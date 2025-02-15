@@ -45,7 +45,7 @@ $backgroundColor: #F5F6F6;
         background: white;
         margin: auto;
         margin-bottom: calc((28/1440) * 100vw);
-        overflow: hidden;
+        // overflow: hidden;
         position: relative;
         padding: calc((28/1440) * 100vw) auto;
         .prev,.next{
@@ -53,13 +53,13 @@ $backgroundColor: #F5F6F6;
             height: calc((95/1440) * 100vw);
             position: absolute;
             cursor: pointer;
-            z-index: 20;
+            z-index: 100;
         }
         .prev{
-            left: 0;
+            left: calc((-34/1440) * 100vw);
         }
         .next{
-            right: 0;
+            right: calc((-34/1440) * 100vw);
         }
     }
     .carousel{

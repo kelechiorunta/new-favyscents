@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './BestSellers.css'
 import { FaHeart } from 'react-icons/fa';
 import pic1 from './BestSellersI.png';
@@ -7,6 +7,7 @@ import pic3 from './BestSellersIII.png';
 import pic4 from './BestSellersIV.png';
 import { useViewChild } from '../ViewContext/ViewContext.jsx';
 import { ViewChild } from '../ViewContext/ViewContext.jsx';
+import Slider from '../slider/Slider.jsx';
 
 const collections = [
     {id: 0, 
@@ -33,60 +34,34 @@ const collections = [
 ]
 
 
-
-export const Item = ({name, pic, supplier, price}) => {
-    return (
-        <div className="child-collection">
-            <img className='img-collection' src={pic} width={'auto'} height={'auto'} />
-            <div className="collection-details">
-                <h1 className="title">{name}</h1>
-                <p className="supplier">{supplier}</p>
-                <p className="price">{price}</p>
-                <button className="addToCart">ADD TO CART</button>
-            </div>
-        </div>
-    )
-}
-
-export const Carousel = ({refId, title, brands, gender}) => {
-    const { isVisible } = useViewChild(refId);
-    
-    return (
-        <div className="carousel">
-            
-            {brands.map((brand, idx) => (
-            <ViewChild animateStyle={
-                {opacity: `${isVisible ? "1" : "0"}`,
-                margin: 'auto',
-                transform: ` ${isVisible ? "translateX(0px)" : `translateX(${100 * idx}px)`}`,
-                transition: `opacity ${1}s ease ${idx * 0.1}s, transform ${1}s ease ${idx * 0.1}s`
-            }}>
-                <div className="item">
-                    <div className="label-container">
-                        <h1 className="label-title">{title}</h1>
-                        <FaHeart className="label-icon" fill='green' size={19}/>
-                    </div>
-                    <Item id={brand.id} title = {brand.name} price = {brand.price} supplier = {brand.supplier} pic={brand.pic}/>
-                </div>
-            </ViewChild>
-            ))}
-            
-        </div>
-    )
-}
-
 export default function BestSellers({id}) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+        const [prevSlide, setPrevSlide] = useState(0); // Track the previous slide index
+        const [direction, setDirection] = useState('left');
+
+        const handleNext = () => {
+          setDirection("right");
+          setPrevSlide(currentIndex);
+          setCurrentIndex((n) => (n + 1) % collections.length);
+        };
+        const handlePrevious = () => {
+          setDirection("left");
+          setPrevSlide(currentIndex);
+    // reLoad(slide+1)
+        setCurrentIndex((n) => (n - 1 + collections.length) % collections.length);
+        };
   return (
     <div className='bestSellers'>
         <h1 className="title">BEST SELLERS</h1>
         <div className="carousel-container">
-            <button className="prev">
+            <button onClick={handlePrevious} className="prev">
                 <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.66667 0.833252L1.5 4.99992L5.66667 9.16659" stroke="black" stroke-linecap="round"/>
                 </svg>
             </button>
-                {collections.map(collection => (<Carousel refId={id} id={collection.id} brands={collection.brands} gender={collection.gender} title={collection.title}/>))}
-            <button className="next">
+            <Slider refId={id} prevIndex={prevSlide} currentIndex={currentIndex} direction={direction} carousels={collections} />
+                {/* {collections.map(collection => (<Carousel refId={id} id={collection.id} brands={collection.brands} gender={collection.gender} title={collection.title}/>))} */}
+            <button onClick={handleNext} className="next">
                 <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.33333 9.16675L5.5 5.00008L1.33333 0.833414" stroke="black" stroke-linecap="round"/>
                 </svg>
