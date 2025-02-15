@@ -1,0 +1,134 @@
+$foreColor: white;
+
+
+.collections{
+    margin: auto;
+    margin-top: calc((265/1440) * 100vw);
+    height: calc((1440/1440) * 100vw);
+    width: calc((1440/1440) * 100vw);
+    // background-color: #D68E21;
+    .title{
+        width: max-content;
+        margin: calc((11/1440) * 100vw) auto;
+        font-size: calc((30/1440) * 100vw);
+        padding: calc((37/1440) * 100vw) auto;
+    }
+    .description{
+        width: max-content;
+        font-size: calc((15/1440) * 100vw);
+        margin: auto;
+        margin-bottom: calc((29/1440) * 100vw);
+    }
+
+    .shopAllBtn{
+                background-color: white;
+                color: #D68E21;
+                font-size: calc((14/1440) * 100vw);
+                outline: 1px solid #D68E21;
+                border: none;
+                display: block;
+                width: max-content;//calc((128.05/1440) * 100vw);
+                margin: auto; //calc(50% - calc((128.05/1440) * 100vw));
+                border-radius: calc((20/1440) * 100vw);
+                padding: calc((10.5/1440) * 100vw) calc((45/1440) * 100vw);
+                // margin-bottom: calc((42/1440) * 100vw);
+                transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
+                &:hover{
+                    cursor: pointer;
+                    color: white;
+                    // border: 1px solid #BE5B75;
+                    // color: #BE5B75;
+                    background-color: #D68E21;
+                }
+            }
+
+            .perfumes-section{
+                // background-color: #D68E21;
+                width: 100%;
+                padding: calc((42/1440) * 100vw) calc((103/1440) * 100vw);
+                .perfumes-container{
+                    width:calc((1234/1440) * 100vw);
+                    height: calc((316/1440) * 100vw);
+                    background-color: white;
+                    margin: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap:calc((31/1440) * 100vw);
+                    overflow: hidden;
+                    
+                    
+                }
+            }
+
+            .frame-container{
+                width: calc((391/1440) * 100vw);
+                height: calc((316/1440) * 100vw);
+                background-color: #F2F2F2;
+                position: relative;
+                // border: 2px solid #D68E21;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: calc((22/1440) * 100vw);
+                transition: background-color 2s ease-in-out, color 1s ease-in-out, background-color 2s ease;
+                // flex-wrap: wrap;
+
+                .content, .link{
+                    display: block;
+                    width: max-content;
+                    font-size: calc((26/1440) * 100vw);
+                    z-index: 1;
+                    color: $foreColor;
+                    letter-spacing: 15%;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-left: 20%;
+                    transition: font-weight 2s ease-in-out, background-color 2s ease-in-out, $foreColor 1s ease, color 1s ease-in-out;
+                }
+                .link{
+                    font-size: calc((16/1440) * 100vw);
+                    text-transform: capitalize;
+                }
+
+                img{
+                    object-fit: cover;
+                    object-position: center;
+                    filter: brightness(50%);
+                    position: absolute;
+                    top:0;
+                    left: 10%;
+                    width: calc((391/1440) * 100vw);
+                    height: calc((316/1440) * 100vw);
+                    transition: left 1s ease, filter 2s ease-in-out, $foreColor 1s ease-in;
+                    
+                    &:hover{
+                        cursor: pointer;
+                        left:0;
+                        filter:brightness(100%);
+                        
+                        .frame-container{
+                            .content, .link{
+                                background-color: black;
+                                $foreColor: black;
+                            }
+                        }
+                       
+                                // background-color: #D68E21;
+                        // }
+                    }
+                }
+
+                // Apply hover effect to change content and link colors
+    &:hover {
+        .content,
+        .link {
+            font-weight: 700;
+            background-color: transparentize($color: #000000, $amount: 1);
+            color: black;//#D68E21; // Change this to your desired color
+        }
+    }
+            }
+    }

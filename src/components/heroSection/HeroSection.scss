@@ -1,0 +1,98 @@
+
+
+$backgroundColor: #D68E21;
+$foreColor:#4D2952;
+
+.hero-section{
+    z-index: -10;
+    margin-top: calc((181/1440) * 100vw);
+    padding:  calc((33/1440) * 100vw)  calc((103/1440) * 100vw);;
+    .landing-section{
+        background-color: $backgroundColor;
+        width: calc((1234/1440) * 100vw);
+        height: calc((387/1440) * 100vw);
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+        overflow: hidden;
+        // justify-content: center;
+        align-items: center;
+        .landing-image{
+            z-index: 10;
+            display: inline;
+            width: calc((634/1440) * 100vw);
+            height: calc((387/1440) * 100vw);
+            background-size:cover;
+            // background-attachment: fixed;
+            background-position: center;
+            background-image: url('./welcome_logo.png');
+        }
+        .landing-caption-section{
+            display: flex;
+            flex-direction: column;
+            width: max-content;
+            margin: auto;
+            gap: calc((12/1440) * 100vw);
+            justify-content: space-evenly;
+
+            .landing-christmas-image{
+                // position: absolute;
+                background-position: center;
+                background-size:cover;
+                // top: 0;
+                // left: calc((13/1440) * 100vw);
+                z-index: 10;
+                width: calc((348.61/1440) * 100vw);
+                height: calc((197.39/1440) * 100vw);
+                margin: auto;
+                margin-left: calc((-13/1440) * 100vw);
+                margin-top: calc((-48/1440) * 100vw);
+                background-image: url('./christmas.png');
+            }
+
+            .landing-caption{
+                color: $foreColor;
+                margin-top: calc((-102/1440) * 100vh);
+                margin-left: calc((9/1440) * 100vw);
+                font-size: calc((64/1440) * 100vw);
+            }
+            .landing-description{
+                color: $foreColor;
+                font-size: calc((24/1440) * 100vw);
+                margin-left: calc((12/1440) * 100vw);
+                margin-top: calc((-24/1440) * 100vw);
+            }
+            .landing-button{
+                display: flex;
+                align-items: center;
+                gap: calc((10/1440) * 100vw);
+                background-color: #BE5B75;
+                color: white;
+                font-size: calc((14/1440) * 100vw);
+                outline: none;
+                border: none;
+                width: max-content;
+                border-radius: calc((20/1440) * 100vw);
+                margin-left: calc((12/1440) * 100vw);
+                // margin-top: calc((12/1440) * 100vw);
+                padding: calc((22.5/1440) * 100vw) calc((45/1440) * 100vw);
+                transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
+                .shop_icon{
+                    fill:white;
+                    transition: fill 1s ease;
+                }
+                
+                &:hover{
+                    cursor: pointer;
+                    // border: 1px solid #BE5B75;
+                    color: #BE5B75;
+                    background-color: white;
+                    .shop_icon{
+                        fill:#BE5B75;
+                    }
+                }
+            }
+        }
+        
+    }
+}

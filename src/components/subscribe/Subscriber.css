@@ -1,0 +1,83 @@
+.subscriber-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.2777777778vw;
+}
+.subscriber-container form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875vw;
+  padding: 1.6666666667vw 3.3333333333vw;
+  border: 1px solid #898989;
+}
+.subscriber-container form h1 {
+  color: #4D2952;
+  font-weight: bold;
+  font-size: 1.1111111111vw;
+}
+.subscriber-container form .input-section {
+  display: flex;
+  align-items: center;
+  gap: 1.0416666667vw;
+}
+.subscriber-container form .input-section .name, .subscriber-container form .input-section .email {
+  display: inline-block;
+  color: #898989;
+  width: 19.8611111111vw;
+  height: 3.2638888889vw;
+  font-size: 0.9722222222vw;
+  padding: 0.8333333333vw;
+}
+.subscriber-container form .input-section .subscribeBtn {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9722222222vw;
+  padding: 0.8333333333vw 3.125vw;
+  color: #4D2952;
+  background-color: transparent;
+  transition: color 1s ease, background-color 1s ease-in-out;
+}
+.subscriber-container form .input-section .subscribeBtn:hover {
+  color: white;
+  background-color: #4D2952;
+}
+.subscriber-container form .consent {
+  font-size: 0.8333333333vw;
+}
+.subscriber-container .divider-hr {
+  display: inline-block;
+  width: 1%;
+  height: 7.2222222222vw;
+  background-color: #4D2952;
+}
+.subscriber-container .address {
+  padding: 1.6666666667vw 3.3333333333vw;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875vw;
+}
+.subscriber-container .address .help-section .needHelp {
+  color: #4D2952;
+  font-weight: bold;
+  font-size: 1.1111111111vw;
+  margin-bottom: 0.8333333333vw;
+}
+.subscriber-container .address .help-section .email {
+  font-size: 0.9722222222vw;
+  padding: 0.9722222222vw auto;
+}
+.subscriber-container .address .visit-section .visitUs {
+  color: #4D2952;
+  font-weight: bold;
+  font-size: 1.1111111111vw;
+  margin-bottom: 0.8333333333vw;
+}
+.subscriber-container .address .visit-section .location {
+  text-transform: uppercase;
+  font-size: 0.9722222222vw;
+  padding: 0.9722222222vw auto;
+}/*# sourceMappingURL=Subscriber.css.map */

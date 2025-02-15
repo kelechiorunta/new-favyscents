@@ -1,0 +1,107 @@
+$fontColor: #898989;
+$highlightColor: #4D2952;
+
+.subscriber-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc((4/1440) * 100vw);
+    
+
+        form{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            // align-items: center;
+            gap: calc((27/1440) * 100vw);
+            padding: calc((24/1440) * 100vw) calc((48/1440) * 100vw);
+            border: 1px solid $fontColor;
+            h1{
+                color: $highlightColor;
+                font-weight: bold;
+                font-size: calc((16/1440) * 100vw);
+            }
+
+            .input-section{
+                display: flex;
+                align-items: center;
+                gap: calc((15/1440) * 100vw);
+
+                .name, .email{
+                    display: inline-block;
+                    color: $fontColor;
+                    width: calc((286/1440) * 100vw);
+                    height: calc((47/1440) * 100vw);
+                    font-size: calc((14/1440) * 100vw);
+                    padding: calc((12/1440) * 100vw);
+                }
+
+                .subscribeBtn{
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: calc((14/1440) * 100vw);
+                    padding: calc((12/1440) * 100vw) calc((45/1440) * 100vw);;
+                    color: $highlightColor;
+                    background-color: transparent;
+                    transition: color 1s ease, background-color 1s ease-in-out;
+                    &:hover{
+                        color: white;
+                        background-color: $highlightColor;
+                    }
+                }
+            }
+
+            .consent{
+                font-size: calc((12/1440) * 100vw);                
+            }
+        
+        }
+
+        .divider-hr{
+            display: inline-block;
+            width:1%;//calc((14/1440) * 100vw);
+            height:calc((104/1440) * 100vw);
+            background-color: $highlightColor;
+            // rotate: 90deg;
+        }
+
+        .address{
+            padding: calc((24/1440) * 100vw) calc((48/1440) * 100vw);
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            // outline: 1px solid $fontColor;
+            // align-items: center;
+            gap: calc((27/1440) * 100vw);
+            // background-color: aquamarine;
+
+            .help-section{
+                .needHelp{
+                    color: $highlightColor;
+                    font-weight: bold;
+                    font-size: calc((16/1440) * 100vw);
+                    margin-bottom: calc((12/1440) * 100vw);;
+                }
+                .email{
+                    font-size: calc((14/1440) * 100vw);
+                    padding: calc((14/1440) * 100vw) auto;
+                }
+            }
+
+            .visit-section{
+                .visitUs{
+                    color: $highlightColor;
+                    font-weight: bold;
+                    font-size: calc((16/1440) * 100vw);
+                    margin-bottom: calc((12/1440) * 100vw);;
+                }
+                .location{
+                    text-transform: uppercase;
+                    // width: 30%;
+                    font-size: calc((14/1440) * 100vw);
+                    padding: calc((14/1440) * 100vw) auto;
+                }
+            }
+        }
+}

@@ -1,0 +1,111 @@
+.collections {
+  margin: auto;
+  margin-top: 18.4027777778vw;
+  height: 100vw;
+  width: 100vw;
+}
+.collections .title {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0.7638888889vw auto;
+  font-size: 2.0833333333vw;
+  padding: 2.5694444444vw auto;
+}
+.collections .description {
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.0416666667vw;
+  margin: auto;
+  margin-bottom: 2.0138888889vw;
+}
+.collections .shopAllBtn {
+  background-color: white;
+  color: #D68E21;
+  font-size: 0.9722222222vw;
+  outline: 1px solid #D68E21;
+  border: none;
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  border-radius: 1.3888888889vw;
+  padding: 0.7291666667vw 3.125vw;
+  transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
+}
+.collections .shopAllBtn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #D68E21;
+}
+.collections .perfumes-section {
+  width: 100%;
+  padding: 2.9166666667vw 7.1527777778vw;
+}
+.collections .perfumes-section .perfumes-container {
+  width: 85.6944444444vw;
+  height: 21.9444444444vw;
+  background-color: white;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.1527777778vw;
+  overflow: hidden;
+}
+.collections .frame-container {
+  width: 27.1527777778vw;
+  height: 21.9444444444vw;
+  background-color: #F2F2F2;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5277777778vw;
+  transition: background-color 2s ease-in-out, color 1s ease-in-out, background-color 2s ease;
+}
+.collections .frame-container .content, .collections .frame-container .link {
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.8055555556vw;
+  z-index: 1;
+  color: white;
+  letter-spacing: 15%;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 20%;
+  transition: font-weight 2s ease-in-out, background-color 2s ease-in-out, white 1s ease, color 1s ease-in-out;
+}
+.collections .frame-container .link {
+  font-size: 1.1111111111vw;
+  text-transform: capitalize;
+}
+.collections .frame-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  filter: brightness(50%);
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 27.1527777778vw;
+  height: 21.9444444444vw;
+  transition: left 1s ease, filter 2s ease-in-out, white 1s ease-in;
+}
+.collections .frame-container img:hover {
+  cursor: pointer;
+  left: 0;
+  filter: brightness(100%);
+}
+.collections .frame-container img:hover .frame-container .content, .collections .frame-container img:hover .frame-container .link {
+  background-color: black;
+}
+.collections .frame-container:hover .content,
+.collections .frame-container:hover .link {
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+}/*# sourceMappingURL=Collections.css.map */

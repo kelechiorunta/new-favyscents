@@ -1,0 +1,20 @@
+$dividerColor: #4D2952;
+
+.dividerII{
+    width: 100%;
+    z-index: 20;
+    color: white;
+    height:calc((45/1440) * 100vw);
+    margin-top: calc((95/1440) * 100vw);
+    background-color: $dividerColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.service-container{
+    display: flex;
+    align-items: flex-start;
+    gap: calc((10/1440) * 100vw);
+}
