@@ -5,7 +5,8 @@ import pic1 from './BestSellersI.png';
 import pic2 from './BestSellersII.png';
 import pic3 from './BestSellersIII.png';
 import pic4 from './BestSellersIV.png';
-
+import { useViewChild } from '../ViewContext/ViewContext.jsx';
+import { ViewChild } from '../ViewContext/ViewContext.jsx';
 
 const collections = [
     {id: 0, 
@@ -47,11 +48,19 @@ export const Item = ({name, pic, supplier, price}) => {
     )
 }
 
-export const Carousel = ({title, brands, gender}) => {
+export const Carousel = ({refId, title, brands, gender}) => {
+    const { isVisible } = useViewChild(refId);
+    
     return (
         <div className="carousel">
             
-            {brands.map(brand => (
+            {brands.map((brand, idx) => (
+            <ViewChild animateStyle={
+                {opacity: `${isVisible ? "1" : "0"}`,
+                margin: 'auto',
+                transform: ` ${isVisible ? "translateX(0px)" : `translateX(${100 * idx}px)`}`,
+                transition: `opacity ${1}s ease ${idx * 0.1}s, transform ${1}s ease ${idx * 0.1}s`
+            }}>
                 <div className="item">
                     <div className="label-container">
                         <h1 className="label-title">{title}</h1>
@@ -59,13 +68,14 @@ export const Carousel = ({title, brands, gender}) => {
                     </div>
                     <Item id={brand.id} title = {brand.name} price = {brand.price} supplier = {brand.supplier} pic={brand.pic}/>
                 </div>
+            </ViewChild>
             ))}
             
         </div>
     )
 }
 
-export default function BestSellers() {
+export default function BestSellers({id}) {
   return (
     <div className='bestSellers'>
         <h1 className="title">BEST SELLERS</h1>
@@ -75,7 +85,7 @@ export default function BestSellers() {
                     <path d="M5.66667 0.833252L1.5 4.99992L5.66667 9.16659" stroke="black" stroke-linecap="round"/>
                 </svg>
             </button>
-                {collections.map(collection => (<Carousel id={collection.id} brands={collection.brands} gender={collection.gender} title={collection.title}/>))}
+                {collections.map(collection => (<Carousel refId={id} id={collection.id} brands={collection.brands} gender={collection.gender} title={collection.title}/>))}
             <button className="next">
                 <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.33333 9.16675L5.5 5.00008L1.33333 0.833414" stroke="black" stroke-linecap="round"/>

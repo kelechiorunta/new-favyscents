@@ -50,6 +50,7 @@
   height: 6.5972222222vw;
   position: absolute;
   cursor: pointer;
+  z-index: 20;
 }
 .bestSellers .carousel-container .prev {
   left: 0;

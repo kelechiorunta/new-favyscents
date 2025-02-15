@@ -38,8 +38,19 @@ export const ServiceContainer = ({name, logo}) => {
 
 export default function DividerII() {
   return (
-    <div className='dividerII'>
-        {services.map(service => (<ServiceContainer logo={service.logo} name={service.name}/>))}
+
+    <div className="dividerII">
+      <div className="service-slider">
+        {services.concat(services).map((service, index) => (
+          <ServiceContainer key={index} logo={service.logo} name={service.name} />
+        ))}
+      </div>
     </div>
+    // <div className='dividerII'>
+    //     {services.map(service => (<ServiceContainer logo={service.logo} name={service.name}/>))}
+    //     {/* {services.map(service => (<ServiceContainer logo={service.logo} name={service.name}/>))} */}
+    // </div>
   )
 }
+
+
