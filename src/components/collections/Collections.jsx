@@ -4,7 +4,7 @@ import './Collections.css'
 import womenPerfumePic from './women_perfume.png';
 import menPerfumePic from './men_perfume.png';
 import bestSellersPic from './best_sellers.png';
-import { useViewChild, ViewChild } from '../ViewContext/ViewContext';
+import { useViewChild, ViewChild } from '../ViewContext/ViewContext.jsx';
 
 const frames = [
     {id: 0, gender: 'Female', content: `Women's Perfume`, pic:womenPerfumePic},

@@ -24,9 +24,9 @@ export function useViewChild(id) {
   const { viewState, updateViewState } = useContext(ViewContext);
   const { ref, inView } = useInView(
     { threshold: [0], 
-      triggerOnce: true,
+      // triggerOnce: true,
       // initialInView
-      // rootMargin:'0',
+      rootMargin:'100px',
       root: null, 
       delay:'500',
       onChange:(inView, entry) => {

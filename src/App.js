@@ -32,15 +32,15 @@ function App() {
         <Collections id={'collections'} />
       </ViewChild>
       <ViewChild id={'recommended'} >
-        <Recommended />
+        <Recommended id={'recommended'}/>
       </ViewChild>
         {/* <Recommended/> */}
       <ViewChild id={'newArrivals'} >
-        <NewArrivals />
+        <NewArrivals id={'newArrivals'}/>
       </ViewChild>
         {/* <NewArrivals/> */}
       <ViewChild id={'bestSellers'} >
-        <BestSellers />
+        <BestSellers id={'bestSellers'}/>
       </ViewChild>
         {/* <BestSellers/> */}
       <ViewChild id={'dividerII'} >

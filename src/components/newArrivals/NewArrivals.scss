@@ -53,6 +53,7 @@ $backgroundColor: #F5F6F6;
             height: calc((95/1440) * 100vw);
             position: absolute;
             cursor: pointer;
+            z-index: 20;
         }
         .prev{
             left: 0;
