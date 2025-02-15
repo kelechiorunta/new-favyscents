@@ -45,7 +45,8 @@ $backgroundColor: #F5F6F6;
         background: white;
         margin: auto;
         margin-bottom: calc((28/1440) * 100vw);
-        overflow: hidden;
+        // z-index: 50;
+        // overflow: hidden;
         position: relative;
         padding: calc((28/1440) * 100vw) auto;
         .prev,.next{
@@ -53,16 +54,17 @@ $backgroundColor: #F5F6F6;
             height: calc((95/1440) * 100vw);
             position: absolute;
             cursor: pointer;
-            z-index: 20;
+            z-index: 100;
         }
         .prev{
-            left: 0;
+            left: calc((-34/1440) * 100vw);
         }
         .next{
-            right: 0;
+            right: calc((-34/1440) * 100vw);
         }
     }
     .carousel{
+        // z-index: 50;
         display: flex;
         flex-shrink: 0;
         flex-grow: 0;
@@ -116,6 +118,7 @@ $backgroundColor: #F5F6F6;
                 align-items: center;
                 text-align: center;
                 gap: calc((30/1440) * 100vw);
+                z-index: 20;
                 
     
                 .img-collection {
@@ -144,6 +147,7 @@ $backgroundColor: #F5F6F6;
                     }
     
                     .addToCart{
+                        z-index: 20;
                         width: calc((252/1440) * 100vw);
                         margin: auto;
                         background-color: transparent;

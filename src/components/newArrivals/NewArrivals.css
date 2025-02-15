@@ -41,7 +41,6 @@
   background: white;
   margin: auto;
   margin-bottom: 1.9444444444vw;
-  overflow: hidden;
   position: relative;
   padding: 1.9444444444vw auto;
 }
@@ -50,13 +49,13 @@
   height: 6.5972222222vw;
   position: absolute;
   cursor: pointer;
-  z-index: 20;
+  z-index: 100;
 }
 .newArrivals .carousel-container .prev {
-  left: 0;
+  left: -2.3611111111vw;
 }
 .newArrivals .carousel-container .next {
-  right: 0;
+  right: -2.3611111111vw;
 }
 .newArrivals .carousel {
   display: flex;
