@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Mainheader.css';
 import { FaSearch } from 'react-icons/fa';
 import { FaCartShopping, FaHeart, FaUser } from 'react-icons/fa6';
+import TabMenu from '../tabmenu/TabMenu.jsx';
+import Divider from '../divider/Divider.jsx';
+import { ViewChild } from '../ViewContext/ViewContext.jsx';
 // import logo from './logo-favy.svg';
 
-export default function MainHeader() {
+export default function MainHeader({id}) {
+
+    const [hoveredTitle, setHoveredTitle] = useState(null);
+
+    const handleMouseEnter = (title) => {
+        setHoveredTitle(title);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredTitle(null);
+    };
+
   return (
     <header className='mainheader'>
         <div className='search-container'>
@@ -37,10 +51,31 @@ export default function MainHeader() {
             </div>
         </div>
 
-        <div className="main-nav">
-            <h1>HOME</h1>
-            <h1>PRODUCT</h1>
+        <div 
+        style={{zIndex: 9999}}
+        className="main-nav">
+            
+                <div
+                    style={{zIndex: 9999}} 
+                    className="menu-item"
+                    onMouseEnter={() => handleMouseEnter("HOME")}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <h1>HOME</h1>
+                    {hoveredTitle === "HOME" && <TabMenu name="HOME" />}
+                </div>
+
+                <div 
+                    style={{zIndex: 9999}}
+                    className="menu-item"
+                    onMouseEnter={() => handleMouseEnter("PRODUCT")}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <h1>PRODUCT</h1>
+                    {hoveredTitle === "PRODUCT" && <TabMenu name="PRODUCT" />}
+                </div>
         </div>
+        <Divider/>
     </header>
   )
 }

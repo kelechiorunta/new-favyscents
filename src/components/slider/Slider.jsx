@@ -13,7 +13,7 @@ export default function Slider({ refId, carousels, direction, currentIndex, prev
         }),
         active: { x: 0, scale: 1, opacity: 1, zIndex: 150 },
         exit: direction => ({
-          x: direction !== 'right' ? "-200%" : "-0%",
+          x: direction !== 'right' ? "-200%" : "0%",
           scale: 1,
           opacity: 0.2
         })
@@ -31,6 +31,7 @@ export default function Slider({ refId, carousels, direction, currentIndex, prev
                 <motion.div 
                 key={indx}
                 variants={sliderVariants}
+                // custom={direction}
                 initial="incoming"
                 animate={currentIndex === indx ? "active": 'incoming'}
                 exit="exit"

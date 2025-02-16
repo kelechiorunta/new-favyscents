@@ -1,12 +1,12 @@
 $dividerColor: #D68E21;
 
 .divider{
-    position: fixed;
+    position: absolute;
     top: 147px;
     left: 0;
     width: 100%;
     // z-index: 20;
-    z-index: 50;
+    z-index: -9999;
     // border: 2px solid;
     height:calc((40/1440) * 100vw);
     background-color: $dividerColor;

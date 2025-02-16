@@ -1,6 +1,6 @@
 .mainheader {
   position: fixed;
-  z-index: 50;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 10.0694444444vw;
+  overflow: visible;
 }
 .mainheader .search-container {
   display: flex;
@@ -98,7 +99,22 @@
   margin-top: -12.7777777778vw;
   margin-bottom: 2.3611111111vw;
   color: #4D2952;
+  z-index: 9999;
+  position: relative;
+  overflow: visible; /* Allow child elements to overflow */
+}
+.mainheader .main-nav .menu-item {
+  z-index: 9999;
 }
 .mainheader .main-nav h1 {
+  z-index: 9999;
   font-size: 0.9722222222vw;
+  border: none;
+  position: relative;
+}
+.mainheader .main-nav h1:hover {
+  z-index: 9999;
+  cursor: pointer;
+  border-bottom: 0.2083333333vw solid #4D2952;
+  transition: border-bottom 0.1s ease;
 }/*# sourceMappingURL=Mainheader.css.map */

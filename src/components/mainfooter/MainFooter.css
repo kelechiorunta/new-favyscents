@@ -3,4 +3,54 @@
   height: 29.5138888889vw;
   padding: 3.3333333333vw 6.6666666667vw;
   background-color: white;
+}
+.main-footer .titles {
+  font-size: 1.1111111111vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main-footer .icons {
+  font-size: 1.1111111111vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2.0833333333vw;
+}
+.main-footer .navlist {
+  display: flex;
+  align-items: center;
+  gap: 3.6805555556vw;
+  padding: 2.3611111111vw;
+  color: #898989;
+}
+.main-footer .navlist nav {
+  font-size: 0.9722222222vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9722222222vw;
+  text-decoration: none;
+  color: #898989;
+}
+.main-footer .navlist .nav3 {
+  margin-left: 17.7083333333vw;
+}
+.main-footer .copyright-section {
+  width: 100vw;
+  height: 15.8333333333vw;
+  color: white;
+  margin-left: -6.6666666667vw;
+  background-color: black;
+  padding: 1.4583333333vw;
+}
+.main-footer .copyright-section .trademark, .main-footer .copyright-section .reserved, .main-footer .copyright-section .service-code {
+  width: 60%;
+  margin: auto;
+  font-size: 0.9722222222vw;
+  text-align: center;
+  margin-bottom: 1.4583333333vw;
+}
+.main-footer .copyright-section .service-code {
+  display: flex;
+  gap: 1.4583333333vw;
 }/*# sourceMappingURL=MainFooter.css.map */

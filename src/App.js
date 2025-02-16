@@ -10,6 +10,8 @@ import BestSellers from './components/bestSellers/BestSellers.jsx';
 import DividerII from './components/dividerII/DividerII.jsx';
 import Subscriber from './components/subscribe/Subscriber.jsx';
 import inViewChild, { ViewChild, ViewProvider } from './components/ViewContext/ViewContext.jsx';
+import MainFooter from './components/mainfooter/MainFooter.jsx';
+import TabMenu from './components/tabmenu/TabMenu.jsx';
 
 function App() {
 
@@ -19,14 +21,21 @@ function App() {
     <div className="App">
      <ViewProvider>
       <ViewChild id={'mainheader'} >
-        <MainHeader />
+        <MainHeader id={'mainheader'}/>
       </ViewChild>
+      {/* <ViewChild id={'tabmenu'} >
+        <TabMenu id={'tabmenu'}/>
+      </ViewChild> */}
       <ViewChild id={'divider'} >
-        <Divider />
+        {/* <Divider /> */}
       </ViewChild>
+      <div className={'heroSection'} style={{zIndex:-9999}}>
       <ViewChild id={'heroSection'} >
-        <HeroSection id={'heroSection'} />
+      
+          <HeroSection id={'heroSection'} />
+        
       </ViewChild>
+      </div>
         {/* <HeroSection /> */}
       <ViewChild id={'collections'} >
         <Collections id={'collections'} />
@@ -49,6 +58,9 @@ function App() {
         {/* <DividerII/> */}
       <ViewChild id={'subscriber'} >
         <Subscriber />
+      </ViewChild>
+      <ViewChild id={'mainFooter'} >
+        <MainFooter id={'mainFooter'} />
       </ViewChild>
         {/* <Subscriber/> */}
       </ViewProvider>

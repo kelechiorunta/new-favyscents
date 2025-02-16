@@ -7,7 +7,7 @@ $logoTitleColor: #4D2952;
 
 .mainheader {
     position: fixed;
-    z-index: 50;
+    z-index: 9999;
     top: 0;
     left: 0;
 
@@ -22,6 +22,7 @@ $logoTitleColor: #4D2952;
     flex-wrap: wrap;
     align-items: center;
     gap: calc((145/1440) * 100vw);
+    overflow: visible;
 
     .search-container{
         display: flex;
@@ -117,8 +118,27 @@ $logoTitleColor: #4D2952;
         margin-top: calc((-184/1440) * 100vw);
         margin-bottom: calc((34/1440) * 100vw);
         color: #4D2952;
+        z-index: 9999;
+        position: relative;
+        overflow: visible; /* Allow child elements to overflow */
+
+        .menu-item{
+            z-index: 9999;
+            // position: relative;
+            // display: inline-block;
+        }
+        
         h1{
+            z-index: 9999;
             font-size: calc((14/1440) * 100vw);
-    }
+            border: none;
+            position: relative;
+            &:hover{
+                z-index: 9999;
+                cursor: pointer;
+                border-bottom: calc((3/1440) * 100vw) solid #4D2952;
+                transition: border-bottom 0.1s ease;
+            }
+        }
 }
 }

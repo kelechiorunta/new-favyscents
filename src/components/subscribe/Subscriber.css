@@ -9,9 +9,9 @@
   width: 50%;
   display: flex;
   flex-direction: column;
+  border: 0.51px solid #898989;
   gap: 1.875vw;
   padding: 1.6666666667vw 3.3333333333vw;
-  border: 1px solid #898989;
 }
 .subscriber-container form h1 {
   color: #4D2952;
@@ -58,6 +58,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
+  border: 0.51px solid #898989;
   gap: 1.875vw;
 }
 .subscriber-container .address .help-section .needHelp {
@@ -69,6 +70,9 @@
 .subscriber-container .address .help-section .email {
   font-size: 0.9722222222vw;
   padding: 0.9722222222vw auto;
+}
+.subscriber-container .address .visit-section {
+  height: 6.6666666667vw;
 }
 .subscriber-container .address .visit-section .visitUs {
   color: #4D2952;

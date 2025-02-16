@@ -6,6 +6,11 @@
   max-width: 100%;
   min-height: 100%;
   overflow: hidden;
+  .heroSection{
+    position: relative;
+    opacity: 1;
+    z-index: -9999;
+  }
 }
 
 .App-logo {
