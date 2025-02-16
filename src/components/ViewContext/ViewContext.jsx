@@ -24,14 +24,14 @@ export function useViewChild(id) {
   const { viewState, updateViewState } = useContext(ViewContext);
   const { ref, inView } = useInView(
     { threshold: [0], 
-      // triggerOnce: true,
+      triggerOnce: true,
       // initialInView
       rootMargin:'100px',
       root: null, 
       delay:'500',
-      onChange:(inView, entry) => {
-        // alert(entry.target.id)
-      },
+      // onChange:(inView, entry) => {
+      //   // alert(entry.target.id)
+      // },
 
      });
 
@@ -47,6 +47,7 @@ export function ViewChild({ id, children, animateStyle }) {
   const { ref, isVisible } = useViewChild(id);
 
   const dynamicStyle = {
+    // zIndex: -999,
     opacity: isVisible ? "1" : "0",
     transform: isVisible ? "translateY(0px)" : "translateY(200px)",
     transition: "opacity 1s ease, transform 1s ease",

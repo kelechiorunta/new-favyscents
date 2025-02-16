@@ -1,6 +1,67 @@
+$fontColor: #898989;
+
 .main-footer{
     width: 100%;
     height: calc((425/1440) * 100vw);
     padding: calc((48/1440) * 100vw) calc((96/1440) * 100vw);
     background-color: white;
+
+    .titles{
+        font-size: calc((16/1440) * 100vw);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .icons{
+        font-size: calc((16/1440) * 100vw);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: calc((30/1440) * 100vw);
+    }
+
+    .navlist{
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        gap: calc((53/1440) * 100vw);
+        padding: calc((34/1440) * 100vw);
+        color: $fontColor;
+
+        nav{
+            font-size: calc((14/1440) * 100vw);;
+            display: flex;
+            flex-direction: column;
+            gap: calc((14/1440) * 100vw);
+            text-decoration: none;
+            color: $fontColor;
+        }
+
+        .nav3{
+            margin-left: calc((255/1440) * 100vw);
+        }
+    }
+
+    .copyright-section{
+        width: 100vw;
+        height: calc((228/1440) * 100vw);
+        color: white;
+        margin-left: calc((-96/1440) * 100vw);
+        background-color: black;
+        padding: calc((21/1440) * 100vw) ;
+
+        .trademark, .reserved, .service-code{
+            width: 60%;
+            margin: auto;
+            font-size: calc((14/1440) * 100vw);
+            text-align: center;
+            margin-bottom: calc((21/1440) * 100vw) ;
+        }
+
+        .service-code{
+            display: flex;
+            gap: calc((21/1440) * 100vw) ;
+        }
+    }
 }

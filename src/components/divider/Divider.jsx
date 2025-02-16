@@ -3,6 +3,6 @@ import './Divider.css';
 
 export default function Divider() {
   return (
-    <div className='divider'></div>
+    <div style={{zIndex: -9999}} className='divider'></div>
   )
 }

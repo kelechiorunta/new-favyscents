@@ -15,7 +15,8 @@ export default function HeroSection({id}) {
     transition: "opacity 1s ease, transform 1s ease 0.1s"
   }
   return (
-    <div className='hero-section'>
+    <div style={{zIndex:-150}}
+    className='hero-section'>
         
         <div className="landing-section">
             {/* <ViewChild animateStyle={

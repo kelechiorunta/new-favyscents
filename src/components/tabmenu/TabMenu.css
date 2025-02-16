@@ -1,0 +1,31 @@
+.tab-menu {
+  background-color: #E5E5E5;
+  color: #4D2952;
+  position: absolute;
+  display: block;
+  top: 100%; /* Positions it below the menu item */
+  left: 0%;
+  transform: translateX(calc(50% - 95.5vw));
+  width: 100vw;
+  height: 60vh;
+  padding: 1.875vw 3.75vw;
+}
+.tab-menu .women {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875vw;
+  font-size: 1.1111111111vw;
+}
+.tab-menu .women .women-links {
+  font-size: 0.9722222222vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.875vw;
+  padding: 0.9027777778vw;
+}
+.tab-menu .name {
+  padding: 0.9722222222vw;
+  z-index: 9999;
+}/*# sourceMappingURL=TabMenu.css.map */
