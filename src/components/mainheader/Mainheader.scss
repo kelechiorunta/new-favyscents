@@ -85,7 +85,8 @@ $logoTitleColor: #4D2952;
         width: calc((351/1440) * 100vw);
         height: calc((45/1440) * 100vw);
 
-        button, .cartitems{
+        button, .cartitems, .accountBtn{
+            text-decoration: none;
             display: flex;
             align-items: flex-start;
             gap: calc((10/1440) * 100vw);

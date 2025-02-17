@@ -23,7 +23,9 @@ function App() {
       
      <ViewProvider>
       <ViewChild id={'mainheader'} >
-        <MainHeader id={'mainheader'}/>
+        <div className='header-contianer'>
+          <MainHeader id={'header-container'}/>
+        </div>
       </ViewChild>
       {/* <ViewChild id={'tabmenu'} >
         <TabMenu id={'tabmenu'}/>

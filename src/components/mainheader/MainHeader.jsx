@@ -6,6 +6,7 @@ import TabMenu from '../tabmenu/TabMenu.jsx';
 import Divider from '../divider/Divider.jsx';
 import { ViewChild } from '../ViewContext/ViewContext.jsx';
 // import logo from './logo-favy.svg';
+import { Link } from 'react-router-dom';
 
 export default function MainHeader({id}) {
 
@@ -53,10 +54,10 @@ export default function MainHeader({id}) {
         </div>
 
         <div className="account-container">
-            <button className='accountBtn'>
+            <Link to={'/account'} className='accountBtn'>
                 <FaUser size={19} color='black' stroke='2px black'/>
                 My Account
-            </button>
+            </Link>
             <button className='wishlistBtn'>
                 <FaHeart size={19} color='black' stroke='2px black'/>
                 WishList

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App.js';
 import Product from './components/products/Product.jsx';
+import Account from './components/account/Account.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import reportWebVitals from './reportWebVitals.js';
 
@@ -13,6 +14,7 @@ root.render(
       <Routes>
           <Route path='/' element={<App/>} />
           <Route path='/product' element={<Product/>} />
+          <Route path='/account' element={<Account/>} />
       </Routes>
       {/* <App /> */}
     </BrowserRouter> 
