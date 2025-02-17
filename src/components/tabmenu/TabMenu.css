@@ -26,6 +26,7 @@
   padding: 0.9027777778vw;
 }
 .tab-menu .name {
+  font-weight: 700;
   padding: 0.9722222222vw;
   z-index: 9999;
 }/*# sourceMappingURL=TabMenu.css.map */

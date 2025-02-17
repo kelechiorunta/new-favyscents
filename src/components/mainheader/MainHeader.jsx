@@ -19,6 +19,22 @@ export default function MainHeader({id}) {
         setHoveredTitle(null);
     };
 
+    const homelist = [
+        {id:0, item:'Perfumes'},
+        {id:1, item:'Bath & Body'},
+        {id:2, item:'Gift Sets'},
+        {id:3, item:`Women's Perfumes`},
+        {id:4, item:`Men's Cologne`},
+    ]
+
+    const productlist = [
+        {id:0, item:'Best Sellers'},
+        {id:1, item:'Recommended'},
+        {id:2, item:'New Arrival'},
+        {id:3, item:`Women's Perfumes`},
+        {id:4, item:`Men's Cologne`},
+    ]
+
   return (
     <header className='mainheader'>
         <div className='search-container'>
@@ -62,7 +78,7 @@ export default function MainHeader({id}) {
                     onMouseLeave={handleMouseLeave}
                 >
                     <h1>HOME</h1>
-                    {hoveredTitle === "HOME" && <TabMenu name="HOME" />}
+                    {hoveredTitle === "HOME" && <TabMenu name="HOME" lists={homelist} />}
                 </div>
 
                 <div 
@@ -72,7 +88,7 @@ export default function MainHeader({id}) {
                     onMouseLeave={handleMouseLeave}
                 >
                     <h1>PRODUCT</h1>
-                    {hoveredTitle === "PRODUCT" && <TabMenu name="PRODUCT" />}
+                    {hoveredTitle === "PRODUCT" && <TabMenu name="PRODUCT" lists={productlist} />}
                 </div>
         </div>
         <Divider/>

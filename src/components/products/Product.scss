@@ -1,13 +1,24 @@
-$primaryColor:  #D68E21;
-$backgroundColor: #F5F6F6;
-
-.newArrivals{
+.product-container{
+    // margin-top: calc((130/1440) * 100vw);
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    height:100%;//calc(((100vw - 140px)/1440) * 100vw)
+    z-index: -9999;
+
+
+    $primaryColor:  #D68E21;
+    $backgroundColor: #F5F8F6;
+
+.product{
+    width: 90%;
+    margin: auto;
     margin-top: calc((297/1440) * 100vw);
     height: 100%;
     display: flex;
-    flex-direction: column;
-    // gap: calc((28/1440) * 100vw);
+    // flex-direction: column;
+    justify-content: center;
+    gap: calc((48/1440) * 100vw);
     background-color: $backgroundColor;//transparent;//$primaryColor;
     .title{
         width: max-content;
@@ -38,16 +49,18 @@ $backgroundColor: #F5F6F6;
         }
     }
     .carousel-container{
-        display: flex;
+        display: grid;
         align-items: center;
-        width: calc((1234/1440) * 100vw);
-        height: calc((662/1440) * 100vw);
+        
+        // flex-wrap: wrap;
+        width: 78%;//calc((1234/1440) * 100vw);
+        height: 200vh;//calc((662/1440) * 100vw);
         background: white;
         margin: auto;
         margin-bottom: calc((28/1440) * 100vw);
-        // overflow: hidden;
         position: relative;
-        padding: calc((28/1440) * 100vw) auto;
+        padding: calc((28/1440) * 100vw);
+        padding-right: calc((38/1440) * 100vw);
         .prev,.next{
             width: calc((34/1440) * 100vw);
             height: calc((95/1440) * 100vw);
@@ -63,16 +76,21 @@ $backgroundColor: #F5F6F6;
         }
     }
     .carousel{
-        display: flex;
-        flex-shrink: 0;
-        flex-grow: 0;
-        flex-basis: 100%;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: calc((18/1440) * 100vw);
-        width: calc((1234/1440) * 100vw);
-        height: calc((562/1440) * 100vw);
-        padding: calc((28/1440) * 100vw) auto;
+        // display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(calc((271.66/1440) * 100vw), 1fr));
+        grid-auto-flow: row;
+        // flex-shrink: 0;
+        // flex-grow: 0;
+        // flex-basis: 100%;
+        // align-items: flex-start;
+        // justify-content: flex-start;
+        // flex-wrap: wrap;
+        gap: calc((60/1440) * 100vw);
+        width: 72%;//calc((1234/1440) * 100vw);
+        height: 200vh;//calc((562/1440) * 100vw);
+        padding: calc((28/1440) * 100vw);
+        padding-right: calc((38/1440) * 100vw);
         // overflow: hidden;
         // background: white;
         .item{
@@ -166,3 +184,11 @@ $backgroundColor: #F5F6F6;
         
     }
 }
+}
+
+
+
+    
+    // border: 1px solid blue;
+
+    

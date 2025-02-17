@@ -2,14 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App.js';
-import { BrowserRouter } from 'react-router-dom';
+import Product from './components/products/Product.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import reportWebVitals from './reportWebVitals.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+          <Route path='/' element={<App/>} />
+          <Route path='/product' element={<Product/>} />
+      </Routes>
+      {/* <App /> */}
     </BrowserRouter> 
   </React.StrictMode>
 );
