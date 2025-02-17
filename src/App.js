@@ -11,7 +11,8 @@ import DividerII from './components/dividerII/DividerII.jsx';
 import Subscriber from './components/subscribe/Subscriber.jsx';
 import inViewChild, { ViewChild, ViewProvider } from './components/ViewContext/ViewContext.jsx';
 import MainFooter from './components/mainfooter/MainFooter.jsx';
-import TabMenu from './components/tabmenu/TabMenu.jsx';
+import { Routes, Route } from 'react-router-dom';
+import Product from './components/products/Product.jsx';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      
      <ViewProvider>
       <ViewChild id={'mainheader'} >
         <MainHeader id={'mainheader'}/>

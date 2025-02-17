@@ -34,7 +34,7 @@ const collections = [
 ]
 
 export default function NewArrivals({id}) {
-    const [currentIndex, setCurrentIndex] = useState(0);
+        const [currentIndex, setCurrentIndex] = useState(0);
         const [prevSlide, setPrevSlide] = useState(0); // Track the previous slide index
         const [direction, setDirection] = useState('left');
 
