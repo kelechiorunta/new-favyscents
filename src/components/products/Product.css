@@ -20,7 +20,7 @@
   width: max-content;
   margin: 0.7638888889vw auto;
   font-size: 2.0833333333vw;
-  padding: 2.5694444444vw auto;
+  padding: 2.5694444444vw 1.1111111111vw;
   margin-bottom: 3.2638888889vw;
 }
 .product-container .product .shopmore {
@@ -42,48 +42,147 @@
   color: white;
   background-color: #D68E21;
 }
-.product-container .product .carousel-container {
+.product-container .product .filter-section {
+  padding: 0.9722222222vw;
+  width: 20%;
+}
+.product-container .product .filter-section h1 {
+  font-size: 1.6666666667vw;
+  margin-bottom: 1.6666666667vw;
+}
+.product-container .product .filter-section .reset {
+  z-index: 20;
+  width: 17.5vw;
+  margin: auto;
+  margin-bottom: 1.6666666667vw;
+  background-color: transparent;
+  border-radius: 0.6944444444vw;
+  border: 1px solid #D68E21;
+  padding: 0.9722222222vw;
+  font-size: 0.9722222222vw;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 1s ease-in-out, color 1s ease-in;
+}
+.product-container .product .filter-section .reset:hover {
+  cursor: pointer;
+  background-color: #D68E21;
+  color: white;
+}
+.product-container .product .filter-section select {
+  z-index: 20;
+  margin: auto;
+  margin-bottom: 1.6666666667vw;
+  background-color: transparent;
+  border-radius: 0.6944444444vw;
+  border: 1px solid #D68E21;
+  padding: 0.9722222222vw 3.3333333333vw;
+  font-size: 0.9722222222vw;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 1s ease-in-out, color 1s ease-in;
+}
+.product-container .product .filter-section select:hover {
+  cursor: pointer;
+  background-color: #D68E21;
+  color: white;
+}
+.product-container .product .perfume-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  text-align: center;
+  padding: 0.9722222222vw;
+}
+.product-container .product .perfume-section .description {
+  margin: auto;
+  width: 68%;
+  margin-bottom: 0.9722222222vw;
+  padding: 0.9722222222vw;
+  font-size: 0.9722222222vw;
+}
+.product-container .product .perfume-section h1 {
+  font-size: 1.6666666667vw;
+}
+.product-container .product .perfume-section .quantity-container {
+  text-align: left;
+  margin: auto;
+  width: 95.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.9722222222vw;
+}
+.product-container .product .perfume-section .quantity-container .cont {
+  z-index: 9999;
+  display: flex;
+  gap: 0.9722222222vw;
+}
+.product-container .product .perfume-section .quantity-container .cont select {
+  padding: 0.4861111111vw;
+  width: 9.3055555556vw;
+}
+.product-container .product .perfume-section .quantity-container .cont select option {
+  padding: 0.4861111111vw;
+}
+.product-container .product .perfume-section .carousel-container {
   display: grid;
   align-items: center;
-  width: 78%;
+  width: 95.5%;
   height: 200vh;
   background: white;
   margin: auto;
   margin-bottom: 1.9444444444vw;
   position: relative;
-  padding: 1.9444444444vw;
-  padding-right: 2.6388888889vw;
+  padding: 1.3194444444vw;
+  padding-right: 1.3194444444vw;
 }
-.product-container .product .carousel-container .prev, .product-container .product .carousel-container .next {
+.product-container .product .perfume-section .carousel-container .prev, .product-container .product .perfume-section .carousel-container .next {
   width: 2.3611111111vw;
   height: 6.5972222222vw;
   position: absolute;
   cursor: pointer;
   z-index: 100;
 }
-.product-container .product .carousel-container .prev {
+.product-container .product .perfume-section .carousel-container .prev {
   left: -2.3611111111vw;
 }
-.product-container .product .carousel-container .next {
+.product-container .product .perfume-section .carousel-container .next {
   right: -2.3611111111vw;
 }
-.product-container .product .carousel {
+.product-container .product .perfume-section .carousel-container .pagination-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  bottom: -1.5%;
+  left: calc(50% - 54px);
+  cursor: pointer;
+  z-index: 9999;
+}
+.product-container .product .perfume-section .carousel-container .pagination-container button {
+  position: relative;
+  width: 2.3611111111vw;
+  height: 2.3611111111vw;
+}
+.product-container .product .perfume-section .carousel {
   display: grid;
   grid-template-columns: repeat(3, minmax(18.8652777778vw, 1fr));
   grid-auto-flow: row;
-  gap: 4.1666666667vw;
+  gap: 4.8611111111vw 4.1666666667vw;
   width: 72%;
   height: 200vh;
-  padding: 1.9444444444vw;
-  padding-right: 2.6388888889vw;
+  padding: 1.3194444444vw;
+  padding-right: 1.3194444444vw;
 }
-.product-container .product .carousel .item {
+.product-container .product .perfume-section .carousel .item {
   display: flex;
   flex-direction: column;
   width: 18.8652777778vw;
   height: 33.8888888889vw;
 }
-.product-container .product .carousel .item .label-container {
+.product-container .product .perfume-section .carousel .item .label-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,7 +190,7 @@
   margin-bottom: 0.6944444444vw;
   height: 33.8888888889vw;
 }
-.product-container .product .carousel .item .label-container .label-title {
+.product-container .product .perfume-section .carousel .item .label-container .label-title {
   background-color: #774C7D;
   font-size: 0.6944444444vw;
   display: flex;
@@ -103,20 +202,19 @@
   height: 1.3888888889vw;
   padding: 0.6944444444vw;
 }
-.product-container .product .carousel .item .label-container .label-icon {
+.product-container .product .perfume-section .carousel .item .label-container .label-icon {
   width: 1.3194444444vw;
   height: 1.1111111111vw;
 }
-.product-container .product .carousel .item .child-collection {
+.product-container .product .perfume-section .carousel .item .child-collection {
   width: 20.4166666667vw;
   height: 33.8888888889vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 2.0833333333vw;
 }
-.product-container .product .carousel .item .child-collection .img-collection {
+.product-container .product .perfume-section .carousel .item .child-collection .img-collection {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -124,23 +222,23 @@
   width: 17.5vw;
   height: 15.9347222222vw;
 }
-.product-container .product .carousel .item .child-collection .collection-details {
+.product-container .product .perfume-section .carousel .item .child-collection .collection-details {
+  margin-top: -6.25vw;
   display: flex;
   flex-direction: column;
-  gap: 0.9027777778vw;
   width: 20.4166666667vw;
   height: 33.8888888889vw;
 }
-.product-container .product .carousel .item .child-collection .collection-details .title, .product-container .product .carousel .item .child-collection .collection-details .price {
+.product-container .product .perfume-section .carousel .item .child-collection .collection-details .title, .product-container .product .perfume-section .carousel .item .child-collection .collection-details .price {
   margin: auto;
   font-size: 0.9722222222vw;
   font-weight: 700;
 }
-.product-container .product .carousel .item .child-collection .collection-details .supplier {
+.product-container .product .perfume-section .carousel .item .child-collection .collection-details .supplier {
   text-transform: uppercase;
   font-size: 0.9027777778vw;
 }
-.product-container .product .carousel .item .child-collection .collection-details .addToCart {
+.product-container .product .perfume-section .carousel .item .child-collection .collection-details .addToCart {
   width: 17.5vw;
   margin: auto;
   background-color: transparent;
@@ -151,7 +249,7 @@
   font-weight: 700;
   transition: background-color 1s ease-in-out, color 1s ease-in;
 }
-.product-container .product .carousel .item .child-collection .collection-details .addToCart:hover {
+.product-container .product .perfume-section .carousel .item .child-collection .collection-details .addToCart:hover {
   cursor: pointer;
   background-color: #D68E21;
   color: white;
