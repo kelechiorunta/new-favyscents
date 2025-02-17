@@ -1,3 +1,6 @@
+$fontColor: #898989;
+$highlightColor: #4D2952;
+
 .product-container{
     // margin-top: calc((130/1440) * 100vw);
     display: flex;
@@ -51,7 +54,7 @@
 
     .filter-section{
         padding: calc((14/1440) * 100vw);
-        width: 20%;
+        width: 15%;
         
 
         h1{
@@ -61,7 +64,7 @@
 
         .reset{
             z-index: 20;
-            width: calc((252/1440) * 100vw);
+            width: calc((202/1440) * 100vw);
             margin: auto;
             margin-bottom: calc((24/1440) * 100vw);
             background-color: transparent;
@@ -81,16 +84,18 @@
 
         select{
             z-index: 20;
-            // width: calc((252/1440) * 100vw);
+            width: calc((202/1440) * 100vw);
             margin: auto;
             margin-bottom: calc((24/1440) * 100vw);
             background-color: transparent;
             border-radius: calc((10/1440) * 100vw);
-            border: 1px solid $primaryColor;
-            padding: calc((14/1440) * 100vw) calc((48/1440) * 100vw);
+            outline: 0;
+            border: none;
+            // border: 1px solid $primaryColor;
+            padding: calc((14/1440) * 100vw) calc((14/1440) * 100vw);
             font-size: calc((14/1440) * 100vw);
             font-weight: 700;
-            text-align: center;
+            text-align: left;
             transition: background-color 1s ease-in-out, color 1s ease-in;
             &:hover{
                 cursor: pointer;
@@ -98,12 +103,80 @@
                 color: white;
             }
         }
+
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            // border: 0.51px solid $fontColor;
+            // align-items: center;
+            gap: calc((27/1440) * 100vw);
+            // padding: calc((24/1440) * 100vw) calc((48/1440) * 100vw);
+            // border: 1px solid $fontColor;
+            
+            
+           
+
+            .input-section{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                // align-items: center;
+                gap: calc((15/1440) * 100vw);
+
+                h1{
+                    width: calc((252/1440) * 100vw);
+                    text-align: left;
+                    color: $highlightColor;
+                    font-weight: bold;
+                    font-size: calc((14/1440) * 100vw);
+                }
+
+                p{
+                    width: calc((222/1440) * 100vw);
+                    text-align: left;
+                    color: $highlightColor;
+                    // font-weight: bold;
+                    font-size: calc((14/1440) * 100vw);
+                }
+
+                .name, .email{
+                    display: inline-block;
+                    color: $fontColor;
+                    width: calc((202/1440) * 100vw);
+                    height: calc((47/1440) * 100vw);
+                    font-size: calc((14/1440) * 100vw);
+                    padding: calc((12/1440) * 100vw);
+                }
+
+                .subscribeBtn{
+                    cursor: pointer;
+                    // width: max-content;
+                    width: calc((202/1440) * 100vw);
+                    font-weight: bold;
+                    font-size: calc((14/1440) * 100vw);
+                    padding: calc((12/1440) * 100vw) calc((45/1440) * 100vw);;
+                    color: white;
+                    background-color: $highlightColor;
+                    transition: color 1s ease, background-color 1s ease-in-out;
+                    &:hover{
+                        color: $highlightColor;
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            .consent{
+                font-size: calc((12/1440) * 100vw);                
+            }
+        
+        }
         
     }
 
     .perfume-section{
 
-        width: 100%;
+        width: 95.5%;
         display: grid;
         grid-template-columns: 100%;
         text-align: center;
@@ -180,7 +253,7 @@
                 justify-content: space-evenly;
                 width:max-content;
                 position: absolute;
-                bottom: -1.5%;
+                bottom: -2.5%;
                 left: calc(50% - 54px);
                 cursor: pointer;
                 z-index: 9999;

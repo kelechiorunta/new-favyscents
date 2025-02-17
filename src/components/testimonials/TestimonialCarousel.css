@@ -1,0 +1,81 @@
+.testimonialCarousel {
+  display: flex;
+  gap: 3.6805555556vw;
+  width: 100%;
+  background-color: #f5f6f6;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  width: 35.35%;
+  height: 18.1944444444vw;
+  margin: auto;
+  margin-bottom: 1.9444444444vw;
+  position: relative;
+  padding: 1.9444444444vw auto;
+}
+.carousel-container .prev, .carousel-container .next {
+  width: 2.3611111111vw;
+  height: 6.5972222222vw;
+  position: absolute;
+  cursor: pointer;
+  z-index: 100;
+}
+.carousel-container .prev {
+  left: -2.3611111111vw;
+}
+.carousel-container .next {
+  right: -2.3611111111vw;
+}
+.carousel-container .testimonial-carousel {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 100%;
+  align-items: center;
+  gap: 1.25vw;
+  width: 100%;
+  padding: 1.9444444444vw auto;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-container .testimonial-carousel .item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 33.9347222222vw;
+  height: 14.0277777778vw;
+}
+.carousel-container .testimonial-carousel .item .testimonial-child-collection {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  margin: auto;
+  gap: 3.6805555556vw;
+  width: 100%;
+  text-align: right;
+  margin-top: 4.4444444444vw;
+}
+.carousel-container .testimonial-carousel .item .testimonial-child-collection img {
+  display: inline-block;
+  border-radius: 50%;
+  width: 5.1388888889vw;
+  height: 5.1388888889vw;
+}
+.carousel-container .testimonial-carousel .item .testimonial-child-collection .collection-details .left-quote {
+  float: left;
+}
+.carousel-container .testimonial-carousel .item .testimonial-child-collection .collection-details .right-quote {
+  float: right;
+}
+.carousel-container .testimonial-carousel .item .testimonial-child-collection .collection-details .title {
+  margin: auto;
+  font-size: 0.9722222222vw;
+  color: #000;
+}
+.carousel-container .testimonial-carousel .item .testimonial-child-collection .collection-details .name {
+  font-weight: 700;
+}/*# sourceMappingURL=TestimonialCarousel.css.map */

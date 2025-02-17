@@ -70,7 +70,8 @@
   width: 24.375vw;
   height: 3.125vw;
 }
-.mainheader .account-container button, .mainheader .account-container .cartitems {
+.mainheader .account-container button, .mainheader .account-container .cartitems, .mainheader .account-container .accountBtn {
+  text-decoration: none;
   display: flex;
   align-items: flex-start;
   gap: 0.6944444444vw;
@@ -81,7 +82,7 @@
   border: none;
   cursor: pointer;
 }
-.mainheader .account-container button:hover, .mainheader .account-container .cartitems:hover {
+.mainheader .account-container button:hover, .mainheader .account-container .cartitems:hover, .mainheader .account-container .accountBtn:hover {
   border: 1px solid #4D2952;
 }
 .mainheader .account-container .accountBtn .icon-user {

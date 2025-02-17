@@ -3,14 +3,22 @@ import MainHeader from '../mainheader/MainHeader.jsx';
 import { ViewChild, ViewProvider } from '../ViewContext/ViewContext.jsx';
 import './Product.css'
 import Slider from '../slider/Slider.jsx';
-import pic1 from './Cosmetic.png';
-import pic2 from './Passion.png';
-import pic3 from './BodyWash.png';
-import pic4 from './Chrome_Azzaro.png';
-import pic5 from './newArrivalI.png';
-import pic6 from './newArrivalII.png';
-import pic7 from './newArrivalIII.png';
-import pic8 from './newArrivalIV.png';
+import pic1 from '../imgs/Cosmetic.png';
+import pic2 from '../imgs/Passion.png';
+import pic3 from '../imgs/BodyWash.png';
+import pic4 from '../imgs/Chrome_Azzaro.png';
+import pic5 from '../imgs/newArrivalI.png';
+import pic6 from '../imgs/newArrivalII.png';
+import pic7 from '../imgs/newArrivalIII.png';
+import pic8 from '../imgs/newArrivalIV.png';
+import pic9 from '../imgs/BestSellersI.png'
+import pic10 from '../imgs/BestSellersII.png'
+import pic11 from '../imgs/BestSellersIII.png'
+import pic12 from '../imgs/BestSellersIV.png'
+
+import DividerII from '../dividerII/DividerII';
+import Subscriber from '../subscribe/Subscriber';
+import MainFooter from '../mainfooter/MainFooter';
 
 const collections = [
     {id: 0, 
@@ -33,12 +41,24 @@ const collections = [
         gender: 'male',
         title: 'MEN',
         brands: [
-            {id: 0, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic1 },
-            {id: 1, name: 'Eau De Parfum', supplier: 'Armaf Passion', price: '$51.74', pic: pic1},
-            {id: 2, name: 'Eau De Tollete', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic1 },
-            {id: 3, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic1 },
+            {id: 0, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic9 },
+            {id: 1, name: 'Eau De Parfum', supplier: 'Armaf Passion', price: '$51.74', pic: pic10},
+            {id: 2, name: 'Eau De Tollete', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic11 },
+            {id: 3, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic12 },
+            {id: 4, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic1 },
+            {id: 5, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic5 },
+            {id: 6, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic4 },
+            {id: 7, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic8 },
+            {id: 8, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic3 },
         ]
         }
+]
+
+const selectItems = [
+    {id:0, default: 'FEATURED BRANDS', items: [`WOMEN'S PERFUME`, `MEN'S COLOGNE`, `BEST SELLERS`]},
+    {id:1, default: 'PRICE RANGE', items: [`$48`, `$52`, `$56`, `$60`]},
+    {id:2, default: 'PERFUME SIZE', items: [`48`, `52`, `56`, `60`]},
+    {id:3, default: 'GENDER', items: [`Male`, `Female`, `Unisex`]},
 ]
 
 export default function Product({id}) {
@@ -88,23 +108,36 @@ export default function Product({id}) {
                     {/* <div className="filter"></div> */}
                     {/* <div className="lists"> */}
                     <div className="filter-section">
-                        <h1 className="">NEW ARRIVALS</h1>
+                        <h1 className="">CATEGORIES</h1>
                         <button className="reset">RESET ALL FILTERS</button>
                         {/* <label htmlFor='filter'>FEATURED BRANDS */}
-                        <select 
+                        {selectItems.map(selectObj => (
+                            <select 
                                 name="filter" 
                                 id="filter" 
                                 className='filter'
                                 value={selectedValueIII} 
                                 onChange={handleChangeOptionIII}>
-                                    <option value="">FEATURED BRANDS</option>
-                                    <option value="volvo">$48</option>
-                                    <option value="saab">$52</option>
-                                    <option value="opel">$56</option>
-                                    <option value="audi">$60</option>
-                                </select>
-                        {/* </label> */}
+                                    <option value="" disabled>{selectObj.default}</option>
+                                    {selectObj.items.map(item =>(
+                                        <option value="volvo">{item}</option>
+                                    ))}
+                            </select>
+                        ))}
                         
+                         <form className='subscriber-form'>
+                            <div className="input-section">
+                            <h1 className="join-list">JOIN OUR COUPON LIST</h1>
+                                <input type="email" className="email" placeholder='Email Address' />
+                                <button className="subscribeBtn">SIGN UP</button>
+                                <h1 className="join-list">ABOUT WOMEN'S PERFUME</h1>
+                                <p>
+                                    The Only Place To Shop The Latest Designer Perfumes At Discounts Up To 80% Off
+                                    Department Store Prices. We Offer The Largest Selection Of The Latest Brand Name
+                                    Perfumes And Discount Perfume Products. Shop And Save On All Women's Perfume Today.
+                                </p>
+                            </div>
+                        </form>
                     </div>
                     
                     <div className="perfume-section">
@@ -167,11 +200,14 @@ export default function Product({id}) {
                                 3
                             </button>
                         </div>
+                       
                     </div>
                     {/* </div> */}
                     </div>
                     </div>
-                   
+                    <DividerII/>
+                    <Subscriber/>
+                    <MainFooter/>
             </ViewChild>
         </ViewProvider>
     </div>

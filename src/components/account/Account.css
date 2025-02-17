@@ -1,0 +1,98 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+.register-container .register-account-form {
+  margin-top: 10.625vw;
+  padding: 9.0625vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4722222222vw;
+  text-align: center;
+}
+.register-container .register-account-form .introduction-container {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  gap: 4.8611111111vw;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.register-container .register-account-form .introduction-container p {
+  width: 60%;
+  height: 4.8611111111vw;
+}
+.register-container .register-account-form .introduction-container .profile-container {
+  width: auto;
+  height: 50%;
+  border-radius: 50%;
+}
+.register-container .register-account-form .introduction-container .profile-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 4.8611111111vw;
+  border-radius: 50%;
+  height: 4.8611111111vw;
+}
+.register-container .register-account-form .input-section {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.0416666667vw;
+  flex-wrap: wrap;
+}
+.register-container .register-account-form .input-section .first, .register-container .register-account-form .input-section .last, .register-container .register-account-form .input-section .email, .register-container .register-account-form .input-section .password {
+  display: inline-block;
+  width: 26.8055555556vw;
+  height: 3.2638888889vw;
+  font-size: 0.9722222222vw;
+  padding: 0.8333333333vw;
+}
+.register-container .register-account-form .input-section .confirm-subscription .agree-label {
+  display: flex;
+  gap: 0.8333333333vw;
+}
+.register-container .register-account-form .input-section .subscribeBtn {
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9722222222vw;
+  padding: 0.8333333333vw 3.125vw;
+  color: #D68E21;
+  background-color: transparent;
+  transition: color 1s ease, background-color 1s ease-in-out;
+}
+.register-container .register-account-form .input-section .subscribeBtn:hover {
+  color: white;
+  background-color: #D68E21;
+}
+.register-container .register-account-form .carousel-container {
+  display: flex;
+  align-items: center;
+  width: 85.6944444444vw;
+  height: 45.9722222222vw;
+  background: white;
+  margin: auto;
+  margin-bottom: 1.9444444444vw;
+  position: relative;
+  padding: 1.9444444444vw auto;
+}
+.register-container .register-account-form .carousel-container .prev, .register-container .register-account-form .carousel-container .next {
+  width: 2.3611111111vw;
+  height: 6.5972222222vw;
+  position: absolute;
+  cursor: pointer;
+  z-index: 100;
+}
+.register-container .register-account-form .carousel-container .prev {
+  left: -2.3611111111vw;
+}
+.register-container .register-account-form .carousel-container .next {
+  right: -2.3611111111vw;
+}/*# sourceMappingURL=Account.css.map */

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './BestSellers.css'
 import { FaHeart } from 'react-icons/fa';
-import pic1 from './BestSellersI.png';
-import pic2 from './BestSellersII.png';
-import pic3 from './BestSellersIII.png';
-import pic4 from './BestSellersIV.png';
+import pic1 from '../imgs/BestSellersI.png';
+import pic2 from '../imgs/BestSellersII.png';
+import pic3 from '../imgs/BestSellersIII.png';
+import pic4 from '../imgs/BestSellersIV.png';
 import { useViewChild } from '../ViewContext/ViewContext.jsx';
 import { ViewChild } from '../ViewContext/ViewContext.jsx';
 import Slider from '../slider/Slider.jsx';
