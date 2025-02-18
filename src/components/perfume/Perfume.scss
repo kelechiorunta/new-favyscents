@@ -6,6 +6,7 @@ $primaryColor:  #D68E21;
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    overflow-x: hidden;
 
     .perfume-section{
         margin-top: calc((203/1440) * 100vw);

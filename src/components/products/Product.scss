@@ -3,6 +3,7 @@ $highlightColor: #4D2952;
 
 .product-container{
     // margin-top: calc((130/1440) * 100vw);
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     width: 100%;

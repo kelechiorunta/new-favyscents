@@ -1,10 +1,10 @@
 .hero-section {
-  z-index: -999;
+  z-index: 9999;
   margin-top: 12.5694444444vw;
   padding: 2.2916666667vw 7.1527777778vw;
 }
 .hero-section .landing-section {
-  z-index: -999;
+  z-index: 9999;
   background-color: #D68E21;
   width: 85.6944444444vw;
   height: 26.875vw;
@@ -56,6 +56,7 @@
   margin-top: -1.6666666667vw;
 }
 .hero-section .landing-section .landing-caption-section .landing-button {
+  z-index: 9999;
   display: flex;
   align-items: center;
   gap: 0.6944444444vw;

@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  overflow-x: hidden;
 }
 .perfume-container .perfume-section {
   margin-top: 14.0972222222vw;
