@@ -273,6 +273,7 @@
      object-position: center;
   width: 17.5vw;
   height: 15.9347222222vw;
+  cursor: pointer;
 }
 .product-container .product .perfume-section .carousel .item .child-collection .collection-details {
   margin-top: -6.25vw;

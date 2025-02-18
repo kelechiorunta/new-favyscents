@@ -1,11 +1,13 @@
 import React from "react";
 import { useViewChild, ViewChild } from "../ViewContext/ViewContext.jsx";
 import { FaHeart } from "react-icons/fa6";
+import { Router, useNavigate } from "react-router-dom";
 
-export const Item = ({name, pic, supplier, price}) => {
+export const Item = ({id, name, pic, supplier, price}) => {
+    const navigate = useNavigate()
     return (
         <div className="child-collection">
-            <img className='img-collection' src={pic} width={'auto'} height={'auto'} />
+            <img onClick={()=>navigate(`/perfume/${id}`)} className='img-collection' src={pic} width={'auto'} height={'auto'} />
             <div className="collection-details">
                 <h1 className="title">{name}</h1>
                 <p className="supplier">{supplier}</p>

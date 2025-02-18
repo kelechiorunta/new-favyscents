@@ -1,0 +1,138 @@
+.perfume-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+.perfume-container .perfume-section {
+  margin-top: 14.0972222222vw;
+  padding: auto 15.2777777778vw;
+  text-align: center;
+  position: relative;
+}
+.perfume-container .perfume-section .perfume {
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  width: 70%;
+  justify-content: space-evenly;
+  gap: 5.5555555556vw;
+}
+.perfume-container .perfume-section .perfume .picture {
+  width: 23.9583333333vw;
+}
+.perfume-container .perfume-section .perfume .picture .small-picture {
+  position: absolute;
+  top: -100%;
+  left: 0;
+}
+.perfume-container .perfume-section .perfume .picture img {
+  display: inline-block;
+  margin: auto;
+  width: 17.0138888889vw;
+  height: 17.0138888889vw;
+}
+.perfume-container .perfume-section .perfume .description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8333333333vw;
+  width: 23.9583333333vw;
+  align-items: center;
+  justify-content: center;
+}
+.perfume-container .perfume-section .perfume .description .gender {
+  padding: 0.4166666667vw;
+  margin: auto;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 0.8333333333vw;
+  font-weight: 700;
+}
+.perfume-container .perfume-section .perfume .description .gender {
+  background-color: #4D2952;
+  color: white;
+}
+.perfume-container .perfume-section .perfume .description .name, .perfume-container .perfume-section .perfume .description .price {
+  padding: 0.4166666667vw;
+  margin: auto;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.6666666667vw;
+  font-weight: 700;
+}
+.perfume-container .perfume-section .perfume .description .price {
+  font-size: 1.1111111111vw;
+}
+.perfume-container .perfume-section .perfume .description .payment-section {
+  display: flex;
+  gap: 0.9722222222vw;
+  align-items: center;
+}
+.perfume-container .perfume-section .perfume .description .payment-section .addToCart, .perfume-container .perfume-section .perfume .description .payment-section input {
+  z-index: 20;
+  width: 10.5555555556vw;
+  margin: auto;
+  background-color: transparent;
+  border-radius: 0.6944444444vw;
+  border: 1px solid #D68E21;
+  padding: 0.9722222222vw;
+  font-size: 0.9722222222vw;
+  font-weight: 700;
+  transition: background-color 1s ease-in-out, color 1s ease-in;
+}
+.perfume-container .perfume-section .perfume .description .payment-section .addToCart:hover, .perfume-container .perfume-section .perfume .description .payment-section input:hover {
+  cursor: pointer;
+  background-color: #D68E21;
+  color: white;
+}
+.perfume-container .content {
+  margin: auto;
+  color: #484949;
+  width: 50.25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f5f6f6;
+  border-bottom-left-radius: 0.9722222222vw;
+  border-bottom-right-radius: 0.9722222222vw;
+  padding: 1.9444444444vw;
+}
+.perfume-container .content h3, .perfume-container .content p {
+  text-align: left;
+  width: 100%;
+  padding: 0.9722222222vw;
+}
+.perfume-container .product-desc {
+  display: flex;
+  justify-content: center;
+  gap: 0.2777777778vw;
+  width: 100%;
+  /* Style tab links */
+  margin: auto;
+  margin-top: 4.8611111111vw;
+  /* Style the tab content (and add height:100% for full page content) */
+}
+.perfume-container .product-desc .tablink {
+  font-weight: 700;
+  color: #484949;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+.perfume-container .product-desc .tablink:hover {
+  background-color: #777;
+}
+.perfume-container .product-desc .tabcontent {
+  color: white;
+  padding: 6.9444444444vw 1.3888888889vw;
+  height: 100%;
+}
+.perfume-container .other-recommended {
+  margin-top: 49.5833333333vw;
+  position: relative;
+  display: block;
+}/*# sourceMappingURL=Perfume.css.map */
