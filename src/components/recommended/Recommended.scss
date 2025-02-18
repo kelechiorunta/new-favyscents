@@ -122,6 +122,7 @@ $backgroundColor: #F5F6F6;
                 
     
                 .img-collection {
+                    cursor: pointer;
                     object-fit: cover;
                     object-position: center;
                     width: calc((252/1440) * 100vw);

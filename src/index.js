@@ -5,6 +5,7 @@ import App from './App.js';
 import Product from './components/products/Product.jsx';
 import Account from './components/account/Account.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Perfume from './components/perfume/Perfume.jsx';
 // import reportWebVitals from './reportWebVitals.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,8 @@ root.render(
           <Route path='/' element={<App/>} />
           <Route path='/product' element={<Product/>} />
           <Route path='/account' element={<Account/>} />
+          <Route path='/perfume/:id' element={<Perfume/>} />
+
       </Routes>
       {/* <App /> */}
     </BrowserRouter> 

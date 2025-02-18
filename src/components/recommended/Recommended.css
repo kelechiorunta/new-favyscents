@@ -110,6 +110,7 @@
   z-index: 20;
 }
 .recommended .carousel .item .child-collection .img-collection {
+  cursor: pointer;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;

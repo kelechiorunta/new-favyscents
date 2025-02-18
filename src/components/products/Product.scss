@@ -324,6 +324,7 @@ $highlightColor: #4D2952;
                         object-position: center;
                         width: calc((252/1440) * 100vw);
                         height: calc((229.46/1440) * 100vw);
+                        cursor: pointer;
                     }
         
                     .collection-details{
@@ -333,7 +334,8 @@ $highlightColor: #4D2952;
                         // gap: calc((13/1440) * 100vw);
                         width: calc((294/1440) * 100vw);
                         height: calc((488/1440) * 100vw);
-        
+                       
+
                         .title, .price{
                             margin: auto;
                             font-size: calc((14/1440) * 100vw);
