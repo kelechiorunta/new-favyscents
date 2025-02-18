@@ -5,11 +5,11 @@ $foreColor:#4D2952;
 
 .hero-section{
     // z-index: -50;
-    z-index: -999;
+    z-index: 9999;
     margin-top: calc((181/1440) * 100vw);
     padding:  calc((33/1440) * 100vw)  calc((103/1440) * 100vw);;
     .landing-section{
-        z-index: -999;
+        z-index: 9999;
         background-color: $backgroundColor;
         width: calc((1234/1440) * 100vw);
         height: calc((387/1440) * 100vw);
@@ -65,6 +65,7 @@ $foreColor:#4D2952;
                 margin-top: calc((-24/1440) * 100vw);
             }
             .landing-button{
+                z-index: 9999;
                 display: flex;
                 align-items: center;
                 gap: calc((10/1440) * 100vw);

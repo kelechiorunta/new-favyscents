@@ -1,0 +1,53 @@
+/*
+TOASTER IMPLEMENTATION
+*/
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 200px;
+  font-size: 1.1111111111vw;
+  visibility: hidden; /* Hidden by default. Visible on click */
+  width: 34.7222222222vw; /* Set a default minimum width */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 1.1111111111vw; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 50; /* Add a z-index if needed */
+  left: calc(50% - 17.3611111111vw); /* Center the snackbar */
+  bottom: 2.0833333333vw; /* 30px from the bottom */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 2.0833333333vw;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 2.0833333333vw;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}/*# sourceMappingURL=Toaster.css.map */

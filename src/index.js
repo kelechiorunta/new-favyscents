@@ -7,20 +7,24 @@ import Account from './components/account/Account.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Perfume from './components/perfume/Perfume.jsx';
 // import reportWebVitals from './reportWebVitals.js';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-          <Route path='/' element={<App/>} />
-          <Route path='/product' element={<Product/>} />
-          <Route path='/account' element={<Account/>} />
-          <Route path='/perfume/:id' element={<Perfume/>} />
-
-      </Routes>
-      {/* <App /> */}
-    </BrowserRouter> 
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<App/>} />
+            <Route path='/product' element={<Product/>} />
+            <Route path='/account' element={<Account/>} />
+            <Route path='/perfume/:id' element={<Perfume/>} />
+        </Routes>
+        {/* <App /> */}
+      </BrowserRouter> 
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

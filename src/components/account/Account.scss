@@ -6,6 +6,7 @@ $backgroundColor: #F5F6F6;
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
     .register-account-form{
         margin-top: calc((153/1440) * 100vw);
         padding: calc((130.5/1440) * 100vw);
