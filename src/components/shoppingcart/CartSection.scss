@@ -1,0 +1,30 @@
+$backColor: #d7fffa;
+// @import url(ShoppingCart.scss);
+
+.cartlist{
+    display: flex;
+    gap: calc((30/1440) * 100vw);
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    padding: calc((14/1440) * 100vw);
+    // border: 1px solid;
+
+
+    .return{
+        background-color: $backColor;
+        display: flex;
+        gap: calc((14/1440) * 100vw);
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        padding: calc((14/1440) * 100vw);
+        p{
+            width: 100%;
+            padding: calc((14/1440) * 100vw);
+            text-align: left;
+        }
+    }
+}

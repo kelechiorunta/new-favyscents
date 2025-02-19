@@ -9,24 +9,13 @@ import NewArrivals from './components/newArrivals/NewArrivals.jsx';
 import BestSellers from './components/bestSellers/BestSellers.jsx';
 import DividerII from './components/dividerII/DividerII.jsx';
 import Subscriber from './components/subscribe/Subscriber.jsx';
-import inViewChild, { ViewChild, ViewProvider } from './components/ViewContext/ViewContext.jsx';
+import { ViewChild, ViewProvider } from './components/ViewContext/ViewContext.jsx';
 import MainFooter from './components/mainfooter/MainFooter.jsx';
-import { Routes, Route } from 'react-router-dom';
-import Product from './components/products/Product.jsx';
 import { openProductDatabase } from './apis/indexedDB.js';
 import React, {useEffect, useState} from 'react';
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query';
+import { useQuery, useMutation } from '@tanstack/react-query';
 import Toaster from './components/toaster/Toaster.jsx';
 import Loader from './components/loader/Loader.jsx';
-
-
-
 
 function App() {
 
@@ -36,6 +25,7 @@ function App() {
 
   const { status, error, data } = query;
   let timerOutId
+
   useEffect(() => {
     if (status === 'success' || data){
       timerOutId = setTimeout(() => setActive(true), 5000)
@@ -43,23 +33,19 @@ function App() {
       setActive(false)
     }
     return () => clearTimeout(timerOutId)
-  }, [data])
+  }, [data, isActive])
 
-  if (status === 'pending') {
-    return <Loader/>//<h1>Pending...</h1>//<Toaster message={status}/>
-  }
+    return status === 'pending' ? <Loader/>
 
-  if (status === 'error') {
-    return <h1>Error...</h1>//<Toaster message={error}/>
-  } 
-
-  return (
-    
+  : status === 'error' ? <h1>Error...{error}</h1>
+ 
+  :
+   (
     <div className="App">  
     {console.log(data)}
-    {/* if (status === 'success') { */}
-      {isActive && <Toaster message={data?.name.toUpperCase() +' DATABASE IS OPENED SUCCESSFULLY.'} />}
-      {/* } */}
+   
+      {isActive && data && <Toaster message={data?.name.toUpperCase() +' DATABASE IS OPENED SUCCESSFULLY.'} />}
+    
       <ViewProvider>
         <ViewChild id={'mainheader'} >
           <div className='header-contianer'>
@@ -69,9 +55,9 @@ function App() {
         {/* <ViewChild id={'tabmenu'} >
           <TabMenu id={'tabmenu'}/>
         </ViewChild> */}
-        <ViewChild id={'divider'} >
+        {/* <ViewChild id={'divider'} > */}
           {/* <Divider /> */}
-        </ViewChild>
+        {/* </ViewChild> */}
         <div className={'heroSection'} style={{zIndex:-9999}}>
         <ViewChild id={'heroSection'} >
         

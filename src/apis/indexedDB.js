@@ -15,7 +15,7 @@ const openProductDatabase = () => {
 
         request.onsuccess = (event) => {
             console.log("Successfully opened database");
-            setTimeout(() => resolve(event.target.result), 5000);
+            setTimeout(() => resolve(event.target.result), 0);
         };
 
         request.onerror = (event) => {

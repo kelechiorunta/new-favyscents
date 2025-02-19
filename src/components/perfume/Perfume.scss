@@ -14,6 +14,18 @@ $primaryColor:  #D68E21;
         text-align: center;
         position: relative;
 
+        .link-cart{
+            text-decoration: none;
+            color: $backColor;
+            background-color: transparent;
+            padding: calc((14/1440) * 100vw);
+            transition: text-decoration 1s ease-in-out, color 1s ease-in-out, background-color 1s ease-in-out;
+            &:hover{
+                text-decoration: underline;
+                color: white;
+                background-color: $backColor;
+            }
+        }
         .perfume{
             margin: auto;
             display: flex;

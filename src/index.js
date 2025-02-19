@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Perfume from './components/perfume/Perfume.jsx';
 // import reportWebVitals from './reportWebVitals.js';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ShoppingCart from './components/shoppingcart/ShoppingCart.jsx';
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ root.render(
             <Route path='/product' element={<Product/>} />
             <Route path='/account' element={<Account/>} />
             <Route path='/perfume/:id' element={<Perfume/>} />
+            <Route path='/cart' element={<ShoppingCart/>} />
         </Routes>
         {/* <App /> */}
       </BrowserRouter> 

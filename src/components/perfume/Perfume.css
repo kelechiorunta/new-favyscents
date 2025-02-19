@@ -11,6 +11,20 @@
   text-align: center;
   position: relative;
 }
+.perfume-container .perfume-section .link-cart {
+  text-decoration: none;
+  color: #4D2952;
+  background-color: transparent;
+  padding: 0.9722222222vw;
+  transition: color 1s ease-in-out, background-color 1s ease-in-out, -webkit-text-decoration 1s ease-in-out;
+  transition: text-decoration 1s ease-in-out, color 1s ease-in-out, background-color 1s ease-in-out;
+  transition: text-decoration 1s ease-in-out, color 1s ease-in-out, background-color 1s ease-in-out, -webkit-text-decoration 1s ease-in-out;
+}
+.perfume-container .perfume-section .link-cart:hover {
+  text-decoration: underline;
+  color: white;
+  background-color: #4D2952;
+}
 .perfume-container .perfume-section .perfume {
   margin: auto;
   display: flex;
