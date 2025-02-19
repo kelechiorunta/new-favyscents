@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import './Perfume.css'
 import MainHeader from '../mainheader/MainHeader';
 import { FaHeart } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 import pic1 from '../imgs/Cosmetic.png';
 import pic2 from '../imgs/Passion.png';
 import pic3 from '../imgs/BodyWash.png';
@@ -51,9 +52,10 @@ export default function Perfume() {
     <div className='perfume-container'>
         <MainHeader/>
             <ViewProvider>
-                <div className="perfume-section">
+                <div style={{position: 'relative'}} className="perfume-section">
                 <ViewChild>
                     <h1>{selectedImg && selectedImg.supplier}</h1>
+                    <Link to={'/cart'} className='link-cart' style={{float: 'right', position:'absolute', right: '100px', top:'0px'}}>Proceed To Cart</Link>
                     <div className="small-picture">
                         <img src={`${selectedImg && selectedImg.pic}`} alt='' width={74} height={74} />
                     </div>

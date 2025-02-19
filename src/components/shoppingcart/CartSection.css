@@ -1,0 +1,24 @@
+.cartlist {
+  display: flex;
+  gap: 2.0833333333vw;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  margin: auto;
+  width: 100%;
+  padding: 0.9722222222vw;
+}
+.cartlist .return {
+  background-color: #d7fffa;
+  display: flex;
+  gap: 0.9722222222vw;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  padding: 0.9722222222vw;
+}
+.cartlist .return p {
+  width: 100%;
+  padding: 0.9722222222vw;
+  text-align: left;
+}/*# sourceMappingURL=CartSection.css.map */
