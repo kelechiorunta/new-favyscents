@@ -1,3 +1,55 @@
+$backColor: #d7fffa;
+$buttonColor: #D68E21;
+
 .order-section{
-    width: 50%;
+    width: 100%;
+    min-width: calc((325/1440) * 100vw);
+    display: flex;
+    flex-direction: column;
+    .subtotal-section{
+        
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: calc((14/1440) * 100vw);
+        background-color: #f5f6f6;
+        padding: calc((24/1440) * 100vw);
+        .subtotal-container, .tax-container, .total-container{
+            background-color: #f5f6f6;
+            display: flex;
+            justify-content: space-between;
+            gap: calc((14/1440) * 100vw);
+            margin: auto;
+            font-weight: 700;
+            width: 100%;
+    
+        }
+    }
+
+    .checkout{
+        gap: calc((14/1440) * 100vw);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: calc((14/1440) * 100vw);
+        background-color: transparent;
+        color: black;
+        transition: color 1s ease, background-color 1s ease;
+        &:hover{
+            background-color: $buttonColor;
+            color: white;
+            .checkout-icon{
+                fill: white;
+            }
+            cursor: pointer;
+        }
+        .checkout-icon{
+            fill: black;
+            transition: fill 1s ease,
+        }
+        
+    }
+    
+
 }

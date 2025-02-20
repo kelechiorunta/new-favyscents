@@ -1,5 +1,5 @@
 $backColor: #d7fffa;
-// @import url(ShoppingCart.scss);
+$buttonColor: #D68E21;
 
 .cartlist{
     display: flex;
@@ -8,23 +8,71 @@ $backColor: #d7fffa;
     flex-direction: column;
     text-align: left;
     margin: auto;
-    width: 100%;
+    width: 70%;
     padding: calc((14/1440) * 100vw);
-    // border: 1px solid;
 
-
-    .return{
+    .return-product{
         background-color: $backColor;
         display: flex;
         gap: calc((14/1440) * 100vw);
         align-items: center;
         width: 100%;
-        margin: auto;
+        // margin: auto;
         padding: calc((14/1440) * 100vw);
         p{
+            margin: auto;
             width: 100%;
             padding: calc((14/1440) * 100vw);
             text-align: left;
         }
     }
+
+    .titles{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        gap: calc((174/1440) * 100vw);
+        padding: calc((17/1440) * 100vw);
+    }
+
+    .cols{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: calc((17/1440) * 100vw);
+        gap: calc((170/1440) * 100vw);
+        
+        .delete{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:calc((4/1440) * 100vw);
+            margin-left: calc((-124/1440) * 100vw);
+        }
+    }
+
+    .shopping-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        button{
+            z-index: 20;
+            width: max-content;//calc((152/1440) * 100vw);
+            background-color: transparent;
+            border-radius: calc((10/1440) * 100vw);
+            border: 1px solid $buttonColor;
+            padding: calc((14/1440) * 100vw) calc((68/1440) * 100vw);
+            font-size: calc((14/1440) * 100vw);
+            font-weight: 700;
+            transition: background-color 1s ease-in-out, color 1s ease-in;
+            &:hover{
+                cursor: pointer;
+                background-color: $buttonColor;
+                color: white;
+            }
+        }
+    }
+    
 }

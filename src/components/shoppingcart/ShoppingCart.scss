@@ -13,14 +13,23 @@
     gap: calc((14/1440) * 100vw);
     margin: auto;
     margin-top: calc((172/1440) * 100vw);
+    position: relative;
+
+    .back{
+        position: absolute;
+        top:2.5%;
+        padding: calc((4/1440) * 100vw) calc((30/1440) * 100vw);
+    }
+
     // border: 5px solid;
 
     .cart-child-container{
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
         // border: 10px soild black;
-        width: 90%;
+        gap:calc((100/1440) * 100vw);
+        width: 100%;
         padding: calc((14/1440) * 100vw);
     }
 }
