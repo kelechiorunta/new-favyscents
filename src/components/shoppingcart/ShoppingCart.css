@@ -12,11 +12,18 @@
   gap: 0.9722222222vw;
   margin: auto;
   margin-top: 11.9444444444vw;
+  position: relative;
+}
+.cart-container .child-cart-section .back {
+  position: absolute;
+  top: 2.5%;
+  padding: 0.2777777778vw 2.0833333333vw;
 }
 .cart-container .child-cart-section .cart-child-container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width: 90%;
+  justify-content: space-between;
+  gap: 6.9444444444vw;
+  width: 100%;
   padding: 0.9722222222vw;
 }/*# sourceMappingURL=ShoppingCart.css.map */
