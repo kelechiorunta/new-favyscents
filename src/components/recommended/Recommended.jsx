@@ -17,7 +17,7 @@ const collections = [
         {id: 0, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic1 },
         {id: 1, name: 'Eau De Parfum', supplier: 'Armaf Passion', price: '$51.74', pic: pic2 },
         {id: 2, name: 'Eau De Tollete', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic3 },
-        {id: 3, name: 'Luminizing Clay', supplier: 'BVLGARI EXTREME', price: '$51.74', pic: pic4 },
+        {id: 3, name: 'Chrome Azzaro', supplier: 'BVLGARI EXTREME', price: '$51.74', pic: pic4 },
     ]
     },
 
@@ -38,7 +38,7 @@ const collections = [
                 {id: 0, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic3 },
                 {id: 1, name: 'Eau De Parfum', supplier: 'Armaf Passion', price: '$51.74', pic: pic4},
                 {id: 2, name: 'Eau De Tollete', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic3 },
-                {id: 3, name: 'Luminizing Clay', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic3 },
+                {id: 3, name: 'Chrome Azzaro', supplier: 'Jo Malone Vitizier', price: '$51.74', pic: pic3 },
             ]
         }
 ]
@@ -53,14 +53,12 @@ export default function Recommended({id}) {
         const handleNext = () => {
           setDirection("right");
           setPrevSlide(currentIndex);
-        // reLoad(slide+1)
-         setCurrentIndex((n) => (n + 1) % collections.length);
+          setCurrentIndex((n) => (n + 1) % collections.length);
         };
         const handlePrevious = () => {
           setDirection("left");
           setPrevSlide(currentIndex);
-    // reLoad(slide+1)
-        setCurrentIndex((n) => (n - 1 + collections.length) % collections.length);
+          setCurrentIndex((n) => (n - 1 + collections.length) % collections.length);
         };
     
   return (

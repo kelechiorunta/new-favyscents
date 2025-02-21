@@ -30,6 +30,7 @@
   padding: 0.9722222222vw;
   background-color: transparent;
   color: black;
+  border-radius: 0.6944444444vw;
   transition: color 1s ease, background-color 1s ease;
 }
 .order-section .checkout:hover {

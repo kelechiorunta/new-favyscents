@@ -23,7 +23,7 @@ export default function Toaster({message}) {
                 mySVG.style.setProperty('padding', '1rem')
                 mySVG.style.setProperty('background-color', 'transparent')
                 mySVG.style.setProperty('border', '2px solid white')
-                mySVG.style.setProperty('z-index', '10')
+                mySVG.style.setProperty('z-index', '9999')
                 mySVG.style.setProperty('margin', 'auto')
                 mySVG.style.setProperty('border-radius', '50%')
                 mySVG.style.setProperty('display', 'flex')
@@ -68,11 +68,11 @@ export default function Toaster({message}) {
 
           createToaster(message)
 
-    }, [message])
+    })
    
 
   return (
-    <div id="snackbar">
+    <div id="snackbar" style={{zIndex: 9999, position: 'fixed'}}>
        <svg id="mySVG" width="5" height="5" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
            <path 
              fill="none" 
@@ -82,7 +82,7 @@ export default function Toaster({message}) {
              d="M5 25 L20 40 L45 10" 
            />
        </svg>
-       <Loader/>
+       {/* <Loader/> */}
        {message}
    </div>
   )

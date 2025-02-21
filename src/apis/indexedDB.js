@@ -69,7 +69,7 @@ const addMessage = async (name, email) => {
   };
 
 
-const addToCart = async (name, price) => {
+const addToCart = async (name, price, pic, quantity, supplier) => {
 const db = await openProductDatabase();
 
 return new Promise((resolve, reject) => {
@@ -86,7 +86,7 @@ return new Promise((resolve, reject) => {
         if (existingItem) {
             // If the item exists, update its quantity or price
             
-            existingItem.price = `£${parseInt(existingItem.price.replace("£", ""), 10) + parseInt(price.replace("£", ""), 10)}`; // Example: update price by adding new price
+            existingItem.price = `$${parseInt(existingItem.price.replace("$", ""), 10) + parseInt(price.replace("$", ""), 10)}`; // Example: update price by adding new price
             existingItem.initialPrice = price//parseInt(price.replace("£", ""), 10)
             const updateRequest = store.put(existingItem);
 
@@ -101,7 +101,7 @@ return new Promise((resolve, reject) => {
             };
         } else {
             // If item doesn't exist, add a new entry
-            const addRequest = store.add({ name, price, initialPrice: price });
+            const addRequest = store.add({ name, price, pic, quantity, supplier });
 
             addRequest.onsuccess = () => {
                 console.log(`Added ${name} to cart.`);
@@ -122,7 +122,7 @@ return new Promise((resolve, reject) => {
 });
 };
 
-const updateCart = async (name, price) => {
+const updateCart = async (name, price, pic, quantity, supplier) => {
 const db = await openProductDatabase();
 
 return new Promise((resolve, reject) => {
@@ -139,7 +139,7 @@ return new Promise((resolve, reject) => {
         if (existingItem) {
             // If the item exists, update its quantity or price
             
-            existingItem.price = price//`£${parseInt(existingItem.price.replace("£", ""), 10) + parseInt(price.replace("£", ""), 10)}`; // Example: update price by adding new price
+            existingItem.quantity = quantity//`£${parseInt(existingItem.price.replace("£", ""), 10) + parseInt(price.replace("£", ""), 10)}`; // Example: update price by adding new price
             // existingItem.initialPrice = price//parseInt(price.replace("£", ""), 10)
             const updateRequest = store.put(existingItem);
 
@@ -154,7 +154,7 @@ return new Promise((resolve, reject) => {
             };
         } else {
             // If item doesn't exist, add a new entry
-            const addRequest = store.add({ name, price, initialPrice: price });
+            const addRequest = store.add({ name, price, pic, quantity, supplier });
 
             addRequest.onsuccess = () => {
                 console.log(`Added ${name} to cart.`);

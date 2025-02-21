@@ -42,6 +42,7 @@
   background: white;
   margin: auto;
   margin-bottom: 1.9444444444vw;
+  z-index: 0;
   position: relative;
   padding: 1.9444444444vw auto;
 }
@@ -135,7 +136,7 @@
   font-size: 0.9027777778vw;
 }
 .recommended .carousel .item .child-collection .collection-details .addToCart {
-  z-index: 20;
+  z-index: -9999;
   width: 17.5vw;
   margin: auto;
   background-color: transparent;

@@ -2,7 +2,7 @@ import React from 'react'
 import { FaCircleExclamation, FaTrash } from 'react-icons/fa6'
 import './CartSection.css'
 
-export default function CartSection({id, pic, name, price, description, quantity}) {
+export default function CartSection({items}) {
   return (
     <div className='cartlist'>
         <div className="return-product">
@@ -19,35 +19,43 @@ export default function CartSection({id, pic, name, price, description, quantity
           <p className="quantity">Quantity</p>
           <p className="total">Total</p>
         </div>
+
         <hr style={{width: '100%', height: '2px'}}/>
-        <div className="cols">
-          <div className="prod-col">
-            <div className="image-col">
-              <img className='prod-img' src={pic} alt="" width={74} height={74} />
-            </div>
-            <div className="description-col">
-              <h1 className="name">{name}</h1>
-              <div className="description">{description}</div>
-            </div>
-          </div>
-          <div className="price-col">
-              <h1 className="price-title">{price}</h1>
-          </div>
-          <div className="quantity-col">
-              <input type='number' className="quantity-title" value={quantity}/>
-          </div>
-          <div className="total-col">
-              <h1 className="total-title"></h1>
-          </div>
-          <button className="delete">
-            <FaTrash className='delete-icon' size={14} fill='black' color='white'/>
-          </button>
+        
+        <div style={{display: 'flex', overflow: 'scroll', flexDirection: 'column'}} className="items-container">
+            {items && items.map(item => (
+                <div className="cols">
+                  <div className="prod-col">
+                    <div className="image-col">
+                      <img className='prod-img' src={item.pic} alt={''} width={74} height={74} />
+                    </div>
+                    <div className="description-col">
+                      <h1 className="name">{item.name}</h1>
+                      <div className="description">{item.description}</div>
+                    </div>
+                  </div>
+                  <div className="price-col">
+                      <h1 className="price-title">{item.price}</h1>
+                  </div>
+                  <div className="quantity-col">
+                      <input type='number' className="quantity-title" value={item.quantity}/>
+                  </div>
+                  <div className="total-col">
+                      <h1 className="total-title">{'$'+parseFloat(item.price.replace('$', ''),'10') * item.quantity}</h1>
+                  </div>
+                  <button className="delete">
+                    <FaTrash className='delete-icon' size={14} fill='black' color='white'/>
+                  </button>
+              </div>
+            ))}
         </div>
+        
+
         <hr style={{width: '100%', height: '2px'}}/>
 
         <div className="shopping-container">
           <button className="continue">CONTINUE SHOPPING</button>
-          <button className="continue">CLEAR SHOPPING CART</button>
+          <button className="clear">CLEAR SHOPPING CART</button>
         </div>
     </div>
   )
