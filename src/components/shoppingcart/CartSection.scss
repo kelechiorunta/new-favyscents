@@ -99,14 +99,15 @@ $buttonColor: #D68E21;
             
             .total-col{
                 text-align: right;
-                
+                // margin-left: calc((-70/1440) * 100vw);
+            }
             
             .delete{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 padding:calc((4/1440) * 100vw);
-               
+                // margin-left: calc((-124/1440) * 100vw);
             }
         }
     }
