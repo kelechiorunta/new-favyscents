@@ -350,6 +350,7 @@ $highlightColor: #4D2952;
         
                         .addToCart{
                             width: calc((252/1440) * 100vw);
+                            position: relative;
                             margin: auto;
                             background-color: transparent;
                             border-radius: calc((10/1440) * 100vw);

@@ -18,9 +18,9 @@ TOASTER IMPLEMENTATION
     text-align: center; /* Centered text */
     border-radius: 2px; /* Rounded borders */
     padding: calc((16/1440) * 100vw); /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 50; /* Add a z-index if needed */
-    left: calc(50% - calc((250/1440) * 100vw)); /* Center the snackbar */
+    position: absolute; /* Sit on top of the screen */
+    z-index: 9999; /* Add a z-index if needed */
+    transform: translateX(calc(150% - calc((250/1440) * 100vw)));//calc(50% - calc((250/1440) * 100vw)); /* Center the snackbar */
     bottom: calc((30/1440) * 100vw); /* 30px from the bottom */
     box-shadow: 2px 2px 2px rgba(0,0,0,0.9);
 
@@ -28,6 +28,7 @@ TOASTER IMPLEMENTATION
   
   /* Show the snackbar when clicking on a button (class added with JavaScript) */
   #snackbar.show {
+    z-index: 9999;
     visibility: visible; /* Show the snackbar */
     /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
     However, delay the fade out process for 2.5 seconds */

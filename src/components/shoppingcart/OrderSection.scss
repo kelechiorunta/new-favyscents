@@ -35,9 +35,11 @@ $buttonColor: #D68E21;
         padding: calc((14/1440) * 100vw);
         background-color: transparent;
         color: black;
+        border-radius: calc((10/1440) * 100vw);
         transition: color 1s ease, background-color 1s ease;
         &:hover{
             background-color: $buttonColor;
+            
             color: white;
             .checkout-icon{
                 fill: white;

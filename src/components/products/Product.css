@@ -294,6 +294,7 @@
 }
 .product-container .product .perfume-section .carousel .item .child-collection .collection-details .addToCart {
   width: 17.5vw;
+  position: relative;
   margin: auto;
   background-color: transparent;
   border-radius: 0.6944444444vw;
