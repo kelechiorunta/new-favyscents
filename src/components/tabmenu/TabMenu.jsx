@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function TabMenu({name, lists}) {
   return (
-    <nav className='tab-menu' style={{ zIndex: 9999, position: "absolute" }}>
+    <nav className='tab-menu' style={{ zIndex: 9999, position: "absolute"}}>
         <nav className="women">
             <Link to={`${name === 'PRODUCT' ? '/product' : '/'} `} className="name">{name}</Link>
             <nav className="women-links">

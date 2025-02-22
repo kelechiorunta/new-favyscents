@@ -5,7 +5,7 @@
   display: block;
   top: 100%; /* Positions it below the menu item */
   left: 0%;
-  transform: translateX(calc(50% - 95.5vw));
+  transform: translateX(calc(50% - 95vw));
   width: 100vw;
   height: 60vh;
   padding: 1.875vw 3.75vw;

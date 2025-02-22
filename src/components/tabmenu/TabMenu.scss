@@ -8,7 +8,7 @@ $foreColor:#4D2952;
     display: block;
     top: 100%; /* Positions it below the menu item */
     left: 0%;
-    transform: translateX(calc(50% - 95.5vw )); //translateY(1%) ; /* Centers it */
+    transform: translateX(calc(50% - 95vw )); //translateY(1%) ; /* Centers it */
     width: 100vw;
     height: 60vh;
     padding: calc((27/1440) * 100vw) calc((54/1440) * 100vw);
