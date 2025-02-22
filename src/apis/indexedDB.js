@@ -145,7 +145,7 @@ return new Promise((resolve, reject) => {
 
             updateRequest.onsuccess = () => {
                 console.log(`Updated ${name} in cart.`);
-                resolve(`Updated ${name} in cart.`);
+                resolve(`Updated ${name} in cart. Quantity is ${quantity}`);
             };
 
             updateRequest.onerror = (event) => {

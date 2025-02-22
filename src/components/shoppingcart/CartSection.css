@@ -80,6 +80,19 @@
   align-items: center;
   justify-content: center;
   padding: 0.2777777778vw;
+  transition: background-color 1s ease, fill 1s ease;
+  background-color: transparent;
+}
+.cartlist .items-container .cols .delete:hover {
+  cursor: pointer;
+  background-color: black;
+}
+.cartlist .items-container .cols .delete:hover .delete-icon {
+  fill: white;
+}
+.cartlist .items-container .cols .delete .delete-icon {
+  fill: black;
+  transition: fill 1s ease;
 }
 .cartlist .shopping-container {
   display: flex;

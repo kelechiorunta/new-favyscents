@@ -15,7 +15,7 @@ export default function OrderSection({totalPrice}) {
             <p className="result">$0</p>
           </div>    
           <div className="total-container">
-            <p className="total">TOTAL</p>
+            <p className="total">ORDER TOTAL</p>
             <p className="result">{`$` + totalPrice}</p>
           </div>      
       </div>
