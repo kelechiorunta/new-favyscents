@@ -61,6 +61,7 @@
   font-size: 2.2222222222vw;
 }
 .mainheader .logo-container .logo-content .logo-description {
+  margin-top: -0.7638888889vw;
   font-size: 0.7638888889vw;
 }
 .mainheader .account-container {
@@ -109,6 +110,8 @@
 }
 .mainheader .main-nav h1 {
   z-index: 9999;
+  padding-top: 0.9722222222vw;
+  padding-bottom: 0.9722222222vw;
   font-size: 1.1111111111vw;
   border: none;
   position: relative;

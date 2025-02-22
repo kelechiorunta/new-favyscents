@@ -23,6 +23,8 @@ import MainFooter from '../mainfooter/MainFooter';
 import { ViewProvider, ViewChild} from '../ViewContext/ViewContext';
 import Recommended from '../recommended/Recommended';
 import ProductTab from '../productTab/ProductTab';
+import { updateCart } from '../../apis/indexedDB.js';
+import Toaster from '../toaster/Toaster.jsx';
 
 const collections = [
     
@@ -43,10 +45,41 @@ export default function Perfume() {
     const selectedImg = collections.find(collection => collection.id == id)
 
     const [title, setTitle] = useState('DESC');
-
+    const [value, setValue] = useState(1);
+    const [selectedId, setSelectedId] = useState(null);
+    const [loading, setLoading] = useState(null);
+    const [message, setMessage] = useState(null)
     const handleTabClick = (title) => {
        setTitle(title)
     }
+
+    const handleUpdateQuantity = async (e, id, name, price, pic, quantity, supplier) => {
+        if (id) {
+          setValue(e.target.value);
+          try{
+            await updateCart(name, price, pic, quantity=e.target.value, supplier)
+          }
+          catch(err){
+            console.log(err)
+          }
+          
+        }
+        setSelectedId(id)  
+      }
+
+      const cartUpdate = async (name, price, pic, quantity, supplier) => {
+        setLoading(true)
+        try{
+            const response = await updateCart(name, price, pic, quantity=value, supplier)
+            setMessage(response)
+        }
+          catch(err){
+            console.log(err)
+          }
+          finally{
+            setLoading(false)
+          }
+      }
 
   return (
     <div className='perfume-container'>
@@ -65,21 +98,25 @@ export default function Perfume() {
                             <div className="picture">
                                 <img src={`${selectedImg && selectedImg.pic}`} alt='' width={74} height={74} />
                             </div>
-                            <div className="description">
+                            <div style={{position: 'relative'}} className="description">
                                 <p className="gender">{selectedImg.gender}</p>
                                 <p className="name">{selectedImg.name}</p>
                                 <p className='price'>{selectedImg.price}</p>
                                 <div className="payment-section">
-                                    <select name="quantity" id="quantity">
+                                    {/* <select name="quantity" id="quantity">
                                         <option value="1">1</option>
-                                    </select>
-                                    <input type="number" name='quantity' value={'1'}  />
-                                    <button className="addToCart">ADD TO CART</button>
-                                    <FaHeart fill='green' size={20} />
+                                    </select> */}
+                                    <input type="number" name='quantity' value={value} onChange={(e) => handleUpdateQuantity(e, id, selectedImg.name, selectedImg.price, selectedImg.pic, selectedImg.quantity, selectedImg.supplier)}  />
+                                    <button onClick={()=>cartUpdate(selectedImg.name, selectedImg.price, selectedImg.pic, value, selectedImg.supplier)} className="addToCart">ADD TO CART</button>
+                                    <FaHeart fill='green' size={20} /> 
+                                        
                                 </div>
+                               
                             </div>
+                            
                         </div>
                     </ViewChild>
+                    {message && <Toaster message={message}/>}
                 </div>
                 <ViewChild> 
                     <div className="product-desc">

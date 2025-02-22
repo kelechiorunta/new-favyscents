@@ -23,6 +23,7 @@ $logoTitleColor: #4D2952;
     align-items: center;
     gap: calc((145/1440) * 100vw);
     overflow: visible;
+    
 
     .search-container{
         display: flex;
@@ -71,6 +72,7 @@ $logoTitleColor: #4D2952;
                 font-size: calc((32/1440) * 100vw);
             }
             .logo-description{
+                margin-top: calc((-11/1440) * 100vw);
                 font-size: calc((11/1440) * 100vw);
             }
 
@@ -122,15 +124,19 @@ $logoTitleColor: #4D2952;
         z-index: 9999;
         position: relative;
         overflow: visible; /* Allow child elements to overflow */
+        
 
         .menu-item{
             z-index: 9999;
+            
             // position: relative;
             // display: inline-block;
         }
         
         h1{
             z-index: 9999;
+            padding-top: calc((14/1440) * 100vw);
+            padding-bottom: calc((14/1440) * 100vw);
             font-size: calc((16/1440) * 100vw);
             border: none;
             position: relative;
