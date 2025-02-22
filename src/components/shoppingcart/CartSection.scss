@@ -107,6 +107,19 @@ $buttonColor: #D68E21;
                 align-items: center;
                 justify-content: center;
                 padding:calc((4/1440) * 100vw);
+                transition: background-color 1s ease, fill 1s ease;
+                background-color: transparent;
+                &:hover{
+                    cursor: pointer;
+                    background-color: black;
+                    .delete-icon{
+                        fill: white;
+                    }
+                }
+                .delete-icon{
+                    fill: black;
+                    transition: fill 1s ease;
+                }
                 // margin-left: calc((-124/1440) * 100vw);
             }
         }

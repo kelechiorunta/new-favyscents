@@ -1,8 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaCircleExclamation, FaTrash } from 'react-icons/fa6'
 import './CartSection.css'
+import { deleteFromDatabase, updateCart } from '../../apis/indexedDB.js'
+import Toaster from '../toaster/Toaster.jsx';
+
 
 export default function CartSection({items}) {
+
+  const [result, setResult] = useState('');
+  const [value, setValue] = useState(1);
+  const [selectedId, setSelectedId] = useState(null);
+  const deleteItem = async(id) => {
+    try{
+      const response = await deleteFromDatabase(id);
+      setResult(response)
+    }
+    catch(err){
+      setResult(err)
+    }
+  }
+  const handleUpdateQuantity = async (e, id, name, price, pic, quantity, supplier) => {
+    if (id) {
+      // alert(e.target.id)
+      setValue(e.target.value);
+      try{
+        await updateCart(name, price, pic, e.target.value, supplier)
+      }
+      catch(err){
+        console.log(err)
+      }
+      
+    }
+    setSelectedId(id)
+
+  }
   return (
     <div className='cartlist'>
         <div className="return-product">
@@ -38,16 +69,18 @@ export default function CartSection({items}) {
                       <h1 className="price-title">{item.price}</h1>
                   </div>
                   <div className="quantity-col">
-                      <input type='number' className="quantity-title" value={item.quantity}/>
+                      <input type='number' min={1} max={100} className="quantity-title" value={selectedId===item.id ? value : item.quantity} onChange={(e)=>handleUpdateQuantity(e, item.id, item.name, item.price, item.pic, item.quantity, item.supplier)}/>
                   </div>
                   <div className="total-col">
-                      <h1 className="total-title">{'$'+parseFloat(item.price.replace('$', ''),'10') * item.quantity}</h1>
+                      <h1 className="total-title">{'$'+ parseFloat(item.price.replace('$', ''),'10') * item.quantity}</h1>
                   </div>
-                  <button className="delete">
-                    <FaTrash className='delete-icon' size={14} fill='black' color='white'/>
+                  <button onClick={()=>deleteItem(item.id)} className="delete">
+                    <FaTrash className='delete-icon' size={14} color='white'/>
                   </button>
+                  
               </div>
             ))}
+            {result && <Toaster message={result}/>}
         </div>
         
 

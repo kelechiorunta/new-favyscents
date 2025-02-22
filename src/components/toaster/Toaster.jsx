@@ -68,7 +68,7 @@ export default function Toaster({message}) {
 
           createToaster(message)
 
-    })
+    }, [message])
    
 
   return (
