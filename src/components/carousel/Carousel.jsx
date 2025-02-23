@@ -10,17 +10,18 @@ import { getCartItems } from "../../apis/indexedDB.js";
 export const Item = ({id, name, pic, supplier, price, quantity}) => {
     const navigate = useNavigate();
     const [message, setMessage] = useState(null);
-    const [newQuantity, setQuantity] = useState(quantity)
+    const [newQuantity, setQuantity] = useState(0);
     const [loading, setIsLoading] = useState(null);
     const [isSuccess, setSuccess] = useState(null);
-    let q = quantity;
-    const handleUpdate = async (name, price, pic, q, supplier) => {
+    // let q = newQuantity;
+    const handleUpdate = async (name, price, pic, quantity=parseFloat(quantity) + parseFloat(newQuantity), supplier) => {
         setIsLoading(true)
-        // setQuantity(q => q + 1);
+        
         try{
+            setQuantity(prev => prev + 1);
             // q += 1;
-            setQuantity(q => q + 1)
-            const response = await updateCart(name, price, pic, newQuantity, supplier);
+            // setQuantity(q => q + 1)
+            const response = await updateCart(name, price, pic, quantity=parseFloat(quantity) + parseFloat(newQuantity) + 1, supplier);
             setMessage(response)
             setSuccess(true)
         }
@@ -49,12 +50,12 @@ export const Item = ({id, name, pic, supplier, price, quantity}) => {
                     : 
                     null
                 }  
-                <h1 className="title">{quantity}</h1>
+                <h1 className="title">{parseFloat(quantity) + parseFloat(newQuantity)}</h1>
                 <p className="supplier">{supplier}</p>
                 <p className="price">{price}</p>
                 <button 
                 style={{ zIndex: 0}}
-                onClick={() => handleUpdate(name, price, pic, q, supplier)}
+                onClick={() => handleUpdate(name, price, pic, quantity=parseFloat(quantity), supplier)}
                 className="addToCart"
                 >
                     ADD TO CART      
@@ -86,10 +87,6 @@ export const Carousel = ({refId, id, title, brands, gender}) => {
         getProducts();
     }, [getProducts]); // ✅ Added `getProducts` as a dependency to avoid unnecessary calls
     
-    useEffect(() => {
-        console.log(selectedItems); // ✅ Logs correctly when `selectedItems` updates
-    }, [selectedItems]); // ✅ Runs when `selectedItems` changes
-
         const getQuantity = (item) => {
             try{
                 if (selectedItems) {
@@ -107,6 +104,10 @@ export const Carousel = ({refId, id, title, brands, gender}) => {
                 console.error(err)
             }   
         }
+
+        useEffect(() => {
+            console.log(selectedItems); // ✅ Logs correctly when `selectedItems` updates
+        }, [selectedItems, getQuantity]); // ✅ Runs when `selectedItems` changes
 
     return (
         <div className="carousel">
