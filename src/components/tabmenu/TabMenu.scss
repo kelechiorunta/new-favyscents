@@ -11,7 +11,7 @@ $foreColor:#4D2952;
     transform: translateX(calc(50% - 95vw )); //translateY(1%) ; /* Centers it */
     width: 100vw;
     height: 60vh;
-    padding: calc((27/1440) * 100vw) calc((54/1440) * 100vw);
+    padding: calc((27/1440) * 100vw) calc((630/1440) * 100vw);
     // z-index: ;
     .women{
         text-decoration: none;
@@ -19,6 +19,8 @@ $foreColor:#4D2952;
         flex-direction: column;
         gap: calc((27/1440) * 100vw);
         font-size: calc((16/1440) * 100vw);
+        // padding: auto calc((1400/1440) * 100vw);
+        
         .women-links{
             font-size: calc((14/1440) * 100vw);
             display: flex;

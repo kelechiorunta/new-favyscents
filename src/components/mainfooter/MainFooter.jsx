@@ -11,9 +11,9 @@ export default function MainFooter() {
             <h1>CUSTOMER SUPPORT</h1>
             <h1>MY ACCOUNT</h1>
             <div className="icons">
-                <FaLinkedin size={40} fill='black' stroke='white' color='white' />
-                <FaGoogle size={40} fill='black' stroke='white' color='white' />
-                <FaTwitter size={40} fill='black' stroke='white' color='white' />
+                <FaLinkedin className='icon' stroke='white' color='white' />
+                <FaGoogle className='icon'  stroke='white' color='white' />
+                <FaTwitter className='icon'  stroke='white' color='white' />
             </div>     
         </div>
         <div className="navlist">

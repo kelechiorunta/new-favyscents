@@ -7,8 +7,12 @@ $highlightColor: #4D2952;
     justify-content: space-between;
     align-items: center;
     gap: calc((4/1440) * 100vw);
+    @media only screen and (min-width: 300px) and (max-width: 787px) {  
+        display: grid; //calc(9px + (768/1440) * 1vw);
+        grid-template-columns: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+        
+    }
     
-
         form{
             width: 50%;
             display: flex;
@@ -18,10 +22,22 @@ $highlightColor: #4D2952;
             gap: calc((27/1440) * 100vw);
             padding: calc((24/1440) * 100vw) calc((48/1440) * 100vw);
             // border: 1px solid $fontColor;
+            @media only screen and (min-width: 300px) and (max-width: 787px) {
+                
+                width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                font-size: calc(16px + (786/1440) * 1vw);
+            }
+            
             h1{
                 color: $highlightColor;
                 font-weight: bold;
                 font-size: calc((16/1440) * 100vw);
+                @media only screen and (min-width: 300px) and (max-width: 787px) {
+                   
+                    width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                    
+                    font-size: calc(12px + (786/1440) * 1vw);
+                }
             }
 
             .input-section{
@@ -36,6 +52,12 @@ $highlightColor: #4D2952;
                     height: calc((47/1440) * 100vw);
                     font-size: calc((14/1440) * 100vw);
                     padding: calc((12/1440) * 100vw);
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                   
+                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                        height: max-content;
+                        font-size: calc(10px + (786/1440) * 1vw);
+                    }
                 }
 
                 .subscribeBtn{
@@ -50,11 +72,23 @@ $highlightColor: #4D2952;
                         color: white;
                         background-color: $highlightColor;
                     }
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                   
+                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                        
+                        font-size: calc(10px + (786/1440) * 1vw);
+                    }
                 }
             }
 
             .consent{
                 font-size: calc((12/1440) * 100vw);                
+                @media only screen and (min-width: 300px) and (max-width: 787px) {
+                   
+                    width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                    
+                    font-size: calc(10px + (786/1440) * 1vw);
+                }
             }
         
         }
@@ -77,6 +111,11 @@ $highlightColor: #4D2952;
             // align-items: center;
             gap: calc((27/1440) * 100vw);
             // background-color: aquamarine;
+            @media only screen and (min-width: 300px) and (max-width: 787px) {
+                
+                width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                font-size: calc(16px + (786/1440) * 1vw);
+            }
 
             .help-section{
                 .needHelp{
@@ -84,26 +123,52 @@ $highlightColor: #4D2952;
                     font-weight: bold;
                     font-size: calc((16/1440) * 100vw);
                     margin-bottom: calc((12/1440) * 100vw);;
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                
+                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                        font-size: calc(12px + (786/1440) * 1vw);
+                    }
                 }
                 .email{
                     font-size: calc((14/1440) * 100vw);
                     padding: calc((14/1440) * 100vw) auto;
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                
+                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                        font-size: calc(12px + (786/1440) * 1vw);
+                    }
                 }
             }
 
             .visit-section{
                 height: calc((96/1440) * 100vw);
+                @media only screen and (min-width: 300px) and (max-width: 787px) {
+                
+                    width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                    font-size: calc(16px + (786/1440) * 1vw);
+                }
                 .visitUs{
                     color: $highlightColor;
                     font-weight: bold;
                     font-size: calc((16/1440) * 100vw);
                     margin-bottom: calc((12/1440) * 100vw);;
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                
+                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                        font-size: calc(12px + (786/1440) * 1vw);
+                    }
+                
                 }
                 .location{
                     text-transform: uppercase;
                     // width: 30%;
                     font-size: calc((14/1440) * 100vw);
                     padding: calc((14/1440) * 100vw) auto;
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                
+                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+                        font-size: calc(10px + (786/1440) * 1vw);
+                    }
                 }
             }
         }
