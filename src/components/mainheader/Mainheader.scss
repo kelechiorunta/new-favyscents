@@ -23,7 +23,27 @@ $logoTitleColor: #4D2952;
     align-items: center;
     gap: calc((145/1440) * 100vw);
     overflow: visible;
+
+    @media only screen and (min-width: 400px) and (max-width: 787px) {
+        
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: calc(35px + (768/1440) * 1vw);
+        padding-bottom: calc(45px + (768/1440) * 1vw);;
+        height: calc(47px + (768/1440) * 1vw);
+        gap: calc(80px + (768/1440) * 1vw);
+        font-size: calc(14px + (768/1440) * 1vw);
+    }
     
+    .hamburger-icon{
+        @media only screen and (min-width: 400px) and (max-width: 787px) {
+    
+            width: calc(72px + ((768/1440) * 1vw));
+        }
+    }
 
     .search-container{
         display: flex;
@@ -39,17 +59,33 @@ $logoTitleColor: #4D2952;
             height: calc((19/1440) * 100vw);
             fill: black;
             stroke: black;
+            @media only screen and (min-width: 400px) and (max-width: 787px) {
+                width: calc(14px + ((768/1440) * 1vw));
+                height: calc(14px + ((768/1440) * 1vw));
+            }
         }
         .search-input{
             border: none;
             width: 100%;//calc((193/1440) * 100vw);
             height: calc((17/1440) * 100vw);
             font-size: calc((14/1440) * 100vw);
+            @media only screen and (min-width: 400px) and (max-width: 787px) {
+                height: calc(16px + ((768/1440) * 1vw));
+               
+                font-size: calc(12px + ((768/1440) * 1vw));
+            }
             outline: none;
             &:focus{
                 outline: none;
             }
             
+        }
+        @media only screen and (min-width: 400px) and (max-width: 787px) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-radius: 1px;
         }
     }
 // Logo section of the header
@@ -58,6 +94,11 @@ $logoTitleColor: #4D2952;
         height: max-content;
         display: flex;
         // background-color: grey;
+        @media only screen and (min-width: 400px) and (max-width: 787px) {
+    
+            width: 100%;
+            justify-content: center;
+        }
 
         .logo{
             width: max-content;
@@ -70,10 +111,18 @@ $logoTitleColor: #4D2952;
             color: $logoTitleColor;
             .logo-title{
                 font-size: calc((32/1440) * 100vw);
+                @media only screen and (min-width: 400px) and (max-width: 787px) {
+    
+                    font-size: calc(16px + ((768/1440) * 1vw));
+                }
             }
             .logo-description{
                 margin-top: calc((-11/1440) * 100vw);
                 font-size: calc((11/1440) * 100vw);
+                @media only screen and (min-width: 400px) and (max-width: 787px) {
+    
+                    font-size: calc(8px + ((768/1440) * 1vw));
+                }
             }
 
         }
@@ -125,6 +174,9 @@ $logoTitleColor: #4D2952;
         position: relative;
         overflow: visible; /* Allow child elements to overflow */
         
+        @media only screen and (min-width: 400px) and (max-width: 787px) {
+           display: none;
+        }
 
         .menu-item{
             z-index: 9999;

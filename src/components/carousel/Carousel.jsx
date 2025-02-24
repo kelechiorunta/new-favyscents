@@ -13,14 +13,12 @@ export const Item = ({id, name, pic, supplier, price, quantity}) => {
     const [newQuantity, setQuantity] = useState(0);
     const [loading, setIsLoading] = useState(null);
     const [isSuccess, setSuccess] = useState(null);
-    // let q = newQuantity;
+   
     const handleUpdate = async (name, price, pic, quantity=parseFloat(quantity) + parseFloat(newQuantity), supplier) => {
         setIsLoading(true)
         
         try{
             setQuantity(prev => prev + 1);
-            // q += 1;
-            // setQuantity(q => q + 1)
             const response = await updateCart(name, price, pic, quantity=parseFloat(quantity) + parseFloat(newQuantity) + 1, supplier);
             setMessage(response)
             setSuccess(true)
@@ -43,8 +41,7 @@ export const Item = ({id, name, pic, supplier, price, quantity}) => {
        >
             
             <img onClick={()=>navigate(`/perfume/${id}`)} className='img-collection' src={pic} width={'auto'} height={'auto'} />
-            <div className="collection-details"
-             >
+            <div className="collection-details">
                 {isSuccess ? 
                     <Toaster message={message}/>
                     : 

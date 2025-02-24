@@ -18,6 +18,11 @@ $dividerColor: #4D2952;
         gap: calc((10/1440) * 100vw); /* Maintain responsiveness */
         flex-wrap: nowrap;
         animation: slide 6s linear infinite;
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+            // flex-basis: 29.3355%;
+            gap: calc(5px + (786/1440) * 1vw);
+            animation: slide 3s linear infinite;
+        }
     .service-container{
             display: flex;
             align-items: flex-start;
@@ -26,7 +31,12 @@ $dividerColor: #4D2952;
             flex-shrink: 0;
             flex-grow: 0;
             flex-basis: 19.3355%;
-            
+            @media only screen and (min-width: 300px) and (max-width: 787px) {
+                flex-basis: 49.3355%;
+                width: 50%;
+                // flex-grow: 1;
+                gap: calc(5px + (786/1440) * 1vw)
+            }
 
         }
     }
@@ -37,6 +47,10 @@ $dividerColor: #4D2952;
         }
         to {
             transform: translateX(-100%);
+            @media only screen and (min-width: 300px) and (max-width: 787px) {
+                // flex-basis: 19.3355%;
+                transform: translateX(-400%);
+            }
         }
     }
 

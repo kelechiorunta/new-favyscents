@@ -7,17 +7,30 @@ $foreColor: white;
     height: calc((1440/1440) * 100vw);
     width: calc((1440/1440) * 100vw);
     // background-color: #D68E21;
+    @media only screen and (min-width: 300px) and (max-width: 787px) {
+        font-size: calc(15px + ((786/1440) * 1vw));
+        margin-bottom: calc(275px + ((786/1440) * 1vw));
+        // height: calc(1440px + ((786/1440) * 1vw));
+    }
     .title{
         width: max-content;
         margin: calc((11/1440) * 100vw) auto;
         font-size: calc((30/1440) * 100vw);
         padding: calc((37/1440) * 100vw) auto;
+
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+            font-size: calc(15px + ((786/1440) * 1vw));
+        }
+        
     }
     .description{
         width: max-content;
         font-size: calc((15/1440) * 100vw);
         margin: auto;
         margin-bottom: calc((29/1440) * 100vw);
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+            font-size: calc(8px + ((786/1440) * 1vw));
+        }
     }
 
     .shopAllBtn{
@@ -40,6 +53,10 @@ $foreColor: white;
                     // color: #BE5B75;
                     background-color: #D68E21;
                 }
+                @media only screen and (min-width: 300px) and (max-width: 787px) {
+                    padding: calc(8.5px + ((786/1440) * 1vw)) calc(45px + ((786/1440) * 1vw));
+                    font-size: calc(10.5px + ((786/1440) * 1vw));
+                }
             }
 
             .perfumes-section{
@@ -47,7 +64,7 @@ $foreColor: white;
                 width: 100%;
                 padding: calc((42/1440) * 100vw) calc((103/1440) * 100vw);
                 .perfumes-container{
-                    width:calc((1234/1440) * 100vw);
+                    width: calc((1234/1440) * 100vw);
                     height: calc((316/1440) * 100vw);
                     background-color: white;
                     margin: auto;
@@ -57,6 +74,14 @@ $foreColor: white;
                     gap:calc((31/1440) * 100vw);
                     overflow: hidden;
                     
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(calc(291px + (786/1440) * 1vw), 1fr));
+                        grid-auto-flow: row;//calc(291px + (786/1440) * 1vw)
+                        font-size: calc(12px + ((768/1440) * 1vw));
+                        overflow: visible;
+                        // height: calc(316px + ((786/1440) * 1vw));
+                    }
                     
                 }
             }
@@ -75,6 +100,12 @@ $foreColor: white;
                 gap: calc((22/1440) * 100vw);
                 transition: background-color 2s ease-in-out, color 1s ease-in-out, background-color 2s ease;
                 // flex-wrap: wrap;
+                @media only screen and (min-width: 300px) and (max-width: 787px) {
+                    width: calc(291px + ((768/1440) * 1vw));
+                    gap: calc(11px + ((768/1440) * 1vw));
+                    height: calc(145px + ((768/1440) * 1vw));
+                    // overflow: visible;
+                }
 
                 .content, .link{
                     display: block;
@@ -87,10 +118,20 @@ $foreColor: white;
                     font-weight: 600;
                     margin-left: 20%;
                     transition: font-weight 2s ease-in-out, background-color 2s ease-in-out, $foreColor 1s ease, color 1s ease-in-out;
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                        font-size: calc(15px + ((768/1440) * 1vw));
+                        // height: calc(316px + ((768/1440) * 1vw));
+                        overflow: visible;
+                    }
                 }
                 .link{
                     font-size: calc((16/1440) * 100vw);
                     text-transform: capitalize;
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                        font-size: calc(12px + ((768/1440) * 1vw));
+                        // height: calc(316px + ((768/1440) * 1vw));
+                        // overflow: visible;
+                    }
                 }
 
                 img{
@@ -103,7 +144,11 @@ $foreColor: white;
                     width: calc((391/1440) * 100vw);
                     height: calc((316/1440) * 100vw);
                     transition: left 1s ease, filter 2s ease-in-out, $foreColor 1s ease-in;
-                    
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                        width: calc(291px + ((768/1440) * 1vw));
+                        height: calc(316px + ((768/1440) * 1vw));
+                        overflow: visible;
+                    }
                     &:hover{
                         cursor: pointer;
                         left:0;

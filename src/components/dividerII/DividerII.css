@@ -17,6 +17,12 @@
   flex-wrap: nowrap;
   animation: slide 6s linear infinite;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .dividerII .service-slider {
+    gap: calc(5px + 0.5458333333vw);
+    animation: slide 3s linear infinite;
+  }
+}
 .dividerII .service-slider .service-container {
   display: flex;
   align-items: flex-start;
@@ -26,11 +32,23 @@
   flex-grow: 0;
   flex-basis: 19.3355%;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .dividerII .service-slider .service-container {
+    flex-basis: 49.3355%;
+    width: 50%;
+    gap: calc(5px + 0.5458333333vw);
+  }
+}
 @keyframes slide {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-100%);
+    @media only screen and (min-width: 300px) and (max-width: 787px) {
+      .dividerII {
+        transform: translateX(-400%);
+      }
+    }
   }
 }/*# sourceMappingURL=DividerII.css.map */

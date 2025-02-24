@@ -14,6 +14,11 @@
   padding: 2.5694444444vw auto;
   margin-bottom: 3.2638888889vw;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .title {
+    font-size: calc(16px + 0.5333333333vw);
+  }
+}
 .bestSellers .shopmore {
   background-color: white;
   color: #D68E21;
@@ -27,6 +32,11 @@
   border-radius: 0.6944444444vw;
   padding: 0.7291666667vw 3.125vw;
   transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .shopmore {
+    font-size: calc(9px + 0.5333333333vw);
+  }
 }
 .bestSellers .shopmore:hover {
   cursor: pointer;
@@ -44,12 +54,30 @@
   position: relative;
   padding: 1.9444444444vw auto;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel-container {
+    gap: calc(48px + 0.5333333333vw);
+    height: 531px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(617px + 0.5458333333vw), 1fr));
+    grid-auto-rows: calc(244px + 0.5458333333vw);
+    padding: 40px auto;
+  }
+}
 .bestSellers .carousel-container .prev, .bestSellers .carousel-container .next {
   width: 2.3611111111vw;
   height: 6.5972222222vw;
   position: absolute;
   cursor: pointer;
   z-index: 100;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel-container .prev, .bestSellers .carousel-container .next {
+    width: -moz-max-content;
+    width: max-content;
+    height: calc(95px + 0.5458333333vw);
+    width: calc(34px + 0.5458333333vw);
+  }
 }
 .bestSellers .carousel-container .prev {
   left: -2.3611111111vw;
@@ -68,11 +96,26 @@
   height: 39.0277777778vw;
   padding: 1.9444444444vw auto;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel {
+    gap: calc(48px + 0.5333333333vw);
+    height: 331px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(171px + 0.5458333333vw), 1fr));
+    overflow-y: scroll;
+    padding: 40px auto;
+  }
+}
 .bestSellers .carousel .item {
   display: flex;
   flex-direction: column;
   width: 18.8652777778vw;
   height: 33.8888888889vw;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel .item {
+    height: 331px;
+  }
 }
 .bestSellers .carousel .item .label-container {
   display: flex;
@@ -96,6 +139,13 @@
   height: 1.3888888889vw;
   padding: 0.6944444444vw;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel .item .label-container .label-title {
+    font-size: calc(6px + 0.5333333333vw);
+    padding: calc(8px + 0.5333333333vw);
+    width: calc(46px + 0.5333333333vw);
+  }
+}
 .bestSellers .carousel .item .label-container .label-icon {
   width: 1.3194444444vw;
   height: 1.1111111111vw;
@@ -108,6 +158,12 @@
   align-items: center;
   text-align: center;
   gap: 2.0833333333vw;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel .item .child-collection {
+    gap: calc(0px + 0.5333333333vw);
+    height: calc(244px + 0.5333333333vw);
+  }
 }
 .bestSellers .carousel .item .child-collection .img-collection {
   -o-object-fit: cover;
@@ -124,14 +180,30 @@
   width: 20.4166666667vw;
   height: 33.8888888889vw;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel .item .child-collection .collection-details {
+    width: calc(294px + 0.5333333333vw);
+    height: calc(488px + 0.5333333333vw);
+  }
+}
 .bestSellers .carousel .item .child-collection .collection-details .title, .bestSellers .carousel .item .child-collection .collection-details .price {
   margin: auto;
   font-size: 0.9722222222vw;
   font-weight: 700;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel .item .child-collection .collection-details .title, .bestSellers .carousel .item .child-collection .collection-details .price {
+    font-size: calc(8px + 0.5333333333vw);
+  }
+}
 .bestSellers .carousel .item .child-collection .collection-details .supplier {
   text-transform: uppercase;
   font-size: 0.9027777778vw;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel .item .child-collection .collection-details .supplier {
+    font-size: calc(8px + 0.5333333333vw);
+  }
 }
 .bestSellers .carousel .item .child-collection .collection-details .addToCart {
   width: 17.5vw;
@@ -143,6 +215,14 @@
   font-size: 0.9722222222vw;
   font-weight: 700;
   transition: background-color 1s ease-in-out, color 1s ease-in;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .bestSellers .carousel .item .child-collection .collection-details .addToCart {
+    font-size: calc(8px + 0.5333333333vw);
+    width: -moz-max-content;
+    width: max-content;
+    padding: calc(7px + 0.5458333333vw);
+  }
 }
 .bestSellers .carousel .item .child-collection .collection-details .addToCart:hover {
   cursor: pointer;

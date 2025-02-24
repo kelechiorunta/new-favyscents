@@ -7,9 +7,12 @@ import Divider from '../divider/Divider.jsx';
 import { ViewChild } from '../ViewContext/ViewContext.jsx';
 // import logo from './logo-favy.svg';
 import { Link } from 'react-router-dom';
+import {useMediaQuery, useMediaQueries} from '@react-hook/media-query';
 
 export default function MainHeader({id}) {
 
+    const matches = useMediaQuery('only screen and (min-width: 787px)');
+    const smallerThan786 = useMediaQuery('only screen and (min-width: 400px) and (max-width: 787px)');
     const [hoveredTitle, setHoveredTitle] = useState(null);
 
     const handleMouseEnter = (title) => {
@@ -38,6 +41,14 @@ export default function MainHeader({id}) {
 
   return (
     <header className='mainheader'>
+
+        {smallerThan786 ? <svg className='hamburger-icon' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 4H13.5M2.5 8H13.5M2.5 12H13.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+            :
+            null
+        }  
+
         <div className='search-container'>
             <input className='search-input' type='search' placeholder='Hey, what are you looking for?' />
             <FaSearch className='icon-search' size={19} />
@@ -56,15 +67,15 @@ export default function MainHeader({id}) {
         <div className="account-container">
             <Link to={'/account'} className='accountBtn'>
                 <FaUser size={19} color='black' stroke='2px black'/>
-                My Account
+                {matches ? 'My Account' : null}
             </Link>
             <button className='wishlistBtn'>
                 <FaHeart size={19} color='black' stroke='2px black'/>
-                WishList
+                {matches ? 'WishList' : null}
             </button>
             <div className="cartitems">
                 <FaCartShopping size={19} color='black' stroke='2px black'/>
-                <p>2 items</p>
+                <p>{matches ? '2 items' : null}</p>
             </div>
         </div>
 

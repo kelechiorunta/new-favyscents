@@ -108,8 +108,7 @@ export default function Perfume() {
                                     </select> */}
                                     <input type="number" name='quantity' value={value} onChange={(e) => handleUpdateQuantity(e, id, selectedImg.name, selectedImg.price, selectedImg.pic, selectedImg.quantity, selectedImg.supplier)}  />
                                     <button onClick={()=>cartUpdate(selectedImg.name, selectedImg.price, selectedImg.pic, value, selectedImg.supplier)} className="addToCart">ADD TO CART</button>
-                                    <FaHeart fill='green' size={20} /> 
-                                        
+                                    <FaHeart fill='green' size={20} />         
                                 </div>
                                
                             </div>

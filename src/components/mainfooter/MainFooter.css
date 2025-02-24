@@ -3,6 +3,12 @@
   height: 29.5138888889vw;
   padding: 3.3333333333vw 6.6666666667vw;
   background-color: white;
+  position: relative;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .main-footer {
+    height: calc(425px + 0.5458333333vw);
+  }
 }
 .main-footer .titles {
   font-size: 1.1111111111vw;
@@ -10,12 +16,39 @@
   justify-content: space-evenly;
   align-items: center;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .main-footer .titles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(325px + 0.5458333333vw), 1fr));
+  }
+}
 .main-footer .icons {
   font-size: 1.1111111111vw;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 2.0833333333vw;
+}
+.main-footer .icons .icon {
+  fill: black;
+  width: 30px;
+  height: 30px;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .main-footer .icons {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    z-index: 50;
+  }
+  .main-footer .icons .icon {
+    fill: black;
+    width: 30px;
+    height: 30px;
+  }
 }
 .main-footer .navlist {
   display: flex;
@@ -32,6 +65,12 @@
   text-decoration: none;
   color: #898989;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .main-footer .navlist nav {
+    font-size: calc(10px + 0.5458333333vw);
+    grid-template-columns: repeat(auto-fit, minmax(calc(224px + 0.5458333333vw), 1fr));
+  }
+}
 .main-footer .navlist .nav3 {
   margin-left: 17.7083333333vw;
 }
@@ -43,6 +82,13 @@
   background-color: black;
   padding: 1.4583333333vw;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .main-footer .copyright-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+    height: calc(228px + 0.5458333333vw);
+  }
+}
 .main-footer .copyright-section .trademark, .main-footer .copyright-section .reserved, .main-footer .copyright-section .service-code {
   width: 60%;
   margin: auto;
@@ -50,7 +96,20 @@
   text-align: center;
   margin-bottom: 1.4583333333vw;
 }
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .main-footer .copyright-section .trademark, .main-footer .copyright-section .reserved, .main-footer .copyright-section .service-code {
+    font-size: calc(10px + 0.5458333333vw);
+    grid-template-columns: repeat(auto-fit, minmax(calc(224px + 0.5458333333vw), 1fr));
+    width: 100%;
+  }
+}
 .main-footer .copyright-section .service-code {
   display: flex;
   gap: 1.4583333333vw;
+}
+@media only screen and (min-width: 300px) and (max-width: 787px) {
+  .main-footer .copyright-section .service-code {
+    font-size: calc(10px + 0.5458333333vw);
+    width: 75%;
+  }
 }/*# sourceMappingURL=MainFooter.css.map */

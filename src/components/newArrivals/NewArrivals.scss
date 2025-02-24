@@ -15,6 +15,9 @@ $backgroundColor: #F5F6F6;
         font-size: calc((30/1440) * 100vw);
         padding: calc((37/1440) * 100vw) auto;
         margin-bottom: calc((47/1440) * 100vw);
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+            font-size: calc(16px + (768/1440) * 1vw);
+        }
     }
     .shopmore{
         background-color: white;
@@ -36,6 +39,9 @@ $backgroundColor: #F5F6F6;
             // color: #BE5B75;
             background-color: #D68E21;
         }
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+            font-size: calc(9px + (768/1440) * 1vw);
+        }
     }
     .carousel-container{
         display: flex;
@@ -48,12 +54,27 @@ $backgroundColor: #F5F6F6;
         // overflow: hidden;
         position: relative;
         padding: calc((28/1440) * 100vw) auto;
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+            gap: calc(48px + (768/1440) * 1vw);
+            height: 431px;//calc(244px + (768/1440) * 1vw);
+            display: grid; //calc(9px + (768/1440) * 1vw);
+            grid-template-columns: repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+            grid-auto-rows: calc(244px + (786/1440) * 1vw);
+            padding: 40px auto;
+        }
         .prev,.next{
             width: calc((34/1440) * 100vw);
             height: calc((95/1440) * 100vw);
             position: absolute;
             cursor: pointer;
             z-index: 100;
+            @media only screen and (min-width: 300px) and (max-width: 787px) {
+                // font-size: calc(8px + (768/1440) * 1vw);
+                width: max-content;
+                height: calc(95px + (786/1440) * 1vw);
+                width: calc(34px + (786/1440) * 1vw);
+                // padding: calc(7px + (786/1440) * 1vw);
+            }
         }
         .prev{
             left: calc((-34/1440) * 100vw);
@@ -75,12 +96,26 @@ $backgroundColor: #F5F6F6;
         padding: calc((28/1440) * 100vw) auto;
         // overflow: hidden;
         // background: white;
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+            gap: calc(48px + (768/1440) * 1vw);
+            height: 331px;//calc(244px + (768/1440) * 1vw);
+            display: grid; //calc(9px + (768/1440) * 1vw);
+            grid-template-columns: repeat(auto-fit, minmax(calc(171px + (786/1440) * 1vw), 1fr));
+            // grid-auto-rows: calc(244px + (786/1440) * 1vw);
+            overflow-y: scroll;
+            padding: 40px auto;
+        }
         .item{
             display: flex;
             
             flex-direction: column;
             width: calc((271.66/1440) * 100vw);
             height: calc((488/1440) * 100vw);
+            @media only screen and (min-width: 300px) and (max-width: 787px) {
+                
+                height: 331px;//calc(244px + (768/1440) * 1vw);
+                
+            }
             .label-container{
                 display: flex;
                 align-items: center;
@@ -102,6 +137,11 @@ $backgroundColor: #F5F6F6;
                     width: calc((54/1440) * 100vw);
                     height: calc((20/1440) * 100vw);
                     padding: calc((10/1440) * 100vw);
+                    @media only screen and (min-width: 300px) and (max-width: 787px) {
+                        font-size: calc(6px + (768/1440) * 1vw);
+                        padding: calc(8px + (768/1440) * 1vw);
+                        width: calc(46px + (768/1440) * 1vw);
+                    }
                 }
                 .label-icon{
                     width: calc((19/1440) * 100vw);
@@ -117,7 +157,10 @@ $backgroundColor: #F5F6F6;
                 align-items: center;
                 text-align: center;
                 gap: calc((30/1440) * 100vw);
-                
+                @media only screen and (min-width: 300px) and (max-width: 787px) {
+                    gap: calc(0px + (768/1440) * 1vw);
+                    height: calc(244px + (768/1440) * 1vw);
+        }
     
                 .img-collection {
                     object-fit: cover;
@@ -137,11 +180,17 @@ $backgroundColor: #F5F6F6;
                         margin: auto;
                         font-size: calc((14/1440) * 100vw);
                         font-weight: 700;
+                        @media only screen and (min-width: 300px) and (max-width: 787px) {
+                            font-size: calc(8px + (768/1440) * 1vw);
+                        }
                     }
     
                     .supplier{
                         text-transform: uppercase;
                         font-size: calc((13/1440) * 100vw);
+                        @media only screen and (min-width: 300px) and (max-width: 787px) {
+                            font-size: calc(8px + (768/1440) * 1vw);
+                        }
                     }
     
                     .addToCart{
@@ -154,6 +203,11 @@ $backgroundColor: #F5F6F6;
                         font-size: calc((14/1440) * 100vw);
                         font-weight: 700;
                         transition: background-color 1s ease-in-out, color 1s ease-in;
+                        @media only screen and (min-width: 300px) and (max-width: 787px) {
+                            font-size: calc(8px + (768/1440) * 1vw);
+                            width: max-content;
+                            padding: calc(7px + (786/1440) * 1vw);
+                        }
                         &:hover{
                             cursor: pointer;
                             background-color: $primaryColor;
