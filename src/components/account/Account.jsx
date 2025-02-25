@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useActionState} from 'react';
 import './Account.css'
 import MainHeader from '../mainheader/MainHeader.jsx';
 import { ViewChild, ViewProvider } from '../ViewContext/ViewContext.jsx';
@@ -10,6 +10,9 @@ import TestimonialSlider from '../testimonialSlider/TestimonialSlider.jsx';
 import DividerII from '../dividerII/DividerII.jsx';
 import Subscriber from '../subscribe/Subscriber.jsx';
 import MainFooter from '../mainfooter/MainFooter.jsx';
+import { addNewSubscriber } from '../../actions/actions.js';
+import Loader from '../loader/Loader.jsx';
+import Toaster from '../toaster/Toaster.jsx';
 
 const testimonials = [
     {
@@ -45,11 +48,14 @@ const testimonials = [
 ]
 
 export default function Account() {
-
+        // This will only work for Nextjs mutation server functions
+        // const [formState, formAction, isPending] = useActionState(addNewSubscriber, {})
         const [currentIndex, setCurrentIndex] = useState(0);
         const [prevSlide, setPrevSlide] = useState(0); // Track the previous slide index
         const [direction, setDirection] = useState('left');
 
+        const [formState, setFormState] = useState(null);
+        const [isPending, setIsPending] = useState(null);
         const handleNext = () => {
           setDirection("right");
           setPrevSlide(currentIndex);
@@ -62,6 +68,36 @@ export default function Account() {
     // reLoad(slide+1)
         setCurrentIndex((n) => (n - 1 + testimonials.length) % testimonials.length);
         };
+
+        const handleReset = (event) => {
+            const [name, value] = event.target.elements
+            
+            for (const [name, value] in event.target.elements) {
+                value = ""
+            }
+        }
+
+        const handleSubmit = async(event) => {
+            event.preventDefault();
+            setIsPending(true)
+            const formData = new FormData(event.target)
+            const formObjects = Object.fromEntries(formData.entries())
+            try{
+                
+                console.log(formObjects)
+                // if (formObjects) {
+                    const response = await addNewSubscriber({}, formObjects)
+                    setFormState(response)
+                // }
+            }
+            catch(err){
+                setFormState(err)
+            }
+            finally{
+                setIsPending(false)
+                event.target.reset()
+            }
+        }
 
   return (
     <div className='register-container'>
@@ -93,28 +129,32 @@ export default function Account() {
                         height: '5px'}}/> 
                 </ViewChild>
                 <ViewChild id={'input-section'}>
-                    <div className="input-section">
-                        <input type="first" className="first" placeholder='Enter First Name' />
-                        <input type="last" className="last" placeholder='Enter Last Name' />
-                        <input type="email" className="email" placeholder='Enter Email Address' />
-                        <input type="password" className="password" placeholder='Enter Password' />
-                        <div className="confirm-subscription">
-                            <label className='agree-label' htmlFor='agree'>
-                                <input type='checkbox' name='agree' className='agree'/>
-                                <p>
-                                    I Agree To Recieve Promotional Emails And Conscent To Our Terms Of Use
-                                    And Privacy Policy
-                                </p>
-                            </label>
-                            <label className='agree-label' htmlFor='agree'>
-                                <input type='checkbox' name='agree' className='agree'/>
-                                <p>
-                                    Subscribe Me To New Products
-                                </p>
-                            </label>
+                    <form onSubmit={handleSubmit}>
+                        <div className="input-section">
+                            <input name='firstname' type="text" className="first" placeholder='Enter First Name' />
+                            <input name='lastname' type="text" className="last" placeholder='Enter Last Name' />
+                            <input name='email' type="email" className="email" placeholder='Enter Email Address' />
+                            <input name='password' type="password" className="password" placeholder='Enter Password' />
+                            <div className="confirm-subscription">
+                                <label className='agree-label' htmlFor='agree'>
+                                    <input name='agree' type='checkbox' className='agree'/>
+                                    <p>
+                                        I Agree To Recieve Promotional Emails And Conscent To Our Terms Of Use
+                                        And Privacy Policy
+                                    </p>
+                                </label>
+                                <label className='agree-label' htmlFor='agree'>
+                                    <input name='subscribe' type='checkbox' className='subscribe'/>
+                                    <p>
+                                        Subscribe Me To New Products
+                                    </p>
+                                </label>
+                            </div>
+                            <button type='submit' className="subscribeBtn">SUBSCRIBE</button>
+                            {isPending && <Loader/>}
+                            {formState?.success ? <Toaster message={formState?.message}/> : <Toaster message={"Failed to get message"}/>}
                         </div>
-                        <button className="subscribeBtn">SUBSCRIBE</button>
-                    </div>
+                    </form>
                 </ViewChild>
             </div>
             {/* TESTIMONIAL SLIDER */}
