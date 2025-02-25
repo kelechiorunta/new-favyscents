@@ -48,13 +48,33 @@ const openMessageDatabase = () => {
     })
 }
 
-const addMessage = async (name, email) => {
+const addMessage = async (firstname, lastname, email, password, agree, subscribe) => {
     const db = await openMessageDatabase();
   
     return new Promise((resolve, reject) => {
       const transaction = db.transaction('outbox', 'readwrite');
       const store = transaction.objectStore('outbox');
-      const request = store.add({ name, email });
+      const request = store.add({ firstname, lastname, email, password, agree, subscribe });
+  
+      request.onsuccess = () => {
+        console.log('Message added to outbox');
+        resolve("Message added to outbox");
+      };
+  
+      request.onerror = (event) => {
+        console.error('Failed to add message:', event.target.error);
+        reject(event.target.error);
+      };
+    });
+  };
+
+  const addSubscriber = async (firstname, lastname, email, password, agree, subscribe) => {
+    const db = await openMessageDatabase();
+  
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction('outbox', 'readwrite');
+      const store = transaction.objectStore('outbox');
+      const request = store.add({ firstname, lastname, email, password, agree, subscribe });
   
       request.onsuccess = () => {
         console.log('Message added to outbox');
@@ -221,4 +241,4 @@ return new Promise((resolve, reject) => {
 };
 
 
-export { updateCart, openProductDatabase, openMessageDatabase, addMessage, addToCart, getCartItems, deleteFromDatabase }
+export { addSubscriber, updateCart, openProductDatabase, openMessageDatabase, addMessage, addToCart, getCartItems, deleteFromDatabase }
