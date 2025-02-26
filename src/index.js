@@ -9,6 +9,7 @@ import Perfume from './components/perfume/Perfume.jsx';
 // import reportWebVitals from './reportWebVitals.js';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ShoppingCart from './components/shoppingcart/ShoppingCart.jsx';
+import WishList from './components/wishlist/WishList.jsx';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ root.render(
             <Route path='/account' element={<Account/>} />
             <Route path='/perfume/:id' element={<Perfume/>} />
             <Route path='/cart' element={<ShoppingCart/>} />
+            <Route path='/wishlist' element={<WishList/>} />
         </Routes>
         {/* <App /> */}
       </BrowserRouter> 

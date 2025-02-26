@@ -1,15 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import './Mainheader.css';
+import Tooltip from '../tooltip/Tooltip.jsx';
 import { FaSearch } from 'react-icons/fa';
 import { FaCartShopping, FaHeart, FaUser } from 'react-icons/fa6';
 import TabMenu from '../tabmenu/TabMenu.jsx';
 import Divider from '../divider/Divider.jsx';
 import { ViewChild } from '../ViewContext/ViewContext.jsx';
 // import logo from './logo-favy.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {useMediaQuery, useMediaQueries} from '@react-hook/media-query';
 
-export default function MainHeader({id}) {
+export default function MainHeader({id, tooltipContent, ...rest }) {
+    const navigate = useNavigate();
+    const accountBtnRef = useRef(null);
+    const wishListBtnRef = useRef(null);
+    const [targetRect, setTargetRect] = useState(null);
+    const [activeTooltip, setActiveTooltip] = useState(null); 
 
     const matches = useMediaQuery('only screen and (min-width: 787px)');
     const smallerThan786 = useMediaQuery('only screen and (min-width: 400px) and (max-width: 787px)');
@@ -23,6 +29,24 @@ export default function MainHeader({id}) {
         setHoveredTitle(null);
     };
 
+
+    const handleTooltipEnter = (ref, tooltipType) => {
+        if (ref.current) {
+            const rect = ref.current.getBoundingClientRect();
+            setTargetRect({
+                left: rect.left,
+                top: rect.top,
+                right: rect.right,
+                bottom: rect.bottom,
+            });
+            setActiveTooltip(tooltipType); // Set the active tooltip
+        }
+    };
+    
+    const handleTooltipLeave = () => {
+        setTargetRect(null);
+        setActiveTooltip(null); // Clear the active tooltip
+    };
     const homelist = [
         {id:0, item:'Perfumes'},
         {id:1, item:'Bath & Body'},
@@ -65,13 +89,38 @@ export default function MainHeader({id}) {
         </div>
 
         <div className="account-container">
-            <Link to={'/account'} className='accountBtn'>
+            <Link
+                
+                ref={accountBtnRef}
+                onPointerEnter={() => handleTooltipEnter(accountBtnRef, 'account')}
+                onPointerLeave={handleTooltipLeave}
+                to={'/account'} className='accountBtn'>
                 <FaUser size={19} color='black' stroke='2px black'/>
                 {matches ? 'My Account' : null}
+                {targetRect !== null && activeTooltip === 'account' && (
+                    <Tooltip targetRect={targetRect}>
+                        {/* My Account */}
+                        {accountBtnRef.current.textContent}
+                    
+                    </Tooltip>
+                )
+                }
             </Link>
-            <button className='wishlistBtn'>
+            <button
+            onClick={()=>navigate('/wishlist')} 
+            ref={wishListBtnRef}
+            onPointerEnter={() => handleTooltipEnter(wishListBtnRef, 'wishlist')}
+            onPointerLeave={handleTooltipLeave}
+            className='wishlistBtn'>
                 <FaHeart size={19} color='black' stroke='2px black'/>
                 {matches ? 'WishList' : null}
+                {targetRect !== null && activeTooltip === 'wishlist' && (
+                    <Tooltip targetRect={targetRect}>
+                        {/* WishList */}
+                        Wishlist
+                    </Tooltip>
+                )
+                }
             </button>
             <div className="cartitems">
                 <FaCartShopping size={19} color='black' stroke='2px black'/>
