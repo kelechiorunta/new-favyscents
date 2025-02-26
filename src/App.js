@@ -49,7 +49,8 @@ function App() {
       <ViewProvider>
         <ViewChild id={'mainheader'} >
           <div className='header-contianer'>
-            <MainHeader id={'header-container'}/>
+            <MainHeader 
+            id={'header-container'}/>
           </div>
         </ViewChild>
         {/* <ViewChild id={'tabmenu'} >
