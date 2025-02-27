@@ -69,14 +69,6 @@ export default function Account() {
         setCurrentIndex((n) => (n - 1 + testimonials.length) % testimonials.length);
         };
 
-        const handleReset = (event) => {
-            const [name, value] = event.target.elements
-            
-            for (const [name, value] in event.target.elements) {
-                value = ""
-            }
-        }
-
         const handleSubmit = async(event) => {
             event.preventDefault();
             setIsPending(true)
