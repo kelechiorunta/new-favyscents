@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useContext, useState, useRef, useTransition, useEffect} from 'react';
 import './Mainheader.css';
 import Tooltip from '../tooltip/Tooltip.jsx';
 import { FaSearch } from 'react-icons/fa';
@@ -9,6 +9,9 @@ import { ViewChild } from '../ViewContext/ViewContext.jsx';
 // import logo from './logo-favy.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import {useMediaQuery, useMediaQueries} from '@react-hook/media-query';
+import useProducts from '../useProducts/useProducts.jsx';
+import { productContext } from '../useProducts/ProductsContext.jsx';
+import { getCartItems } from '../../apis/indexedDB.js';
 
 export default function MainHeader({id, tooltipContent, ...rest }) {
     const navigate = useNavigate();
@@ -16,10 +19,28 @@ export default function MainHeader({id, tooltipContent, ...rest }) {
     const wishListBtnRef = useRef(null);
     const [targetRect, setTargetRect] = useState(null);
     const [activeTooltip, setActiveTooltip] = useState(null); 
+    
+    // const {totalQ} = useContext(productContext)//useProducts();
+    const {totalQ, updatedItems, handleUpdateItems, handleUpdate} = useContext(productContext)//useProducts(); 
+    const [updatedQuantity, setUpdatedQuantity] = useState(totalQ)
 
     const matches = useMediaQuery('only screen and (min-width: 787px)');
     const smallerThan786 = useMediaQuery('only screen and (min-width: 400px) and (max-width: 787px)');
     const [hoveredTitle, setHoveredTitle] = useState(null);
+
+    useEffect(() => {
+        const updateQuantity = async() => {
+            const allProducts = await getCartItems();
+            const totalQuantities = allProducts && allProducts?.items.reduce((sum, item) => parseInt(sum) + parseInt(item.quantity),0 )
+            if (totalQuantities){
+                setUpdatedQuantity(totalQuantities)
+            } else {
+                setUpdatedQuantity(totalQ)
+            }
+            
+        }
+        updateQuantity();
+    }, [handleUpdateItems, handleUpdate])
 
     const handleMouseEnter = (title) => {
         setHoveredTitle(title);
@@ -124,7 +145,7 @@ export default function MainHeader({id, tooltipContent, ...rest }) {
             </button>
             <div className="cartitems">
                 <FaCartShopping size={19} color='black' stroke='2px black'/>
-                <p>{matches ? '2 items' : null}</p>
+                <p>{matches ? `${updatedQuantity} items` : null}</p>
             </div>
         </div>
 

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useContext, useEffect, useState} from "react";
 import { useViewChild, ViewChild } from "../ViewContext/ViewContext.jsx";
 import { FaHeart } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
@@ -6,33 +6,37 @@ import { updateCart, addToCart } from "../../apis/indexedDB.js";
 import Loader from "../loader/Loader.jsx";
 import Toaster from "../toaster/Toaster.jsx";
 import { getCartItems } from "../../apis/indexedDB.js";
+import { productContext } from "../useProducts/ProductsContext.jsx";
 
 export const Item = ({id, name, pic, supplier, price, quantity}) => {
     const navigate = useNavigate();
-    const [message, setMessage] = useState(null);
-    const [newQuantity, setQuantity] = useState(0);
-    const [loading, setIsLoading] = useState(null);
-    const [isSuccess, setSuccess] = useState(null);
-   
-    const handleUpdate = async (name, price, pic, quantity=parseFloat(quantity) + parseFloat(newQuantity), supplier) => {
-        setIsLoading(true)
+    // const [message, setMessage] = useState(null);
+    // const [newQuantity, setQuantity] = useState(0);
+    // const [loading, setIsLoading] = useState(null);
+    // const [isSuccess, setSuccess] = useState(null);
+    const { handleUpdateItems, handleUpdate, isSuccess, message, newQuantity } = useContext(productContext);
+
+    // const handleUpdate = async (name, price, pic, quantity=parseFloat(quantity) + parseFloat(newQuantity), supplier) => {
+    //     setIsLoading(true)
         
-        try{
-            setQuantity(prev => prev + 1);
-            const response = await updateCart(name, price, pic, quantity=parseFloat(quantity) + parseFloat(newQuantity) + 1, supplier);
-            setMessage(response)
-            setSuccess(true)
-        }
-        catch(error) {
-            alert(error)
-            console.error(error)
-            setSuccess(false)
-        }
-        finally{
-            setIsLoading(false)
-            // setMessage(null)
-        }
-    }
+    //     try{
+    //         setQuantity(prev => prev + 1);
+    //         const response = await updateCart(name, price, pic, quantity=parseFloat(quantity) + parseFloat(newQuantity) + 1, supplier);
+    //         setMessage(response)
+    //         setSuccess(true)
+            
+    //     }
+    //     catch(error) {
+    //         alert(error)
+    //         console.error(error)
+    //         setSuccess(false)
+    //     }
+    //     finally{
+    //         setIsLoading(false)
+            
+    //         // setMessage(null)
+    //     }
+    // }
     return (
         <>
         
@@ -47,7 +51,7 @@ export const Item = ({id, name, pic, supplier, price, quantity}) => {
                     : 
                     null
                 }  
-                <h1 className="title">{parseFloat(quantity) + parseFloat(newQuantity)}</h1>
+                <h1 className="title">{parseFloat(quantity)}</h1>
                 <p className="supplier">{supplier}</p>
                 <p className="price">{price}</p>
                 <button 
@@ -70,6 +74,7 @@ export const Carousel = ({refId, id, title, brands, gender}) => {
     const { isVisible } = useViewChild(refId);
     const [selectedItems, setSelectedItems] = useState([]);
     const [itemQuantity, setItemQuantity] = useState(1)
+    const { handleUpdateItems } = useContext(productContext);
 
     const getProducts = useCallback(async () => {
         try {
@@ -82,7 +87,7 @@ export const Carousel = ({refId, id, title, brands, gender}) => {
     
     useEffect(() => {
         getProducts();
-    }, [getProducts]); // ✅ Added `getProducts` as a dependency to avoid unnecessary calls
+    }, [getProducts, handleUpdateItems]); // ✅ Added `getProducts` as a dependency to avoid unnecessary calls
     
         const getQuantity = (item) => {
             try{
@@ -94,7 +99,7 @@ export const Carousel = ({refId, id, title, brands, gender}) => {
                         return selectedItem.quantity
                         // } 
                     }else {
-                        return 1;
+                        return 0;
                     }
                 }
             }catch(err){
@@ -104,7 +109,7 @@ export const Carousel = ({refId, id, title, brands, gender}) => {
 
         useEffect(() => {
             console.log(selectedItems); // ✅ Logs correctly when `selectedItems` updates
-        }, [selectedItems, getQuantity]); // ✅ Runs when `selectedItems` changes
+        }, [selectedItems, getQuantity, handleUpdateItems]); // ✅ Runs when `selectedItems` changes
 
     return (
         <div className="carousel">

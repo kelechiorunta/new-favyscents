@@ -10,12 +10,13 @@ import Perfume from './components/perfume/Perfume.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ShoppingCart from './components/shoppingcart/ShoppingCart.jsx';
 import WishList from './components/wishlist/WishList.jsx';
-
+import ProductsContext from './components/useProducts/ProductsContext.jsx';
 const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ProductsContext>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
@@ -29,6 +30,7 @@ root.render(
         {/* <App /> */}
       </BrowserRouter> 
     </QueryClientProvider>
+    </ProductsContext>
   </React.StrictMode>
 );
 

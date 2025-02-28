@@ -12,7 +12,7 @@ import Subscriber from './components/subscribe/Subscriber.jsx';
 import { ViewChild, ViewProvider } from './components/ViewContext/ViewContext.jsx';
 import MainFooter from './components/mainfooter/MainFooter.jsx';
 import { openProductDatabase } from './apis/indexedDB.js';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, memo, useMemo} from 'react';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import Toaster from './components/toaster/Toaster.jsx';
 import Loader from './components/loader/Loader.jsx';
@@ -22,18 +22,19 @@ function App() {
   // Queries
   const query = useQuery({ queryKey: ['products'], queryFn: openProductDatabase })
   const [isActive, setActive] = useState(null);
+  // const memoizedQuery = useMemo(() => query);
+  const { status, error, data } = query;//memoizedQuery
+  let timerOutId;
+  // let isActive;
 
-  const { status, error, data } = query;
-  let timerOutId
-
-  useEffect(() => {
-    if (status === 'success' || data){
-      timerOutId = setTimeout(() => setActive(true), 5000)
-    }else{
-      setActive(false)
-    }
-    return () => clearTimeout(timerOutId)
-  }, [data, isActive])
+  // useEffect(() => {
+  //   if (!isActive) {
+  //     if (status === 'success' || data){
+  //       timerOutId = setTimeout(() => setActive(true), 5000)
+  //     }
+  //     return () => clearTimeout(timerOutId)
+  //   }
+  // }, [])
 
     return status === 'pending' ? <Loader/>
 
@@ -44,7 +45,7 @@ function App() {
     <div className="App">  
     {console.log(data)}
    
-      {isActive && data && <Toaster message={data?.name.toUpperCase() +' DATABASE IS OPENED SUCCESSFULLY.'} />}
+      {/* {isActive && data && <Toaster message={data?.name.toUpperCase() +' DATABASE IS OPENED SUCCESSFULLY.'} />} */}
     
       <ViewProvider>
         <ViewChild id={'mainheader'} >
@@ -100,4 +101,4 @@ function App() {
   );
 }
 
-export default App;
+export default memo(App);
