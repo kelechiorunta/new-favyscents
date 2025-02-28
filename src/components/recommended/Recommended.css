@@ -58,7 +58,6 @@
   margin: auto;
   margin-bottom: 1.9444444444vw;
   z-index: 0;
-  overflow: hidden;
   position: relative;
   padding: 1.9444444444vw auto;
 }
@@ -103,7 +102,6 @@
   width: 85.6944444444vw;
   height: 39.0277777778vw;
   padding: 1.9444444444vw auto;
-  overflow: hidden;
 }
 @media only screen and (min-width: 300px) and (max-width: 787px) {
   .recommended .carousel {

@@ -19,11 +19,14 @@ export default function NewForm({action, pending}) {
     return (
     <div>
         <h1>NewForm</h1>
-        {pending && <Loader/>}
+        
         {/* //<Toaster message={'Loading...'}/>} */}
         <form ref={formRef} onSubmit={handleAction}>
             <input type="text" name='message' />
-            <button type='submit'>Submit</button>
+            <button type='submit' style={{position: 'relative', padding: '1rem', width: '120px'}}>
+                Submit
+                {pending && <Loader/>}
+            </button>
         </form>
     </div>
   )

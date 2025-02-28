@@ -1,30 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCircleExclamation, FaTrash } from 'react-icons/fa6'
 import './CartSection.css'
-import { deleteFromDatabase, updateCart } from '../../apis/indexedDB.js'
+import { deleteFromDatabase, getCartItems, updateCart } from '../../apis/indexedDB.js'
 import Toaster from '../toaster/Toaster.jsx';
 
 
-export default function CartSection({items}) {
+export default function CartSection({items, handleUpdateItems, result, deleteItem, updateProducts}) {
 
-  const [result, setResult] = useState('');
   const [value, setValue] = useState(1);
   const [selectedId, setSelectedId] = useState(null);
-  const deleteItem = async(id) => {
-    try{
-      const response = await deleteFromDatabase(id);
-      setResult(response)
-    }
-    catch(err){
-      setResult(err)
-    }
-  }
+  
   const handleUpdateQuantity = async (e, id, name, price, pic, quantity, supplier) => {
     if (id) {
-      // alert(e.target.id)
       setValue(e.target.value);
       try{
         await updateCart(name, price, pic, e.target.value, supplier)
+        const allItems = await getCartItems();
+        handleUpdateItems(allItems.items)
+        
       }
       catch(err){
         console.log(err)
@@ -32,8 +25,18 @@ export default function CartSection({items}) {
       
     }
     setSelectedId(id)
-
   }
+
+  
+
+  useEffect(() => {
+    const getAllItems = async() => {
+      const allItems = await getCartItems();
+      handleUpdateItems(allItems.items)
+    }
+    getAllItems()
+  }, [])
+
   return (
     <div className='cartlist'>
         <div className="return-product">
@@ -80,7 +83,7 @@ export default function CartSection({items}) {
                   
               </div>
             ))}
-            {result && <Toaster message={result}/>}
+            {result? <Toaster message={result}/> : null}
         </div>
         
 
