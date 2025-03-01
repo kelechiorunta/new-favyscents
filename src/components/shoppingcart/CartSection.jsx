@@ -17,7 +17,6 @@ export default function CartSection({items, handleUpdateItems, result, deleteIte
         await updateCart(name, price, pic, e.target.value, supplier)
         const allItems = await getCartItems();
         handleUpdateItems(allItems.items)
-        
       }
       catch(err){
         console.log(err)

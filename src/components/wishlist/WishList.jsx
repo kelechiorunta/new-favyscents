@@ -1,9 +1,12 @@
-import React, { useTransition } from 'react'
+import React, { Suspense, useTransition } from 'react'
 import { useRef, useState } from 'react';
 import MyInput from './MyInput.jsx';
 import MyForm from './MyForm.jsx';
 import { delaySubmit, simulateSubmit } from './formaction.js';
 import NewForm from './NewForm.jsx';
+import GetProducts from './GetProducts.jsx';
+import Loader from '../loader/Loader.jsx';
+import { getCartItems } from '../../apis/indexedDB.js';
 
 export default function WishList() {
     const [pending, startTransition] = useTransition();
@@ -32,6 +35,8 @@ export default function WishList() {
         
     }
 
+    const allProducts = getCartItems()
+
   return (
     <div>
         <h1>WishList</h1>
@@ -39,6 +44,9 @@ export default function WishList() {
         <MyInput ref={myRef}/>
         <MyForm messages={messages} sendMessage={sendMessage}/>
         <NewForm action={sendAction} pending={pending}/>
+        <Suspense fallback={<Loader/>}>
+            <GetProducts allProducts={allProducts}/>
+        </Suspense>
     </div>
   )
 }

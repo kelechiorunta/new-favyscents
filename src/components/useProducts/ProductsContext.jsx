@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
 import useProducts from './useProducts.jsx';
 import { getCartItems, deleteFromDatabase, updateCart } from '../../apis/indexedDB.js';
 
@@ -15,7 +15,7 @@ export default function ProductsContext({children}) {
   const [newQuantity, setQuantity] = useState(0);
   const [loading, setIsLoading] = useState(null);
   const [isSuccess, setSuccess] = useState(null);
-  // const [result, setResult] = useState(null);
+ 
     // const { handleUpdateItems } = useContext(productContext);
 
   const handleUpdate = async (name, price, pic, quantity=parseFloat(quantity) + 1, supplier) => {
@@ -45,6 +45,7 @@ export default function ProductsContext({children}) {
             setUpdatedItems(items)
           }
     }
+
     const deleteItem = async(id) => {
       try{
         const response = await deleteFromDatabase(id);
