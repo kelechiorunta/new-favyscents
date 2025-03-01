@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import './Toaster.css';
 import Loader from '../loader/Loader.jsx';
+import { createPortal } from 'react-dom';
 
 export default function Toaster({message}) {
 
@@ -72,7 +73,7 @@ export default function Toaster({message}) {
    
 
   return (
-    <div id="snackbar" style={{zIndex: 9999, position: 'fixed'}}>
+    createPortal(<div id="snackbar" style={{zIndex: 9999, position: 'fixed'}}>
        <svg id="mySVG" width="5" height="5" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
            <path 
              fill="none" 
@@ -84,6 +85,6 @@ export default function Toaster({message}) {
        </svg>
        {/* <Loader/> */}
        {message}
-   </div>
+   </div>, document.body)
   )
 }
