@@ -144,7 +144,7 @@ export default function Account() {
                             </div>
                             <button type='submit' className="subscribeBtn">SUBSCRIBE</button>
                             {isPending && <Loader/>}
-                            {formState?.success ? <Toaster message={formState?.message}/> : <Toaster message={"Failed to get message"}/>}
+                            {formState?.success ? <Toaster message={formState?.message}/> : null}
                         </div>
                     </form>
                 </ViewChild>
