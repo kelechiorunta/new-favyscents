@@ -12,6 +12,7 @@ import {useMediaQuery, useMediaQueries} from '@react-hook/media-query';
 import useProducts from '../useProducts/useProducts.jsx';
 import { productContext } from '../useProducts/ProductsContext.jsx';
 import { getCartItems } from '../../apis/indexedDB.js';
+import ProgressBar from '../progressbar/ProgressBar.jsx';
 
 export default function MainHeader({id, tooltipContent, ...rest }) {
     const navigate = useNavigate();
@@ -83,6 +84,23 @@ export default function MainHeader({id, tooltipContent, ...rest }) {
         {id:3, item:`Women's Perfumes`},
         {id:4, item:`Men's Cologne`},
     ]
+    const [value, setValue] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const progress = (scrollTop / height) * 1;
+          setValue(progress);
+        };
+    
+        document.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          document.removeEventListener("scroll", handleScroll);
+        };
+      }, [value]); // ✅ Empty dependency array prevents unnecessary re-renders
+    
 
   return (
     <header className='mainheader'>
@@ -174,6 +192,7 @@ export default function MainHeader({id, tooltipContent, ...rest }) {
                 </div>
         </div>
         <Divider/>
+        <ProgressBar value={value}/>
     </header>
   )
 }
