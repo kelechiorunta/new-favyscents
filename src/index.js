@@ -11,11 +11,13 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ShoppingCart from './components/shoppingcart/ShoppingCart.jsx';
 import WishList from './components/wishlist/WishList.jsx';
 import ProductsContext from './components/useProducts/ProductsContext.jsx';
+import ErrorBoundary from './components/errorboundary/ErrorBoundary.jsx';
 const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ErrorBoundary>
     <ProductsContext>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
@@ -31,6 +33,7 @@ root.render(
       </BrowserRouter> 
     </QueryClientProvider>
     </ProductsContext>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 

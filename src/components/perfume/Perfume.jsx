@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Perfume.css'
 import MainHeader from '../mainheader/MainHeader';
@@ -23,7 +23,7 @@ import MainFooter from '../mainfooter/MainFooter';
 import { ViewProvider, ViewChild} from '../ViewContext/ViewContext';
 import Recommended from '../recommended/Recommended';
 import ProductTab from '../productTab/ProductTab';
-import { updateCart } from '../../apis/indexedDB.js';
+import { getCartItems, updateCart } from '../../apis/indexedDB.js';
 import Toaster from '../toaster/Toaster.jsx';
 
 const collections = [
@@ -43,9 +43,19 @@ export default function Perfume() {
 
     const {id} = useParams();
     const selectedImg = collections.find(collection => collection.id == id)
+    const [value, setValue] = useState(1);
+    useEffect(() => {
+        const getCurrentImg = async() => {
+            const carts = await getCartItems();
+            const allItems = carts?.items;
+            const currentItem = allItems.find(item => item.name === selectedImg.name)
+            setValue(currentItem?.quantity)
+        }
+        getCurrentImg();
+    }, [])
 
     const [title, setTitle] = useState('DESC');
-    const [value, setValue] = useState(1);
+    
     const [selectedId, setSelectedId] = useState(null);
     const [loading, setLoading] = useState(null);
     const [message, setMessage] = useState(null)
