@@ -22,19 +22,9 @@ function App() {
   // Queries
   const query = useQuery({ queryKey: ['products'], queryFn: openProductDatabase })
   const [isActive, setActive] = useState(null);
-  // const memoizedQuery = useMemo(() => query);
+ 
   const { status, error, data } = query;//memoizedQuery
   let timerOutId;
-  // let isActive;
-
-  // useEffect(() => {
-  //   if (!isActive) {
-  //     if (status === 'success' || data){
-  //       timerOutId = setTimeout(() => setActive(true), 5000)
-  //     }
-  //     return () => clearTimeout(timerOutId)
-  //   }
-  // }, [])
 
     return status === 'pending' ? <Loader/>
 
@@ -43,7 +33,7 @@ function App() {
   :
    (
     <div className="App">  
-    {console.log(data)}
+    {/* {console.log(data)} */}
    
       {/* {isActive && data && <Toaster message={data?.name.toUpperCase() +' DATABASE IS OPENED SUCCESSFULLY.'} />} */}
     
