@@ -35,6 +35,7 @@ export default function ProductsContext({children}) {
         }
         finally{
             setIsLoading(false)
+            const timerId = setTimeout(() => {setSuccess(null); clearTimeout(timerId)}, 2000)
         }
     }
 
