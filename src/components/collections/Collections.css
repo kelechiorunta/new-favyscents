@@ -138,8 +138,10 @@
      object-position: center;
   filter: brightness(50%);
   position: absolute;
+  display: inline-block;
   top: 0;
-  left: 10%;
+  left: 50px;
+  transform: translateX("100px");
   width: 27.1527777778vw;
   height: 21.9444444444vw;
   transition: left 1s ease, filter 2s ease-in-out, white 1s ease-in;
@@ -155,6 +157,7 @@
   cursor: pointer;
   left: 0;
   filter: brightness(100%);
+  transform: translateX(0);
 }
 .collections .frame-container img:hover .frame-container .content, .collections .frame-container img:hover .frame-container .link {
   background-color: black;

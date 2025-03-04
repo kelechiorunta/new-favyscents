@@ -22,35 +22,11 @@ const queryClient = new QueryClient();
 //without the error document is not defined.
 
 // Hydrate the state from the server
-// if (window.__REACT_QUERY_STATE__) {
-//   hydrate(queryClient, window.__REACT_QUERY_STATE__);
-// }
+if (window.__REACT_QUERY_STATE__) {
+  hydrate(queryClient, window.__REACT_QUERY_STATE__);
+}
 
-// hydrateRoot(document.getElementById('root'), 
-//   <React.StrictMode>
-//     <ErrorBoundary>
-//     <ProductsContext>
-//     <QueryClientProvider client={queryClient}>
-//       <BrowserRouter>
-//         <Routes>
-//             <Route path='/' element={<App/>} />
-//             <Route path='/product' element={<Product/>} />
-//             <Route path='/account' element={<Account/>} />
-//             <Route path='/perfume/:id' element={<Perfume/>} />
-//             <Route path='/cart' element={<ShoppingCart/>} />
-//             <Route path='/wishlist' element={<WishList/>} />
-//         </Routes>
-//         {/* <App /> */}
-//       </BrowserRouter> 
-//     </QueryClientProvider>
-//     </ProductsContext>
-//     </ErrorBoundary>
-//   </React.StrictMode>
-//   // <HydratedMarkup/>
-// )
-
-const root = createRoot(document.getElementById('root'), <App/>);
-root.render(
+hydrateRoot(document.getElementById('root'), 
   <React.StrictMode>
     <ErrorBoundary>
     <ProductsContext>
@@ -70,7 +46,31 @@ root.render(
     </ProductsContext>
     </ErrorBoundary>
   </React.StrictMode>
-);
+  // <HydratedMarkup/>
+)
+
+// const root = createRoot(document.getElementById('root'), <App/>);
+// root.render(
+//   <React.StrictMode>
+//     <ErrorBoundary>
+//     <ProductsContext>
+//     <QueryClientProvider client={queryClient}>
+//       <BrowserRouter>
+//         <Routes>
+//             <Route path='/' element={<App/>} />
+//             <Route path='/product' element={<Product/>} />
+//             <Route path='/account' element={<Account/>} />
+//             <Route path='/perfume/:id' element={<Perfume/>} />
+//             <Route path='/cart' element={<ShoppingCart/>} />
+//             <Route path='/wishlist' element={<WishList/>} />
+//         </Routes>
+//         {/* <App /> */}
+//       </BrowserRouter> 
+//     </QueryClientProvider>
+//     </ProductsContext>
+//     </ErrorBoundary>
+//   </React.StrictMode>
+// );
 
 // const RootComponent = () => {
 //   const [hydrated, setHydrated] = useState(false);
