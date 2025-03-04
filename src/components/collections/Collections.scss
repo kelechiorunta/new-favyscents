@@ -139,8 +139,10 @@ $foreColor: white;
                     object-position: center;
                     filter: brightness(50%);
                     position: absolute;
+                    display: inline-block;
                     top:0;
-                    left: 10%;
+                    left: 50px;
+                    transform: translateX('100px');
                     width: calc((391/1440) * 100vw);
                     height: calc((316/1440) * 100vw);
                     transition: left 1s ease, filter 2s ease-in-out, $foreColor 1s ease-in;
@@ -153,6 +155,7 @@ $foreColor: white;
                         cursor: pointer;
                         left:0;
                         filter:brightness(100%);
+                        transform: translateX(0);
                         
                         .frame-container{
                             .content, .link{
