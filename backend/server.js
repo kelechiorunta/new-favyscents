@@ -253,10 +253,10 @@ app.get("/*", async (req, res) => {
         res.statusCode = 500;
         res.send("<!doctype html><p>Server Error</p>");
       },
-      onAllReady(){
-        const markup = renderToStaticMarkup(<HydratedMarkup/>);
-        res.send(markup)
-      }
+      // onAllReady(){
+      //   const markup = renderToStaticMarkup(<HydratedMarkup/>);
+      //   res.send(markup)
+      // }
     }
   );
 });
