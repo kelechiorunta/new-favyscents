@@ -1,11 +1,13 @@
 import React, { useImperativeHandle, useRef, useState } from 'react'
+import Toaster from '../toaster/Toaster';
 
 export default function MultiStepIndicator({ref}) {
     const progressRef = useRef(null);
     const [value, setValue] = useState(0);
+    const [toaster, setToaster] = useState(null);
   
     useImperativeHandle(ref, () => ({
-      animateIndicator() {
+      animateIndicatorOne() {
         let startTime = null;
         let requestId
   
@@ -21,6 +23,11 @@ export default function MultiStepIndicator({ref}) {
   
           if (progress < 100) {
             requestId = requestAnimationFrame(animate);
+            setToaster(false)
+        }
+          if (progress >= 100) {
+            setToaster(true)
+            cancelAnimationFrame(requestId)
           }
         //   cancelAnimationFrame(requestId)
         };
@@ -32,7 +39,7 @@ export default function MultiStepIndicator({ref}) {
     <div>
         <h1>MultiStepIndicator</h1>
         <progress ref={progressRef} value={value} max={100}/>
-
+        {toaster && <Toaster message={"Complete"}/>}
     </div>
   )
 }

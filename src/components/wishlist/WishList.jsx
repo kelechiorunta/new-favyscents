@@ -7,11 +7,12 @@ import NewForm from './NewForm.jsx';
 import GetProducts from './GetProducts.jsx';
 import Loader from '../loader/Loader.jsx';
 import { getCartItems } from '../../apis/indexedDB.js';
+import { useMemo } from 'react';
 
 
 
 export default function WishList() {
-    const allProducts = getCartItems()
+    const allProducts = useMemo(() => getCartItems()); 
     const [pending, startTransition] = useTransition();
     const myRef = useRef(null);
     const handleClick = () => {
@@ -44,7 +45,7 @@ export default function WishList() {
             }  
         })
         
-    },[result])
+    },[])
 
   return (
     <div>
@@ -53,9 +54,9 @@ export default function WishList() {
         <MyInput ref={myRef}/>
         <MyForm messages={messages} sendMessage={sendMessage}/>
         <NewForm action={sendAction} pending={pending}/>
-        <Suspense fallback={<Loader/>}>
+        {/* <Suspense fallback={<Loader/>}>
             <GetProducts allProducts={allProducts}/>
-        </Suspense>
+        </Suspense> */}
     </div>
   )
 }

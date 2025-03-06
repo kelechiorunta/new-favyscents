@@ -14,7 +14,7 @@ export default function NewForm({action, pending}) {
             const myNewForm = new FormData(event.target)
             const formObjects = Object.fromEntries(myNewForm.entries())
             action(formObjects['message'])
-            multiStepRef.current.animateIndicator();
+            multiStepRef.current.animateIndicatorOne();
             event.target.reset();
         })
     }
