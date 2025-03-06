@@ -177,9 +177,11 @@
 // app.listen(3200, () => console.log("Server running on http://localhost:3200"));
 
 
+
+
 import express from "express";
 import React from "react";
-import { renderToPipeableStream } from "react-dom/server";
+import { renderToPipeableStream, renderToStaticMarkup } from "react-dom/server";
 import { StaticRouter } from "react-router";
 import App from "../src/App.js";
 import ProductsContext from "../src/components/useProducts/ProductsContext.jsx";
@@ -188,6 +190,7 @@ import ErrorBoundary from "../src/components/errorboundary/ErrorBoundary.jsx";
 import path from "path";
 import fs from "fs"; // To serve static index.html
 import { openProductDatabase } from "../src/apis/indexedDB.js";
+import HydratedMarkup from "../src/components/hydratedmarkup/HydratedMarkup.jsx";
 
 const app = express();
 const buildPath = path.resolve(__dirname, "../build");
@@ -250,6 +253,10 @@ app.get("/*", async (req, res) => {
         res.statusCode = 500;
         res.send("<!doctype html><p>Server Error</p>");
       },
+      onAllReady(){
+        const markup = renderToStaticMarkup(<HydratedMarkup/>);
+        res.send(markup)
+      }
     }
   );
 });
@@ -267,3 +274,59 @@ app.get("/build-index", (req, res) => {
 });
 
 app.listen(3200, () => console.log("Server running on http://localhost:3200"));
+
+
+// import express from "express";
+// import fs from "fs";
+// import path from "path";
+// import React from "react";
+// import ProductsContext from "../src/components/useProducts/ProductsContext.jsx";
+// import { QueryClient, QueryClientProvider, dehydrate } from "@tanstack/react-query";
+// import ErrorBoundary from "../src/components/errorboundary/ErrorBoundary.jsx";
+// import { renderToString } from "react-dom/server";
+// import App from "../src/App.js"; // Your main React App component
+// import { StaticRouter } from "react-router"; // For SSR routing
+
+// const app = express();
+
+// // ✅ Serve static assets (CSS, JS, images, but NOT index.html)
+// // app.use(express.static(path.resolve("build"), { index: false }));
+
+// app.get("*", async (req, res) => {
+//   const queryClient = new QueryClient();
+
+//   // ✅ OPTIONAL: Preload data for SSR
+//   // await queryClient.prefetchQuery(["products"], openProductDatabase);
+//   // const dehydratedState = dehydrate(queryClient);
+
+//   // ✅ Convert the React App to a static HTML string
+//   const appHtml = renderToString(
+//     <StaticRouter location={req.url}>
+//       <h1>Thanks</h1>
+//       <ErrorBoundary>
+//         <ProductsContext>
+//           <QueryClientProvider client={queryClient}>
+//             <App />
+//           </QueryClientProvider>
+//         </ProductsContext>
+//       </ErrorBoundary>
+//     </StaticRouter>
+//   );
+
+//   const indexFile = path.resolve("./build/index.html");
+//   fs.readFile(indexFile, "utf8", (err, data) => {
+//     if (err) {
+//       return res.status(500).send("Error loading index file");
+//     }
+//     return res.send(
+//       data.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+//     );
+//   });
+
+// });
+
+// // Start the server
+// const PORT = process.env.PORT || 3200;
+// app.listen(PORT, () => {
+//   console.log(`Server running at http://localhost:${PORT}`);
+// });
