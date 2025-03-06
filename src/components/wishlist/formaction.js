@@ -5,7 +5,11 @@ export const simulateSubmit = async(message) => {
 }
 
 export const delaySubmit = async(message) => {
-    await new Promise((res) => setTimeout(res, 3000))
-    return message;
+    let timeroutId;
+    await new Promise((res) => {
+        timeroutId = setTimeout(()=> {res(message); clearTimeout(timeroutId);}, 1000)
+
+    })
+     return message;
 }
 

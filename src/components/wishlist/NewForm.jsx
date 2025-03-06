@@ -1,9 +1,11 @@
 import React, { startTransition, useRef } from 'react'
 import Toaster from '../toaster/Toaster.jsx'
 import Loader from '../loader/Loader.jsx';
+import MultiStepIndicator from './MultiStepIndicator.jsx';
 
 export default function NewForm({action, pending}) {
     const formRef = useRef(null);
+    const multiStepRef = useRef(null);
 
     const handleAction = async(event) => {
         event.preventDefault();
@@ -12,6 +14,7 @@ export default function NewForm({action, pending}) {
             const myNewForm = new FormData(event.target)
             const formObjects = Object.fromEntries(myNewForm.entries())
             action(formObjects['message'])
+            multiStepRef.current.animateIndicator();
             event.target.reset();
         })
     }
@@ -19,7 +22,7 @@ export default function NewForm({action, pending}) {
     return (
     <div>
         <h1>NewForm</h1>
-        
+        <MultiStepIndicator ref={multiStepRef} />
         {/* //<Toaster message={'Loading...'}/>} */}
         <form ref={formRef} onSubmit={handleAction}>
             <input type="text" name='message' />

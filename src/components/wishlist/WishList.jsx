@@ -1,4 +1,4 @@
-import React, { Suspense, useTransition } from 'react'
+import React, { Suspense, useTransition, useCallback } from 'react'
 import { useRef, useState } from 'react';
 import MyInput from './MyInput.jsx';
 import MyForm from './MyForm.jsx';
@@ -8,7 +8,10 @@ import GetProducts from './GetProducts.jsx';
 import Loader from '../loader/Loader.jsx';
 import { getCartItems } from '../../apis/indexedDB.js';
 
+
+
 export default function WishList() {
+    const allProducts = getCartItems()
     const [pending, startTransition] = useTransition();
     const myRef = useRef(null);
     const handleClick = () => {
@@ -20,22 +23,28 @@ export default function WishList() {
     ])
     const [result, setResult] = useState(null)
 
-    const sendMessage = async(formData) => {
+    const sendMessage = useCallback(async(formData) => {
         const message = await simulateSubmit(formData.get('message'));
         setMessages(messages => [...messages, {text: message, sending: true}])
-    }
+    },[messages])
 
-    const sendAction = async(message) => {
+    const sendAction = useCallback(async(message) => {
         startTransition(async() =>{
-            const newResult = await delaySubmit(message);
-            startTransition(() => {
+            try{
+                const newResult = await delaySubmit(message);
                 setResult(newResult)
-            })
+                // startTransition(() => {
+            //})
+            }
+            catch(err){
+                setResult(err)
+            }
+            finally{
+                setTimeout(()=>setResult(null), 3000)
+            }  
         })
         
-    }
-
-    const allProducts = getCartItems()
+    },[result])
 
   return (
     <div>
