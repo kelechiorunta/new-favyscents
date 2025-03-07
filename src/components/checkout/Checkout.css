@@ -1,0 +1,11 @@
+.checkout-container {
+  width: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.checkout-container .checkout-title {
+  color: black;
+  margin-top: 8.3333333333vw;
+  padding-left: 8.3333333333vw;
+}/*# sourceMappingURL=Checkout.css.map */

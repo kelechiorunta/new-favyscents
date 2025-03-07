@@ -7,6 +7,7 @@ export default function Tooltip({ children, targetRect }) {
     const ref = useRef(null);
     const [tooltipHeight, setTooltipHeight] = useState(0);
   
+    //Executes before the next browser repaint
     useLayoutEffect(() => {
       const { height } = ref.current.getBoundingClientRect();
       setTooltipHeight(height * 2);

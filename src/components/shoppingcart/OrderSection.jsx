@@ -2,10 +2,13 @@ import React, {useState, useEffect} from 'react';
 import './OrderSection.css'
 import { FaShoppingBag } from 'react-icons/fa';
 import { getCartItems } from '../../apis/indexedDB';
+import { useNavigate } from 'react-router-dom';
 
 export default function OrderSection({totalPrice, handleUpdateItems, deleteItem}) {
     const [updatedTotal, setUpdatedTotal] = useState(totalPrice)
   
+    const navigate = useNavigate();
+
   useEffect(() => {
     const getTotalPrice = async() => {
         const allItems = await getCartItems();
@@ -38,7 +41,7 @@ export default function OrderSection({totalPrice, handleUpdateItems, deleteItem}
       </div>
       <hr style={{width: '100%', height: '2px', margin: '24'}}/>
     
-      <button className="checkout">
+      <button onClick={()=>navigate('/checkout')} className="checkout">
           <FaShoppingBag className='checkout-icon' />
           PROCEED TO SECURE CHECKOUT
       </button>

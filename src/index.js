@@ -15,6 +15,7 @@ import ErrorBoundary from './components/errorboundary/ErrorBoundary.jsx';
 // import { hydrateRoot } from 'react-dom/client';
 // import HydratedMarkup from './components/hydratedmarkup/HydratedMarkup.jsx';
 import Loader from './components/loader/Loader.jsx';
+import Checkout from './components/checkout/Checkout.jsx';
 const queryClient = new QueryClient();
 
 //GET BACK TO THIS AND FIND OUT HOW TO 
@@ -39,6 +40,7 @@ hydrateRoot(document.getElementById('root'),
             <Route path='/perfume/:id' element={<Perfume/>} />
             <Route path='/cart' element={<ShoppingCart/>} />
             <Route path='/wishlist' element={<WishList/>} />
+            <Route path='/checkout' element={<Checkout/>} />
         </Routes>
         {/* <App /> */}
       </BrowserRouter> 
