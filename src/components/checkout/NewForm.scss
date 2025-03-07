@@ -1,3 +1,18 @@
 .form-container{
     padding: calc((120/1440) * 100vw);
+
+    .shipping-section{
+        form{
+            button{
+                background-color: #4d2952;
+                color: white;
+            }
+            input{
+                outline: none;
+                :focus{
+                    outline: none;
+                }
+            }
+        }
+    }
 }
