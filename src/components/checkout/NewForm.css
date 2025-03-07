@@ -1,3 +1,13 @@
 .form-container {
   padding: 8.3333333333vw;
+}
+.form-container .shipping-section form button {
+  background-color: #4d2952;
+  color: white;
+}
+.form-container .shipping-section form input {
+  outline: none;
+}
+.form-container .shipping-section form input :focus {
+  outline: none;
 }/*# sourceMappingURL=NewForm.css.map */
