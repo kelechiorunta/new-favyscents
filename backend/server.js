@@ -2,11 +2,13 @@ import express from "express";
 import React from "react";
 import { renderToPipeableStream, renderToStaticMarkup } from "react-dom/server";
 import { StaticRouter } from "react-router";
-import server from "../src/App.js";
+import App from "../src/App.js";
 import ProductsContext from "../src/components/useProducts/ProductsContext.jsx";
 import { QueryClient, QueryClientProvider, dehydrate } from "@tanstack/react-query";
 import ErrorBoundary from "../src/components/errorboundary/ErrorBoundary.jsx";
 import path from "path";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
 import fs from "fs"; // To serve static index.html
 import userRouter from "./userRoutes.js";
 import { openProductDatabase } from "../src/apis/indexedDB.js";
@@ -18,7 +20,9 @@ const buildPath = path.resolve(__dirname, "../build");
 
 server.use(express.static(buildPath)); // Serve client assets
 server.use(express.json());
-server.use('/user', userRouter)
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({extended: false}));
+server.use('/users', userRouter)
 
 server.get("/*", async (req, res) => {
   const queryClient = new QueryClient();

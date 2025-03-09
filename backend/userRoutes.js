@@ -1,7 +1,7 @@
 import express from 'express';
 import { mailer } from './controllers/userController.js';
-const userRouter = express.Router();
+const router = express.Router();
 
-userRouter.post('/', mailer);
+router.post('/subscribe', mailer);
 
-export default userRouter
+export default router

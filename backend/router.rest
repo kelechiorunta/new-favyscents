@@ -1,0 +1,8 @@
+#mailer post request
+POST http://localhost:3200/users/subscribe
+Content-Type: application/json
+
+{
+    "name": "Kelechi",
+    "email": "kelechiorunta1@gmail.com"
+}
