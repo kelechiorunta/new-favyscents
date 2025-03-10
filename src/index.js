@@ -16,6 +16,7 @@ import ErrorBoundary from './components/errorboundary/ErrorBoundary.jsx';
 // import HydratedMarkup from './components/hydratedmarkup/HydratedMarkup.jsx';
 import Loader from './components/loader/Loader.jsx';
 import Checkout from './components/checkout/Checkout.jsx';
+import Unsubscribe from './components/unsubscribe/Unsubscribe.jsx';
 const queryClient = new QueryClient();
 
 //GET BACK TO THIS AND FIND OUT HOW TO 
@@ -66,6 +67,7 @@ root.render(
             <Route path='/cart' element={<ShoppingCart/>} />
             <Route path='/wishlist' element={<WishList/>} />
             <Route path='/checkout' element={<Checkout/>} />
+            <Route path='/users/unsubscribe/:name' element={<Unsubscribe/>} />
         </Routes>
         {/* <App /> */}
       </BrowserRouter> 
