@@ -48,15 +48,23 @@ const mailer = async(req, res) => {
 
 }
 
-const unsubscribeUser = (req, res) => {
-    // const { name } = req.params.name
+const unsubscribeUser = async(req, res) => {
+    
     const name = req.user.name
 
     if (!name) {
         return res.status(400).json({error: "No such subscriber"});
     }
 
-    res.json({name})
+    try{
+        // const user = await Subscriber.findOne({name: name})
+        await req.user.deleteOne()
+        res.status(200).json({message: "Subscriber has been successfully unsubscribed."})
+    }
+    catch(err){
+        console.error(err)
+        res.status(500).json({error: err})
+    }
 
 }
 
