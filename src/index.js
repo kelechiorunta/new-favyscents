@@ -42,6 +42,7 @@ const queryClient = new QueryClient();
 //             <Route path='/cart' element={<ShoppingCart/>} />
 //             <Route path='/wishlist' element={<WishList/>} />
 //             <Route path='/checkout' element={<Checkout/>} />
+//             <Route path='/users/unsubscribe/:name' element={<Unsubscribe/>} />
 //         </Routes>
 //         {/* <App /> */}
 //       </BrowserRouter> 
