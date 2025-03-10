@@ -6,3 +6,8 @@ Content-Type: application/json
     "name": "Kelechi",
     "email": "kelechiorunta1@gmail.com"
 }
+
+###
+GET http://localhost:3200/users/unsubscribe/kelechi
+
+

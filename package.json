@@ -9,6 +9,7 @@
     "body-parser": "^1.20.3",
     "concurrently": "^9.1.2",
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "cra-template": "1.2.0",
     "express": "^4.21.2",
     "framer-motion": "^12.4.3",
@@ -28,7 +29,7 @@
     "prod-build": "npm run build && cp -r ./public ./backend/public",
     "backend": "NODE_ENV=production nodemon --env-file=.env server-babel.js",
     "start": "concurrently \"npm run frontend\" \"npm run backend\"",
-    "ssr": "npm run build && node server-babel.js"
+    "ssr": "npm run build && node --env-file=.env server-babel.js"
   },
   "eslintConfig": {
     "extends": [

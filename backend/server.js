@@ -13,12 +13,30 @@ import fs from "fs"; // To serve static index.html
 import userRouter from "./userRoutes.js";
 import { openProductDatabase } from "../src/apis/indexedDB.js";
 import HydratedMarkup from "../src/components/hydratedmarkup/HydratedMarkup.jsx";
+import cors from 'cors';
 
 
 const server = express();
+
+const allowedOrigins = ['http://localhost:3200', 'http://localhost:3000', '*']
+
+const corsOptions = {
+  origin: function(origin, callback) {
+      if (allowedOrigins.indexOf(origin) !== -1 || (!origin)){
+        return callback(null, true);
+      } else {
+        return callback("Domain not supported", false)
+      }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}
+
 const buildPath = path.resolve(__dirname, "../build");
 
 server.use(express.static(buildPath)); // Serve client assets
+server.use(cors(corsOptions));
 server.use(express.json());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
