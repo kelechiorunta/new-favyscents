@@ -14,9 +14,21 @@ import userRouter from "./userRoutes.js";
 import { openProductDatabase } from "../src/apis/indexedDB.js";
 import HydratedMarkup from "../src/components/hydratedmarkup/HydratedMarkup.jsx";
 import cors from 'cors';
-
+import Unsubscribe from "../src/components/unsubscribe/Unsubscribe.jsx";
+import mongoose from "mongoose";
 
 const server = express();
+
+const uri = process.env.MONGO_URI
+
+mongoose.connect(uri, {useNewUrlParser: true});
+const db = mongoose.connection
+db.on('error', (error) => {
+  console.error(error)
+})
+db.once('open', () => {
+  console.log("Connected successfully to database")
+})
 
 const allowedOrigins = ['http://localhost:3200', 'http://localhost:3000', '*']
 
@@ -42,69 +54,72 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use('/users', userRouter)
 
-server.get("/*", async (req, res) => {
-  const queryClient = new QueryClient();
+// server.get("/*", async (req, res) => {
+//   const queryClient = new QueryClient();
 
-  // Preload data for SSR (optional)
-  await queryClient.prefetchQuery(["products"], openProductDatabase);
+//   // Preload data for SSR (optional)
+//   await queryClient.prefetchQuery(["products"], openProductDatabase);
 
-  const dehydratedState = dehydrate(queryClient);
+//   const dehydratedState = dehydrate(queryClient);
 
-  const { pipe } = renderToPipeableStream(
-    <StaticRouter location={req.url}>
-      {/* Shell - Initial UI for users with JavaScript disabled */}
-      <h1>Welcome to Kelechi's SSR App</h1>
+//   const { pipe } = renderToPipeableStream(
+//     <StaticRouter location={req.url}>
+//       {/* Shell - Initial UI for users with JavaScript disabled */}
+//       <h1>Welcome to Kelechi's SSR App</h1>
+//       <div>
+//         <Unsubscribe />
+//       </div>
       
-      {/* Main Application for Hydration */}
-      <ErrorBoundary>
-        <ProductsContext>
-          <QueryClientProvider client={queryClient}>
-            <server />
-          </QueryClientProvider>
-        </ProductsContext>
-      </ErrorBoundary>
-    </StaticRouter>,
-    {
-      onShellReady() {
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "text/html");
-        res.write(`
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>My SSR React App</title>
-            <script>window.__REACT_QUERY_STATE__ = ${JSON.stringify(dehydratedState)}</script>
-            <script>
-              // When JS is enabled, load the client-side app
-              document.addEventListener("DOMContentLoaded", function () {
-                fetch("/build-index").then(response => response.text()).then(html => {
-                  document.open();
-                  document.write(html);
-                  document.close();
-                });
-              });
-            </script>
-          </head>
-          <body>
-            <div id="root">`);
-        pipe(res);
-        res.write(`</div>
-          </body>
-          </html>`);
-      },
-      onShellError() {
-        res.statusCode = 500;
-        res.send("<!doctype html><p>Server Error</p>");
-      },
+//       {/* Main Application for Hydration */}
+//       <ErrorBoundary>
+//         <ProductsContext>
+//           <QueryClientProvider client={queryClient}>
+//             <App />
+//           </QueryClientProvider>
+//         </ProductsContext>
+//       </ErrorBoundary>
+//     </StaticRouter>,
+//     {
+//       onShellReady() {
+//         res.statusCode = 200;
+//         res.setHeader("Content-Type", "text/html");
+//         res.write(`
+//           <!DOCTYPE html>
+//           <html lang="en">
+//           <head>
+//             <meta charset="UTF-8">
+//             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//             <title>My SSR React App</title>
+//             <script>window.__REACT_QUERY_STATE__ = ${JSON.stringify(dehydratedState)}</script>
+//             <script>
+//               // When JS is enabled, load the client-side app
+//               document.addEventListener("DOMContentLoaded", function () {
+//                 fetch("/build-index").then(response => response.text()).then(html => {
+//                   document.open();
+//                   document.write(html);
+//                   document.close();
+//                 });
+//               });
+//             </script>
+//           </head>
+//           <body>
+//             <div id="root">`);
+//         pipe(res);
+//         res.write(`</div>
+//           </body>
+//           </html>`);
+//       },
+//       onShellError() {
+//         res.statusCode = 500;
+//         res.send("<!doctype html><p>Server Error</p>");
+//       },
       
-    }
-  );
-});
+//     }
+//   );
+// });
 
 // ✅ Serve the full client-side React build when JavaScript is enabled
-server.get("/build-index", (req, res) => {
+server.get("/*", (req, res) => {
   const indexFile = path.join(buildPath, "index.html");
   fs.readFile(indexFile, "utf8", (err, data) => {
     if (err) {

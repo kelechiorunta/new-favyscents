@@ -1,4 +1,5 @@
 import { createTransport } from 'nodemailer';
+import Subscriber from '../models/Subscriber.js';
 
 const mailer = async(req, res) => {
     const { name, email } = req.body;
@@ -33,9 +34,12 @@ const mailer = async(req, res) => {
                 `,
     };
 
+    const newSubsrciber = new Subscriber({name, email})
+
     try {
         await transporter.sendMail(mailOptions);
-        return res.status(201).json({ message: 'User successfully subscribed. Kindly check your email.' })
+        await newSubsrciber.save();
+        return res.status(201).json({ message: 'User successfully subscribed. Kindly check your email.', subscriber: newSubsrciber })
       } catch (error) {
         console.log(process.env.EMAIL_PASS)
         console.error('Error sending email:', error);
@@ -45,8 +49,8 @@ const mailer = async(req, res) => {
 }
 
 const unsubscribeUser = (req, res) => {
-    //const { name } = req.params.name
-    const name = req.username
+    // const { name } = req.params.name
+    const name = req.user.name
 
     if (!name) {
         return res.status(400).json({error: "No such subscriber"});
