@@ -4,7 +4,8 @@ Content-Type: application/json
 
 {
     "name": "Kelechi",
-    "email": "kelechiorunta1@gmail.com"
+    "email": "kelechiorunta1@gmail.com",
+    "password": "keleman4xst"
 }
 
 ###
@@ -16,5 +17,5 @@ Content-Type: application/json
 
 {
     "name": "Kelechi",
-    "password": "kelechiorunta1@gmail.com"
+    "password": "keleman4xst"
 }
