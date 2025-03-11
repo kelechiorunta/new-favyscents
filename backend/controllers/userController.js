@@ -15,7 +15,7 @@ passport.use(
                     return done(null, false, { message: 'No such user' });
                 }
 
-                const isCorrectPassword = await bcrypt.compare(password, user.email);
+                const isCorrectPassword = await bcrypt.compare(password, user.password);
                 if (!isCorrectPassword) {
                     return done(null, false, { message: 'Wrong password' });
                 }
@@ -29,11 +29,11 @@ passport.use(
 );
 
 const mailer = async(req, res) => {
-    const { name, email } = req.body;
+    const { name, email, password } = req.body;
     req.username = name
 
     const user = process.env.EMAIL_PASS
-    if (!name || !email) {
+    if (!name || !email || !password) {
         return res.status(400).json({error: "Invalid fields."})
     }
 
@@ -60,8 +60,8 @@ const mailer = async(req, res) => {
              <p>Thank you,<br>Support Team</p>
                 `,
     };
-
-    const newSubsrciber = new Subscriber({name, email})
+    // const hashedPassword = await bcrypt.hash(password, 10)
+    const newSubsrciber = new Subscriber({name, email, password})
 
     try {
         await transporter.sendMail(mailOptions);
