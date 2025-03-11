@@ -10,4 +10,11 @@ Content-Type: application/json
 ###
 GET http://localhost:3200/users/unsubscribe/Kelechi
 
+###
+POST http://localhost:3200/users/login
+Content-Type: application/json
 
+{
+    "name": "Kelechi",
+    "password": "kelechiorunta1@gmail.com"
+}
