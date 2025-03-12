@@ -59,11 +59,11 @@ $foreColor: white;
                 }
             }
 
-            .perfumes-section{
-                // background-color: #D68E21;
+            .perfumes-section {
                 width: 100%;
                 padding: calc((42/1440) * 100vw) calc((103/1440) * 100vw);
-                .perfumes-container{
+            
+                .perfumes-container {
                     width: calc((1234/1440) * 100vw);
                     height: calc((316/1440) * 100vw);
                     background-color: white;
@@ -71,112 +71,95 @@ $foreColor: white;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    gap:calc((31/1440) * 100vw);
+                    gap: calc((31/1440) * 100vw);
                     overflow: hidden;
-                    
+            
                     @media only screen and (min-width: 300px) and (max-width: 787px) {
                         display: grid;
                         grid-template-columns: repeat(auto-fit, minmax(calc(291px + (786/1440) * 1vw), 1fr));
-                        grid-auto-flow: row;//calc(291px + (786/1440) * 1vw)
+                        grid-auto-flow: row;
                         font-size: calc(12px + ((768/1440) * 1vw));
                         overflow: visible;
-                        // height: calc(316px + ((786/1440) * 1vw));
                     }
-                    
-                }
-            }
-
-            .frame-container{
-                width: calc((391/1440) * 100vw);
-                height: calc((316/1440) * 100vw);
-                background-color: #F2F2F2;
-                position: relative;
-                // border: 2px solid #D68E21;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: calc((22/1440) * 100vw);
-                transition: background-color 2s ease-in-out, color 1s ease-in-out, background-color 2s ease;
-                // flex-wrap: wrap;
-                @media only screen and (min-width: 300px) and (max-width: 787px) {
-                    width: calc(291px + ((768/1440) * 1vw));
-                    gap: calc(11px + ((768/1440) * 1vw));
-                    height: calc(145px + ((768/1440) * 1vw));
-                    // overflow: visible;
-                }
-
-                .content, .link{
-                    display: block;
-                    width: max-content;
-                    font-size: calc((26/1440) * 100vw);
-                    z-index: 1;
-                    color: $foreColor;
-                    letter-spacing: 15%;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    margin-left: 20%;
-                    transition: font-weight 2s ease-in-out, background-color 2s ease-in-out, $foreColor 1s ease, color 1s ease-in-out;
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                        font-size: calc(15px + ((768/1440) * 1vw));
-                        // height: calc(316px + ((768/1440) * 1vw));
-                        overflow: visible;
-                    }
-                }
-                .link{
-                    font-size: calc((16/1440) * 100vw);
-                    text-transform: capitalize;
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                        font-size: calc(12px + ((768/1440) * 1vw));
-                        // height: calc(316px + ((768/1440) * 1vw));
-                        // overflow: visible;
-                    }
-                }
-
-                img{
-                    object-fit: cover;
-                    object-position: center;
-                    filter: brightness(50%);
-                    position: absolute;
-                    display: inline-block;
-                    top:0;
-                    left: 50px;
-                    transform: translateX('100px');
-                    width: calc((391/1440) * 100vw);
-                    height: calc((316/1440) * 100vw);
-                    transition: left 1s ease, filter 2s ease-in-out, $foreColor 1s ease-in;
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                        width: calc(291px + ((768/1440) * 1vw));
-                        height: calc(316px + ((768/1440) * 1vw));
-                        overflow: visible;
-                    }
-                    &:hover{
-                        cursor: pointer;
-                        left:0;
-                        filter:brightness(100%);
-                        transform: translateX(0);
-                        
-                        .frame-container{
-                            .content, .link{
-                                background-color: black;
-                                $foreColor: black;
+            
+                    .frame-container {
+                        width: calc((391/1440) * 100vw);
+                        height: calc((316/1440) * 100vw);
+                        background-color: #F2F2F2;
+                        position: relative;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: calc((22/1440) * 100vw);
+                        transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+            
+                        @media only screen and (min-width: 300px) and (max-width: 787px) {
+                            width: calc(291px + ((768/1440) * 1vw));
+                            height: calc(145px + ((768/1440) * 1vw));
+                            gap: calc(11px + ((768/1440) * 1vw));
+                        }
+            
+                        .content,
+                        .link {
+                            display: block;
+                            width: max-content;
+                            font-size: calc((26/1440) * 100vw);
+                            z-index: 1;
+                            color: $foreColor;
+                            letter-spacing: 15%;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            margin-left: 20%;
+                            transition: font-weight 0.5s ease, color 0.5s ease;
+                        }
+            
+                        .link {
+                            font-size: calc((16/1440) * 100vw);
+                            text-transform: capitalize;
+            
+                            @media only screen and (min-width: 300px) and (max-width: 787px) {
+                                font-size: calc(12px + ((768/1440) * 1vw));
                             }
                         }
-                       
-                                // background-color: #D68E21;
-                        // }
+            
+                        img {
+                            object-fit: cover;
+                            object-position: center;
+                            filter: brightness(50%);
+                            position: absolute;
+                            display: inline-block;
+                            top: 0;
+                            transform: translateX(100px);
+                            width: 100%;
+                            height: 100%;
+                            transition: transform 0.5s ease, filter 0.5s ease;
+            
+                            @media only screen and (min-width: 300px) and (max-width: 787px) {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+            
+                        // Apply hover effect properly
+                        &:hover {
+                            img {
+                                cursor: pointer;
+                                filter: brightness(100%);
+                                transform: translateX(0);
+                            }
+            
+                            .content,
+                            .link {
+                                font-weight: 700;
+                                color: black;
+                            }
+                        }
                     }
                 }
-
-                // Apply hover effect to change content and link colors
-    &:hover {
-        .content,
-        .link {
-            font-weight: 700;
-            background-color: transparentize($color: #000000, $amount: 1);
-            color: black;//#D68E21; // Change this to your desired color
-        }
-    }
             }
+            
+
+            
     }
