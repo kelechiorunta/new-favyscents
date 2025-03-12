@@ -106,7 +106,7 @@ const login = async (req, res, next) => {
             'your_jwt_secret', // Change this to an environment variable
             { expiresIn: '1h' }
         );
-
+        
         res.status(200).json({ message: 'User authenticated', token });
     })(req, res, next);
 };
@@ -123,5 +123,16 @@ const authenticateJWT = (req, res, next) => {
     });
 };
 
+const getUser = (req, res) => {
+    try{
+        const user = req.user;
+        res.status(200).json(user)
 
-export { mailer, unsubscribeUser, login, authenticateJWT }
+    }
+    catch(err){
+        res.status(400).json({error: "Invalid Token"})
+    }
+}
+
+
+export { mailer, unsubscribeUser, login, authenticateJWT, getUser }

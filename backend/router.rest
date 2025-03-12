@@ -12,6 +12,9 @@ Content-Type: application/json
 GET http://localhost:3200/users/unsubscribe/Kelechi
 
 ###
+GET http://localhost:3200/users/session
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDA2YjNiMDRmODA1N2E3YWI5ODFkYSIsIm5hbWUiOiJLZWxlY2hpIiwiaWF0IjoxNzQxNzMzMjE0LCJleHAiOjE3NDE3MzY4MTR9.d9-sxJllGB2KQsq1XcHyCzj06EuETidrE5EOfrqkLe8
+###
 POST http://localhost:3200/users/login
 Content-Type: application/json
 

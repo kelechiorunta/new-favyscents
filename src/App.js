@@ -38,12 +38,12 @@ function App() {
       {/* {isActive && data && <Toaster message={data?.name.toUpperCase() +' DATABASE IS OPENED SUCCESSFULLY.'} />} */}
     
       <ViewProvider>
-        <ViewChild id={'mainheader'} >
+        {/* <ViewChild id={'mainheader'} > */}
           <div className='header-contianer'>
             <MainHeader 
             id={'header-container'}/>
           </div>
-        </ViewChild>
+        {/* </ViewChild> */}
         {/* <ViewChild id={'tabmenu'} >
           <TabMenu id={'tabmenu'}/>
         </ViewChild> */}

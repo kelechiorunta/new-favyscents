@@ -1,5 +1,5 @@
 import express from 'express';
-import { login, mailer, unsubscribeUser } from './controllers/userController.js';
+import { authenticateJWT, getUser, login, mailer, unsubscribeUser } from './controllers/userController.js';
 import Subscriber from './models/Subscriber.js';
 const router = express.Router();
 
@@ -24,5 +24,6 @@ const getusername = async (req, res, next) => {
 router.post('/subscribe', mailer);
 router.post('/login', login)
 router.get('/unsubscribe/:name', getusername, unsubscribeUser);
+router.get('/session', authenticateJWT, getUser)
 
 export default router
