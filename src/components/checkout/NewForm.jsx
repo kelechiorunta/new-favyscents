@@ -97,7 +97,13 @@ export default function NewForm({action, pending}) {
                         
                     </form>
                 </div>
-                <OrderSection />
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                    <OrderSection />
+                    <OrderSection />
+                    <OrderSection />
+                </div>
+               
+
             </section>
         </ViewChild>
     </div>
