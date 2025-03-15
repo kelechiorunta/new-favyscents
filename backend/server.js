@@ -30,8 +30,7 @@ db.once('open', () => {
   console.log("Connected successfully to database")
 })
 
-const allowedOrigins = ['http://localhost:3200', 'http://localhost:3000', '*']
-
+const allowedOrigins = process.env.ALLOWED_DOMAINS.split(',') || []
 const corsOptions = {
   origin: function(origin, callback) {
       if (allowedOrigins.indexOf(origin) !== -1 || (!origin)){
