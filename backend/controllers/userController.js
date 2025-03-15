@@ -107,6 +107,47 @@ const unsubscribeUser = async(req, res) => {
 
 }
 
+const signup = async(req, res) => {
+
+        const { name, email, password } = req.body;
+
+        if (!name || !email || !password) {
+            return res.status(401).json({error: "Invalid Entries"})
+        }
+   
+        const selectedUser = await Subscriber.findOne({name: name})
+            if (selectedUser){
+                return res.status(400).json({ error: "User already exits. Ty another..." });
+            }
+
+            const newUser = new Subscriber({name, email, password})
+            
+            try{
+                await newUser.save();
+                const token = jwt.sign(
+                    { user: newUser},
+                    process.env.SESSION_SECRET, // Use JWT_SECRET instead
+                    { expiresIn: 7 * 24 * 60 * 60 * 1000 }
+                );
+        
+                res.cookie('userSession', token, {
+                    httpOnly: true,
+                    maxAge: 7 * 24 * 60 * 60 * 1000,
+                    // expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+                    secure: process.env.NODE_ENV === 'production',
+                    sameSite: 'None',
+                });
+        
+                res.status(200).json({ message: 'User authenticated', token, newUser });
+            }
+            catch(err){
+                res.status(500).json({error: "Unable to save", err})
+            }
+        // Generate JWT Token
+        
+    
+};
+
 const login = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) return res.status(500).json({ error: err.message });
@@ -177,4 +218,4 @@ const getUser = (req, res) => {
 }
 
 
-export { mailer, unsubscribeUser, login, authenticateJWT, getUser, logout }
+export { mailer, unsubscribeUser, login, authenticateJWT, getUser, logout, signup }

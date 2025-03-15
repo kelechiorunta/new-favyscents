@@ -25,4 +25,14 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3200/users/signup
+Content-Type: application/json
+
+{
+    "name": "Enyinnaya",
+    "email": "oruntakelechi86@gmail.com",
+    "password": "keleman4xst"
+}
+
+###
 GET http://localhost:3200/users/logout
