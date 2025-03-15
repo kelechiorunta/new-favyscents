@@ -1,5 +1,5 @@
 import express from 'express';
-import { authenticateJWT, getUser, login, mailer, unsubscribeUser } from './controllers/userController.js';
+import { authenticateJWT, getUser, login, logout, mailer, unsubscribeUser } from './controllers/userController.js';
 import Subscriber from './models/Subscriber.js';
 const router = express.Router();
 
@@ -25,5 +25,6 @@ router.post('/subscribe', mailer);
 router.post('/login', login)
 router.get('/unsubscribe/:name', getusername, unsubscribeUser);
 router.get('/session', authenticateJWT, getUser)
+router.get('/logout', logout)
 
 export default router

@@ -28,6 +28,18 @@ passport.use(
     )
 );
 
+passport.serializeUser(function(user, cb) {
+    process.nextTick(function() {
+      cb(null, { id: user.id, name: user.name });
+    });
+  });
+  
+  passport.deserializeUser(function(user, cb) {
+    process.nextTick(function() {
+      return cb(null, user);
+    });
+  });
+
 const mailer = async(req, res) => {
     const { name, email, password } = req.body;
     req.username = name
@@ -95,33 +107,63 @@ const unsubscribeUser = async(req, res) => {
 
 }
 
-const login = async (req, res, next) => {
-    passport.authenticate('local', async (err, user, info) => {
+const login = (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
         if (err) return res.status(500).json({ error: err.message });
         if (!user) return res.status(400).json({ error: info.message });
 
         // Generate JWT Token
         const token = jwt.sign(
             { id: user._id, name: user.name },
-            'your_jwt_secret', // Change this to an environment variable
-            { expiresIn: '1h' }
+            process.env.SESSION_SECRET, // Use JWT_SECRET instead
+            { expiresIn: 7 * 24 * 60 * 60 * 1000 }
         );
-        
+
+        res.cookie('userSession', token, {
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000,
+            // expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'None',
+        });
+
         res.status(200).json({ message: 'User authenticated', token });
     })(req, res, next);
 };
 
 
+
 const authenticateJWT = (req, res, next) => {
-    const token = req.header('Authorization')?.split(' ')[1];
+    const token = req.cookies.userSession; //|| req.header('Authorization')?.split(' ')[1] || req.cookies.userSession; 
     if (!token) return res.status(401).json({ error: 'Access denied' });
 
-    jwt.verify(token, 'your_jwt_secret', (err, user) => {
+    jwt.verify(token, process.env.SESSION_SECRET, (err, user) => {
         if (err) return res.status(403).json({ error: 'Invalid token' });
+
         req.user = user;
         next();
     });
 };
+
+const logout = async(req, res) => {
+
+    if (req.session) {
+        req.session.destroy(function (err) {
+          if (err) {
+            console.error('Error destroying session:', err);
+            return res.status(500).json({ message: 'Error destroying session' });
+          }
+
+          res.clearCookie('userSession'); // Clear the session cookie
+          console.log('Session destroyed and cookie cleared');
+          return res.status(200).json({
+            message: 'User logged out successfully',
+          });
+        });
+     ;
+    }
+    
+}
 
 const getUser = (req, res) => {
     try{
@@ -135,4 +177,4 @@ const getUser = (req, res) => {
 }
 
 
-export { mailer, unsubscribeUser, login, authenticateJWT, getUser }
+export { mailer, unsubscribeUser, login, authenticateJWT, getUser, logout }
