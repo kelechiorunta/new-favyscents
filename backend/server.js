@@ -16,10 +16,41 @@ import HydratedMarkup from "../src/components/hydratedmarkup/HydratedMarkup.jsx"
 import cors from 'cors';
 import Unsubscribe from "../src/components/unsubscribe/Unsubscribe.jsx";
 import mongoose from "mongoose";
+import session from 'express-session';
+import ConnectMongoDBSession from "connect-mongodb-session";
+import passport from 'passport';
+import { authenticate } from "passport";
+
+
 
 const server = express();
 
 const uri = process.env.MONGO_URI
+
+// Implementing a MongoDB middleware session and store for passport authentication
+const MongoDBStore = ConnectMongoDBSession(session);
+const store = new MongoDBStore(
+  {uri: uri, collection: 'sessions', 
+  expires: 1000 * 60 * 60 * 24 * 7}// Sessions expire after 1 week}
+)
+
+store.on('error', (err) => {
+  console.error(err)
+})
+
+server.use(session({
+  name: "userSession",
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    sameSite: 'None',
+    secure: process.env.NODE_ENV=='development'? false : true,
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+  },
+  store: store
+}))
 
 mongoose.connect(uri, {useNewUrlParser: true});
 const db = mongoose.connection
@@ -29,6 +60,7 @@ db.on('error', (error) => {
 db.once('open', () => {
   console.log("Connected successfully to database")
 })
+
 
 const allowedOrigins = process.env.ALLOWED_DOMAINS.split(',') || []
 const corsOptions = {
@@ -48,11 +80,15 @@ const buildPath = path.resolve(__dirname, "../build");
 
 server.use(express.static(buildPath)); // Serve client assets
 server.use(cors(corsOptions));
+server.use(cookieParser())
 server.use(express.json());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use('/users', userRouter)
 
+
+server.use(passport.initialize());
+server.use(passport.session());
 // server.get("/*", async (req, res) => {
 //   const queryClient = new QueryClient();
 
