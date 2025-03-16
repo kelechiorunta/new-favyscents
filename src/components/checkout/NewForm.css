@@ -1,5 +1,6 @@
 .form-container {
-  padding: 8.3333333333vw;
+  padding: 5.5555555556vw auto;
+  margin-top: 8.3333333333vw;
 }
 .form-container .shipping-section form button {
   background-color: #4d2952;

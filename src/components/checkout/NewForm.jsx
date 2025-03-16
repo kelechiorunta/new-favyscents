@@ -1,4 +1,4 @@
-import React, { startTransition, useRef } from 'react'
+import React, { startTransition, useRef, useMemo } from 'react'
 import Toaster from '../toaster/Toaster.jsx'
 import Loader from '../loader/Loader.jsx';
 import './NewForm.css'
@@ -9,11 +9,15 @@ import { ViewChild, ViewProvider } from '../ViewContext/ViewContext.jsx';
 import Divider from '../divider/Divider.jsx';
 import DividerII from '../dividerII/DividerII.jsx';
 import ShippingForm from './ShippingForm.jsx';
+import { Suspense } from 'react';
+import { getCartItems } from '../../apis/indexedDB.js';
+import OrderSummary from './OrderSummary.jsx';
 
 export default function NewForm({action, pending}) {
     const formRef = useRef(null);
     const multiStepRefI = useRef(null);
     const multiStepRefII = useRef(null);
+    const allProducts = useMemo(() => getCartItems()); 
 
     const handleAction = async(event) => {
         event.preventDefault();
@@ -49,9 +53,12 @@ export default function NewForm({action, pending}) {
                     
                 </div>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
-                    <OrderSection />
-                    <OrderSection />
-                    <OrderSection />
+                    <Suspense fallback={<Loader/>}>
+                        <OrderSummary allProducts={allProducts}/>
+                    </Suspense>
+                    {/* <OrderSection /> */}
+                    {/* <OrderSection />
+                    <OrderSection /> */}
                 </div>
             </section>
         </ViewChild>
