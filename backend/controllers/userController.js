@@ -167,7 +167,7 @@ const login = (req, res, next) => {
             secure: process.env.NODE_ENV === 'production',
             sameSite: 'None',
         });
-
+       
         res.status(200).json({ message: 'User authenticated', token });
     })(req, res, next);
 };
@@ -176,10 +176,10 @@ const login = (req, res, next) => {
 
 const authenticateJWT = (req, res, next) => {
     const token = req.cookies.userSession; //|| req.header('Authorization')?.split(' ')[1] || req.cookies.userSession; 
-    if (!token) return res.status(401).json({ error: 'Access denied' });
+    if (!token) return res.status(401).json({ error: 'Access denied. User not authenticated.' });
 
     jwt.verify(token, process.env.SESSION_SECRET, (err, user) => {
-        if (err) return res.status(403).json({ error: 'Invalid token' });
+        if (err) return res.status(403).json({ error: 'Invalid token. Failed to authorize.' });
 
         req.user = user;
         next();

@@ -1,7 +1,9 @@
 .form-container{
-    padding: calc((120/1440) * 100vw);
+    padding: calc((80/1440) * 100vw) auto;
+    margin-top: calc((120/1440) * 100vw);
 
     .shipping-section{
+        
         form{
             button{
                 background-color: #4d2952;
