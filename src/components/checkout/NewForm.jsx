@@ -1,25 +1,25 @@
-import React, { startTransition, useRef, useMemo } from 'react'
+import React, { startTransition, useRef, useMemo, useCallback } from 'react'
 import Toaster from '../toaster/Toaster.jsx'
 import Loader from '../loader/Loader.jsx';
 import './NewForm.css'
 import MultiStepIndicator from './MultiStepIndicator.jsx';
-import { Link } from 'react-router-dom';
-import OrderSection from '../shoppingcart/OrderSection.jsx';
 import { ViewChild, ViewProvider } from '../ViewContext/ViewContext.jsx';
-import Divider from '../divider/Divider.jsx';
-import DividerII from '../dividerII/DividerII.jsx';
 import ShippingForm from './ShippingForm.jsx';
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { getCartItems } from '../../apis/indexedDB.js';
-import OrderSummary from './OrderSummary.jsx';
+// import OrderSummary from './OrderSummary.jsx';
+
+const LazyOrderSummary = lazy(() => import('./OrderSummary.jsx'))
 
 export default function NewForm({action, pending}) {
     const formRef = useRef(null);
+    const formRef2 = useRef(null);
     const multiStepRefI = useRef(null);
     const multiStepRefII = useRef(null);
-    const allProducts = useMemo(() => getCartItems()); 
+    const allProducts = useMemo(() => getCartItems(), []); 
 
-    const handleAction = async(event) => {
+
+    const handleAction = useCallback(async(event) => {
         event.preventDefault();
         startTransition(() => {
             
@@ -29,7 +29,8 @@ export default function NewForm({action, pending}) {
             multiStepRefI.current.animateIndicatorOne();
             event.target.reset();
         })
-    }
+    }, [action])
+
   
     return (
     <ViewProvider>
@@ -49,12 +50,12 @@ export default function NewForm({action, pending}) {
                     <ShippingForm ref={formRef} handleAction={handleAction} pending={pending}/>
                     <hr style={{margin: '50px auto', width:'100%', height:5}}/>
 
-                    <ShippingForm ref={formRef} handleAction={handleAction} pending={pending}/>
+                    <ShippingForm ref={formRef2} handleAction={handleAction} pending={pending}/>
                     
                 </div>
-                <div style={{display: 'flex', flexDirection: 'column'}}>
-                    <Suspense fallback={<Loader/>}>
-                        <OrderSummary allProducts={allProducts}/>
+                <div style={{display: 'flex', flexDirection: 'column', position: 'relative'}}>
+                    <Suspense fallback={<div style={{position: 'absolute'}}><Loader/></div>}>
+                        <LazyOrderSummary allProducts={allProducts}/>
                     </Suspense>
                     {/* <OrderSection /> */}
                     {/* <OrderSection />

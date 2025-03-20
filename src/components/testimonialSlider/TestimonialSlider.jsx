@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 // import { Carousel } from '../recommended/Recommended';
-import { Carousel } from '../carousel/Carousel.jsx';
+// import { Carousel } from '../carousel/Carousel.jsx';
 import { TestimonialCarousel } from '../testimonials/TestimonialCarousel.jsx';
 
 export default function TestimonialSlider({ refId, carousels, direction, currentIndex, prevIndex}) {
