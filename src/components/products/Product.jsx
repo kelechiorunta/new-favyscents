@@ -69,13 +69,11 @@ export default function Product({id}) {
         const handleNext = () => {
           setDirection("right");
           setPrevSlide(currentIndex);
-        // reLoad(slide+1)
          setCurrentIndex((n) => (n + 1) % collections.length);
         };
         const handlePrevious = () => {
           setDirection("left");
           setPrevSlide(currentIndex);
-    // reLoad(slide+1)
         setCurrentIndex((n) => (n - 1 + collections.length) % collections.length);
         };
 

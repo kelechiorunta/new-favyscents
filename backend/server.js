@@ -52,7 +52,7 @@ server.use(session({
   store: store
 }))
 
-mongoose.connect(uri, {useNewUrlParser: true});
+mongoose.connect(uri);
 const db = mongoose.connection
 db.on('error', (error) => {
   console.error(error)

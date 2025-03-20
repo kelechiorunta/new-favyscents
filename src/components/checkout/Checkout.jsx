@@ -15,7 +15,7 @@ import { useMemo } from 'react';
 
 export default function Checkout() {
 
-    const allProducts = useMemo(() => getCartItems()); 
+    // const allProducts = useMemo(() => getCartItems()); 
     const [pending, startTransition] = useTransition();
     const myRef = useRef(null);
     const handleClick = () => {
