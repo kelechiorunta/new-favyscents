@@ -1,5 +1,4 @@
 import React, { startTransition, useRef, useMemo, useCallback } from 'react'
-import Toaster from '../toaster/Toaster.jsx'
 import Loader from '../loader/Loader.jsx';
 import './NewForm.css'
 import MultiStepIndicator from './MultiStepIndicator.jsx';
