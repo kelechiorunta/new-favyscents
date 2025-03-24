@@ -15,7 +15,7 @@ const OrderSummary = ({ allProducts }) => {
                     {allOrders && allOrders?.items.map(item => 
                     (
                 <ViewChild id={'product'}>
-                <div style={{display: 'flex', gap: '1rem', alignItems: 'flex-start', justifyContent: 'space-evenly'}}>
+                <div style={{display: 'flex', gap: '1rem', alignItems: 'flex-start', width: '100%', justifyContent: 'space-evenly'}}>
                     <img src={item.pic} alt='' width={100} height={100}/>
                     <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', justifyContent: 'space-between'}}>
                         <p>{item.price}</p>
@@ -28,7 +28,7 @@ const OrderSummary = ({ allProducts }) => {
                     <p>{item.quantity}</p>
                  </div>
                             
-                        </ViewChild>
+                 </ViewChild>
                     )
             )}
         </ul>

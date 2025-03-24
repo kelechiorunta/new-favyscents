@@ -41,7 +41,7 @@ export default function NewForm({action, pending}) {
         </div>
         {/* //<Toaster message={'Loading...'}/>} */}
         <ViewChild id={'shipping'}>
-            <section style={{display: 'flex', gap: '2rem', alignItems: 'center'}}>
+            <section style={{display: 'flex', justifyContent:'space-evenly', alignItems: 'center'}}>
                 <div className="shipping-section">
                     <h1 style={{marginBottom: '2rem', marginTop: '4rem'}}>SHIPPING ADDRESS</h1>
                     
