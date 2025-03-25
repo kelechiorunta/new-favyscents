@@ -1,15 +1,15 @@
-import React, {useContext, useState, useRef, useTransition, useEffect} from 'react';
+import React, {useContext, useState, useRef, useEffect} from 'react';
 import './Mainheader.css';
 import Tooltip from '../tooltip/Tooltip.jsx';
 import { FaSearch } from 'react-icons/fa';
 import { FaCartShopping, FaHeart, FaUser } from 'react-icons/fa6';
 import TabMenu from '../tabmenu/TabMenu.jsx';
 import Divider from '../divider/Divider.jsx';
-import { ViewChild } from '../ViewContext/ViewContext.jsx';
+// import { ViewChild } from '../ViewContext/ViewContext.jsx';
 // import logo from './logo-favy.svg';
 import { Link, useNavigate } from 'react-router-dom';
-import {useMediaQuery, useMediaQueries} from '@react-hook/media-query';
-import useProducts from '../useProducts/useProducts.jsx';
+import {useMediaQuery} from '@react-hook/media-query';
+// import useProducts from '../useProducts/useProducts.jsx';
 import { productContext } from '../useProducts/ProductsContext.jsx';
 import { getCartItems } from '../../apis/indexedDB.js';
 import ProgressBar from '../progressbar/ProgressBar.jsx';
@@ -22,7 +22,7 @@ export default function MainHeader({id, tooltipContent, ...rest }) {
     const [activeTooltip, setActiveTooltip] = useState(null); 
     
     // const {totalQ} = useContext(productContext)//useProducts();
-    const {totalQ, updatedItems, handleUpdateItems, handleUpdate} = useContext(productContext)//useProducts(); 
+    const {totalQ, handleUpdateItems, handleUpdate} = useContext(productContext)//useProducts(); 
     const [updatedQuantity, setUpdatedQuantity] = useState(totalQ)
 
     const matches = useMediaQuery('only screen and (min-width: 787px)');

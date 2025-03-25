@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import MainHeader from './components/mainheader/MainHeader.jsx';
-import Divider from './components/divider/Divider.jsx';
+// import Divider from './components/divider/Divider.jsx';
 import HeroSection from './components/heroSection/HeroSection.jsx';
 import Collections from './components/collections/Collections.jsx';
 import Recommended from './components/recommended/Recommended.jsx';
@@ -12,19 +12,19 @@ import Subscriber from './components/subscribe/Subscriber.jsx';
 import { ViewChild, ViewProvider } from './components/ViewContext/ViewContext.jsx';
 import MainFooter from './components/mainfooter/MainFooter.jsx';
 import { openProductDatabase } from './apis/indexedDB.js';
-import React, {useEffect, useState, memo, useMemo} from 'react';
-import { useQuery, useMutation } from '@tanstack/react-query';
-import Toaster from './components/toaster/Toaster.jsx';
+import React, {  memo} from 'react';
+import { useQuery } from '@tanstack/react-query';
+// import Toaster from './components/toaster/Toaster.jsx';
 import Loader from './components/loader/Loader.jsx';
 
 function App() {
 
   // Queries
   const query = useQuery({ queryKey: ['products'], queryFn: openProductDatabase })
-  const [isActive, setActive] = useState(null);
+  // const [isActive, setActive] = useState(null);
  
-  const { status, error, data } = query;//memoizedQuery
-  let timerOutId;
+  const { status, error} = query;//memoizedQuery
+  // let timerOutId;
 
     return status === 'pending' ? <Loader/>
 
@@ -34,7 +34,7 @@ function App() {
    (
     <div className="App">  
     {/* {console.log(data)} */}
-   
+    
       {/* {isActive && data && <Toaster message={data?.name.toUpperCase() +' DATABASE IS OPENED SUCCESSFULLY.'} />} */}
     
       <ViewProvider>
