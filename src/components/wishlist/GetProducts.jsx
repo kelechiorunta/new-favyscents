@@ -1,7 +1,7 @@
-import React, { use, memo } from "react";
+import React, { use, memo } from 'react'
 
 const GetProducts = ({ allProducts }) => {
-  const products = use(allProducts); // Using the new React 'use' hook
+  const products = use(allProducts) // Using the new React 'use' hook
 
   return (
     <div>
@@ -12,9 +12,8 @@ const GetProducts = ({ allProducts }) => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
 // ✅ Wrap with memo to prevent unnecessary re-renders
-export default memo(GetProducts);
-
+export default memo(GetProducts)

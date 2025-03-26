@@ -1,383 +1,381 @@
 $fontColor: #898989;
-$highlightColor: #4D2952;
+$highlightColor: #4d2952;
 
-.product-container{
-    // margin-top: calc((130/1440) * 100vw);
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height:100%;//calc(((100vw - 140px)/1440) * 100vw)
-    z-index: -9999;
+.product-container {
+  // margin-top: calc((130/1440) * 100vw);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%; //calc(((100vw - 140px)/1440) * 100vw)
+  z-index: -9999;
 
+  $primaryColor: #d68e21;
+  $backgroundColor: #f5f8f6;
 
-    $primaryColor:  #D68E21;
-    $backgroundColor: #F5F8F6;
-
-.product{
+  .product {
     width: 90%;
     margin: auto;
-    margin-top: calc((297/1440) * 100vw);
+    margin-top: calc((297 / 1440) * 100vw);
     height: 100%;
     display: flex;
     // flex-direction: column;
     justify-content: center;
-    gap: calc((48/1440) * 100vw);
-    background-color: $backgroundColor;//transparent;//$primaryColor;
-    .title{
-        width: max-content;
-        margin: calc((11/1440) * 100vw) auto;
-        font-size: calc((30/1440) * 100vw);
-        padding: calc((37/1440) * 100vw) calc((16/1440) * 100vw);
-        margin-bottom: calc((47/1440) * 100vw);
+    gap: calc((48 / 1440) * 100vw);
+    background-color: $backgroundColor; //transparent;//$primaryColor;
+    .title {
+      width: max-content;
+      margin: calc((11 / 1440) * 100vw) auto;
+      font-size: calc((30 / 1440) * 100vw);
+      padding: calc((37 / 1440) * 100vw) calc((16 / 1440) * 100vw);
+      margin-bottom: calc((47 / 1440) * 100vw);
     }
-    .shopmore{
-        background-color: white;
-        color: #D68E21;
-        font-size: calc((14/1440) * 100vw);
-        outline: 1px solid #D68E21;
+    .shopmore {
+      background-color: white;
+      color: #d68e21;
+      font-size: calc((14 / 1440) * 100vw);
+      outline: 1px solid #d68e21;
+      border: none;
+      display: block;
+      width: max-content; //calc((128.05/1440) * 100vw);
+      margin: auto; //calc(50% - calc((128.05/1440) * 100vw));
+      border-radius: calc((10 / 1440) * 100vw);
+      padding: calc((10.5 / 1440) * 100vw) calc((45 / 1440) * 100vw);
+      // margin-bottom: calc((42/1440) * 100vw);
+      transition:
+        background-color 1s ease-in-out,
+        color 1s ease,
+        border 1s ease-in;
+      &:hover {
+        cursor: pointer;
+        color: white;
+        // border: 1px solid #BE5B75;
+        // color: #BE5B75;
+        background-color: #d68e21;
+      }
+    }
+
+    .filter-section {
+      padding: calc((14 / 1440) * 100vw);
+      width: 15%;
+
+      h1 {
+        font-size: calc((24 / 1440) * 100vw);
+        margin-bottom: calc((24 / 1440) * 100vw);
+      }
+
+      .reset {
+        z-index: 20;
+        width: calc((202 / 1440) * 100vw);
+        margin: auto;
+        margin-bottom: calc((24 / 1440) * 100vw);
+        background-color: transparent;
+        border-radius: calc((10 / 1440) * 100vw);
+        border: 1px solid $primaryColor;
+        padding: calc((14 / 1440) * 100vw);
+        font-size: calc((14 / 1440) * 100vw);
+        font-weight: 700;
+        text-align: center;
+        transition:
+          background-color 1s ease-in-out,
+          color 1s ease-in;
+        &:hover {
+          cursor: pointer;
+          background-color: $primaryColor;
+          color: white;
+        }
+      }
+
+      select {
+        z-index: 20;
+        width: calc((202 / 1440) * 100vw);
+        margin: auto;
+        margin-bottom: calc((24 / 1440) * 100vw);
+        background-color: transparent;
+        border-radius: calc((10 / 1440) * 100vw);
+        outline: 0;
         border: none;
-        display: block;
-        width: max-content;//calc((128.05/1440) * 100vw);
-        margin: auto; //calc(50% - calc((128.05/1440) * 100vw));
-        border-radius: calc((10/1440) * 100vw);
-        padding: calc((10.5/1440) * 100vw) calc((45/1440) * 100vw);
-        // margin-bottom: calc((42/1440) * 100vw);
-        transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
-        &:hover{
-            cursor: pointer;
-            color: white;
-            // border: 1px solid #BE5B75;
-            // color: #BE5B75;
-            background-color: #D68E21;
+        // border: 1px solid $primaryColor;
+        padding: calc((14 / 1440) * 100vw) calc((14 / 1440) * 100vw);
+        font-size: calc((14 / 1440) * 100vw);
+        font-weight: 700;
+        text-align: left;
+        transition:
+          background-color 1s ease-in-out,
+          color 1s ease-in;
+        &:hover {
+          cursor: pointer;
+          background-color: $primaryColor;
+          color: white;
         }
+      }
+
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        // border: 0.51px solid $fontColor;
+        // align-items: center;
+        gap: calc((27 / 1440) * 100vw);
+        // padding: calc((24/1440) * 100vw) calc((48/1440) * 100vw);
+        // border: 1px solid $fontColor;
+
+        .input-section {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          // align-items: center;
+          gap: calc((15 / 1440) * 100vw);
+
+          h1 {
+            width: calc((252 / 1440) * 100vw);
+            text-align: left;
+            color: $highlightColor;
+            font-weight: bold;
+            font-size: calc((14 / 1440) * 100vw);
+          }
+
+          p {
+            width: calc((222 / 1440) * 100vw);
+            text-align: left;
+            color: $highlightColor;
+            // font-weight: bold;
+            font-size: calc((14 / 1440) * 100vw);
+          }
+
+          .name,
+          .email {
+            display: inline-block;
+            color: $fontColor;
+            width: calc((202 / 1440) * 100vw);
+            height: calc((47 / 1440) * 100vw);
+            font-size: calc((14 / 1440) * 100vw);
+            padding: calc((12 / 1440) * 100vw);
+          }
+
+          .subscribeBtn {
+            cursor: pointer;
+            // width: max-content;
+            width: calc((202 / 1440) * 100vw);
+            font-weight: bold;
+            font-size: calc((14 / 1440) * 100vw);
+            padding: calc((12 / 1440) * 100vw) calc((45 / 1440) * 100vw);
+            color: white;
+            background-color: $highlightColor;
+            transition:
+              color 1s ease,
+              background-color 1s ease-in-out;
+            &:hover {
+              color: $highlightColor;
+              background-color: transparent;
+            }
+          }
+        }
+
+        .consent {
+          font-size: calc((12 / 1440) * 100vw);
+        }
+      }
     }
 
-    .filter-section{
-        padding: calc((14/1440) * 100vw);
-        width: 15%;
-        
+    .perfume-section {
+      width: 95.5%;
+      display: grid;
+      grid-template-columns: 100%;
+      text-align: center;
+      padding: calc((14 / 1440) * 100vw);
 
-        h1{
-            font-size: calc((24/1440) * 100vw);
-            margin-bottom: calc((24/1440) * 100vw);
-        }
+      .description {
+        margin: auto;
+        width: 68%;
+        margin-bottom: calc((14 / 1440) * 100vw);
+        padding: calc((14 / 1440) * 100vw);
+        font-size: calc((14 / 1440) * 100vw);
+      }
+      h1 {
+        font-size: calc((24 / 1440) * 100vw);
+      }
 
-        .reset{
-            z-index: 20;
-            width: calc((202/1440) * 100vw);
-            margin: auto;
-            margin-bottom: calc((24/1440) * 100vw);
-            background-color: transparent;
-            border-radius: calc((10/1440) * 100vw);
-            border: 1px solid $primaryColor;
-            padding: calc((14/1440) * 100vw);
-            font-size: calc((14/1440) * 100vw);
-            font-weight: 700;
-            text-align: center;
-            transition: background-color 1s ease-in-out, color 1s ease-in;
-            &:hover{
-                cursor: pointer;
-                background-color: $primaryColor;
-                color: white;
+      .quantity-container {
+        text-align: left;
+        // border: 2px solid;
+        margin: auto;
+        width: 95.5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: calc((14 / 1440) * 100vw);
+        .cont {
+          z-index: 9999;
+          display: flex;
+          gap: calc((14 / 1440) * 100vw);
+          // width: max-content;
+
+          select {
+            padding: calc((7 / 1440) * 100vw);
+            width: calc((134 / 1440) * 100vw);
+            option {
+              padding: calc((7 / 1440) * 100vw);
+              // width: max-content;//calc((134/1440) * 100vw);
             }
+          }
+          // margin-bottom: calc((28/1440) * 100vw);
+        }
+      }
+
+      .carousel-container {
+        display: grid;
+        align-items: center;
+
+        // flex-wrap: wrap;
+        width: 95.5%; //calc((1234/1440) * 100vw);
+        height: 200vh; //calc((662/1440) * 100vw);
+        background: white;
+        margin: auto;
+        margin-bottom: calc((28 / 1440) * 100vw);
+        position: relative;
+        padding: calc((19 / 1440) * 100vw);
+        padding-right: calc((19 / 1440) * 100vw);
+        .prev,
+        .next {
+          width: calc((34 / 1440) * 100vw);
+          height: calc((95 / 1440) * 100vw);
+          position: absolute;
+          cursor: pointer;
+          z-index: 100;
+        }
+        .prev {
+          left: calc((-34 / 1440) * 100vw);
+        }
+        .next {
+          right: calc((-34 / 1440) * 100vw);
         }
 
-        select{
-            z-index: 20;
-            width: calc((202/1440) * 100vw);
-            margin: auto;
-            margin-bottom: calc((24/1440) * 100vw);
-            background-color: transparent;
-            border-radius: calc((10/1440) * 100vw);
-            outline: 0;
-            border: none;
-            // border: 1px solid $primaryColor;
-            padding: calc((14/1440) * 100vw) calc((14/1440) * 100vw);
-            font-size: calc((14/1440) * 100vw);
-            font-weight: 700;
-            text-align: left;
-            transition: background-color 1s ease-in-out, color 1s ease-in;
-            &:hover{
-                cursor: pointer;
-                background-color: $primaryColor;
-                color: white;
+        .pagination-container {
+          display: flex;
+          justify-content: space-evenly;
+          width: max-content;
+          position: absolute;
+          bottom: -2.5%;
+          left: calc(50% - 54px);
+          cursor: pointer;
+          z-index: 9999;
+          button {
+            position: relative;
+            width: calc((34 / 1440) * 100vw);
+            height: calc((34 / 1440) * 100vw);
+          }
+        }
+      }
+      .carousel {
+        // display: flex;
+        display: grid;
+        grid-template-columns: repeat(
+          3,
+          minmax(calc((271.66 / 1440) * 100vw), 1fr)
+        );
+        grid-auto-flow: row;
+        gap: calc((70 / 1440) * 100vw) calc((60 / 1440) * 100vw);
+        width: 72%; //calc((1234/1440) * 100vw);
+        height: 200vh; //calc((562/1440) * 100vw);
+        padding: calc((19 / 1440) * 100vw);
+        padding-right: calc((19 / 1440) * 100vw);
+
+        .item {
+          display: flex;
+
+          flex-direction: column;
+          width: calc((271.66 / 1440) * 100vw);
+          height: calc((488 / 1440) * 100vw);
+          .label-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: calc((10 / 1440) * 100vw);
+            margin-bottom: calc((10 / 1440) * 100vw);
+            height: calc((488 / 1440) * 100vw);
+            // width: calc((234/1440) * 100vw);
+            // margin: auto;
+            .label-title {
+              background-color: #774c7d;
+              font-size: calc((10 / 1440) * 100vw);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              margin-left: calc((12 / 1440) * 100vw);
+              // color: white;
+              width: calc((54 / 1440) * 100vw);
+              height: calc((20 / 1440) * 100vw);
+              padding: calc((10 / 1440) * 100vw);
             }
-        }
-
-        form{
-            width: 100%;
+            .label-icon {
+              width: calc((19 / 1440) * 100vw);
+              height: calc((16 / 1440) * 100vw);
+            }
+          }
+          .child-collection {
+            width: calc((294 / 1440) * 100vw);
+            height: calc((488 / 1440) * 100vw);
             display: flex;
             flex-direction: column;
-            // border: 0.51px solid $fontColor;
-            // align-items: center;
-            gap: calc((27/1440) * 100vw);
-            // padding: calc((24/1440) * 100vw) calc((48/1440) * 100vw);
-            // border: 1px solid $fontColor;
-            
-            
-           
-
-            .input-section{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                // align-items: center;
-                gap: calc((15/1440) * 100vw);
-
-                h1{
-                    width: calc((252/1440) * 100vw);
-                    text-align: left;
-                    color: $highlightColor;
-                    font-weight: bold;
-                    font-size: calc((14/1440) * 100vw);
-                }
-
-                p{
-                    width: calc((222/1440) * 100vw);
-                    text-align: left;
-                    color: $highlightColor;
-                    // font-weight: bold;
-                    font-size: calc((14/1440) * 100vw);
-                }
-
-                .name, .email{
-                    display: inline-block;
-                    color: $fontColor;
-                    width: calc((202/1440) * 100vw);
-                    height: calc((47/1440) * 100vw);
-                    font-size: calc((14/1440) * 100vw);
-                    padding: calc((12/1440) * 100vw);
-                }
-
-                .subscribeBtn{
-                    cursor: pointer;
-                    // width: max-content;
-                    width: calc((202/1440) * 100vw);
-                    font-weight: bold;
-                    font-size: calc((14/1440) * 100vw);
-                    padding: calc((12/1440) * 100vw) calc((45/1440) * 100vw);;
-                    color: white;
-                    background-color: $highlightColor;
-                    transition: color 1s ease, background-color 1s ease-in-out;
-                    &:hover{
-                        color: $highlightColor;
-                        background-color: transparent;
-                    }
-                }
-            }
-
-            .consent{
-                font-size: calc((12/1440) * 100vw);                
-            }
-        
-        }
-        
-    }
-
-    .perfume-section{
-
-        width: 95.5%;
-        display: grid;
-        grid-template-columns: 100%;
-        text-align: center;
-        padding: calc((14/1440) * 100vw);
-
-        .description{
-            margin: auto;
-            width: 68%;
-            margin-bottom: calc((14/1440) * 100vw);
-            padding: calc((14/1440) * 100vw);
-            font-size: calc((14/1440) * 100vw);
-        }
-        h1{
-            font-size: calc((24/1440) * 100vw);
-        }
-
-        .quantity-container{
-            text-align: left;
-            // border: 2px solid;
-            margin: auto;
-            width: 95.5%;
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: calc((14/1440) * 100vw);
-            .cont{
-                z-index: 9999;
-                display: flex;
-                gap: calc((14/1440) * 100vw);
-                // width: max-content;
-                
-                select{
-                    padding: calc((7/1440) * 100vw);
-                    width: calc((134/1440) * 100vw);
-                    option{
-                        padding: calc((7/1440) * 100vw);
-                        // width: max-content;//calc((134/1440) * 100vw);
-                    }
-                    
-                }
-                // margin-bottom: calc((28/1440) * 100vw);
-            }
-        }
+            text-align: center;
+            // gap: calc((30/1440) * 100vw);
 
-        .carousel-container{
-            display: grid;
-            align-items: center;
-            
-            // flex-wrap: wrap;
-            width: 95.5%;//calc((1234/1440) * 100vw);
-            height: 200vh;//calc((662/1440) * 100vw);
-            background: white;
-            margin: auto;
-            margin-bottom: calc((28/1440) * 100vw);
-            position: relative;
-            padding: calc((19/1440) * 100vw);
-            padding-right: calc((19/1440) * 100vw);
-            .prev,.next{
-                width: calc((34/1440) * 100vw);
-                height: calc((95/1440) * 100vw);
-                position: absolute;
-                cursor: pointer;
-                z-index: 100;
+            .img-collection {
+              object-fit: cover;
+              object-position: center;
+              width: calc((252 / 1440) * 100vw);
+              height: calc((229.46 / 1440) * 100vw);
+              cursor: pointer;
             }
-            .prev{
-                left: calc((-34/1440) * 100vw);
-            }
-            .next{
-                right: calc((-34/1440) * 100vw);
-            }
-    
-            .pagination-container{
-                display: flex;
-                justify-content: space-evenly;
-                width:max-content;
-                position: absolute;
-                bottom: -2.5%;
-                left: calc(50% - 54px);
-                cursor: pointer;
-                z-index: 9999;
-                button{
-                    position: relative;
-                    width: calc((34/1440) * 100vw);
-                    height: calc((34/1440) * 100vw);
-                }
-            }
-        }
-        .carousel{
-            // display: flex;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(calc((271.66/1440) * 100vw), 1fr));
-            grid-auto-flow: row;
-            gap: calc((70/1440) * 100vw) calc((60/1440) * 100vw);
-            width: 72%;//calc((1234/1440) * 100vw);
-            height: 200vh;//calc((562/1440) * 100vw);
-            padding: calc((19/1440) * 100vw);
-            padding-right: calc((19/1440) * 100vw);
-            
-            .item{
-                display: flex;
-                
-                flex-direction: column;
-                width: calc((271.66/1440) * 100vw);
-                height: calc((488/1440) * 100vw);
-                .label-container{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: calc((10/1440) * 100vw);
-                    margin-bottom: calc((10/1440) * 100vw);
-                    height: calc((488/1440) * 100vw);
-                    // width: calc((234/1440) * 100vw);
-                    // margin: auto;
-                    .label-title{
-                        background-color: #774C7D;
-                        font-size: calc((10/1440) * 100vw);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        margin-left: calc((12/1440) * 100vw);
-                        // color: white;
-                        width: calc((54/1440) * 100vw);
-                        height: calc((20/1440) * 100vw);
-                        padding: calc((10/1440) * 100vw);
-                    }
-                    .label-icon{
-                        width: calc((19/1440) * 100vw);
-                        height: calc((16/1440) * 100vw);
-                    }
-        
-                }
-                .child-collection{
-                    width: calc((294/1440) * 100vw);
-                    height: calc((488/1440) * 100vw);
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                    // gap: calc((30/1440) * 100vw);
-                    
-        
-                    .img-collection {
-                        object-fit: cover;
-                        object-position: center;
-                        width: calc((252/1440) * 100vw);
-                        height: calc((229.46/1440) * 100vw);
-                        cursor: pointer;
-                    }
-        
-                    .collection-details{
-                        margin-top: calc((-90/1440) * 100vw);
-                        display: flex;
-                        flex-direction: column;
-                        // gap: calc((13/1440) * 100vw);
-                        width: calc((294/1440) * 100vw);
-                        height: calc((488/1440) * 100vw);
-                       
 
-                        .title, .price{
-                            margin: auto;
-                            font-size: calc((14/1440) * 100vw);
-                            font-weight: 700;
-                        }
-        
-                        .supplier{
-                            text-transform: uppercase;
-                            font-size: calc((13/1440) * 100vw);
-                        }
-        
-                        .addToCart{
-                            width: calc((252/1440) * 100vw);
-                            position: relative;
-                            margin: auto;
-                            background-color: transparent;
-                            border-radius: calc((10/1440) * 100vw);
-                            border: 1px solid $primaryColor;
-                            padding: calc((14/1440) * 100vw);
-                            font-size: calc((14/1440) * 100vw);
-                            font-weight: 700;
-                            transition: background-color 1s ease-in-out, color 1s ease-in;
-                            &:hover{
-                                cursor: pointer;
-                                background-color: $primaryColor;
-                                color: white;
-                            }
-                        }
-                    }
+            .collection-details {
+              margin-top: calc((-90 / 1440) * 100vw);
+              display: flex;
+              flex-direction: column;
+              // gap: calc((13/1440) * 100vw);
+              width: calc((294 / 1440) * 100vw);
+              height: calc((488 / 1440) * 100vw);
+
+              .title,
+              .price {
+                margin: auto;
+                font-size: calc((14 / 1440) * 100vw);
+                font-weight: 700;
+              }
+
+              .supplier {
+                text-transform: uppercase;
+                font-size: calc((13 / 1440) * 100vw);
+              }
+
+              .addToCart {
+                width: calc((252 / 1440) * 100vw);
+                position: relative;
+                margin: auto;
+                background-color: transparent;
+                border-radius: calc((10 / 1440) * 100vw);
+                border: 1px solid $primaryColor;
+                padding: calc((14 / 1440) * 100vw);
+                font-size: calc((14 / 1440) * 100vw);
+                font-weight: 700;
+                transition:
+                  background-color 1s ease-in-out,
+                  color 1s ease-in;
+                &:hover {
+                  cursor: pointer;
+                  background-color: $primaryColor;
+                  color: white;
                 }
+              }
             }
-            
+          }
         }
+      }
     }
-    
-}
+  }
 }
 
-
-
-    
-    // border: 1px solid blue;
-
-    
+// border: 1px solid blue;

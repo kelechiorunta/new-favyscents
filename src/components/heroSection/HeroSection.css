@@ -5,7 +5,7 @@
 }
 .hero-section .landing-section {
   z-index: 9999;
-  background-color: #D68E21;
+  background-color: #d68e21;
   width: 85.6944444444vw;
   height: 26.875vw;
   display: flex;
@@ -21,7 +21,7 @@
   height: 26.875vw;
   background-size: cover;
   background-position: center;
-  background-image: url("./welcome_logo.png");
+  background-image: url('./welcome_logo.png');
 }
 .hero-section .landing-section .landing-caption-section {
   display: flex;
@@ -32,7 +32,10 @@
   gap: 0.8333333333vw;
   justify-content: space-evenly;
 }
-.hero-section .landing-section .landing-caption-section .landing-christmas-image {
+.hero-section
+  .landing-section
+  .landing-caption-section
+  .landing-christmas-image {
   background-position: center;
   background-size: cover;
   z-index: 10;
@@ -41,16 +44,16 @@
   margin: auto;
   margin-left: -0.9027777778vw;
   margin-top: -3.3333333333vw;
-  background-image: url("./christmas.png");
+  background-image: url('./christmas.png');
 }
 .hero-section .landing-section .landing-caption-section .landing-caption {
-  color: #4D2952;
+  color: #4d2952;
   margin-top: -7.0833333333vh;
   margin-left: 0.625vw;
   font-size: 4.4444444444vw;
 }
 .hero-section .landing-section .landing-caption-section .landing-description {
-  color: #4D2952;
+  color: #4d2952;
   font-size: 1.6666666667vw;
   margin-left: 0.8333333333vw;
   margin-top: -1.6666666667vw;
@@ -60,7 +63,7 @@
   display: flex;
   align-items: center;
   gap: 0.6944444444vw;
-  background-color: #BE5B75;
+  background-color: #be5b75;
   color: white;
   font-size: 0.9722222222vw;
   outline: none;
@@ -70,17 +73,28 @@
   border-radius: 1.3888888889vw;
   margin-left: 0.8333333333vw;
   padding: 1.5625vw 3.125vw;
-  transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease,
+    border 1s ease-in;
 }
-.hero-section .landing-section .landing-caption-section .landing-button .shop_icon {
+.hero-section
+  .landing-section
+  .landing-caption-section
+  .landing-button
+  .shop_icon {
   fill: white;
   transition: fill 1s ease;
 }
 .hero-section .landing-section .landing-caption-section .landing-button:hover {
   cursor: pointer;
-  color: #BE5B75;
+  color: #be5b75;
   background-color: white;
 }
-.hero-section .landing-section .landing-caption-section .landing-button:hover .shop_icon {
-  fill: #BE5B75;
-}/*# sourceMappingURL=HeroSection.css.map */
+.hero-section
+  .landing-section
+  .landing-caption-section
+  .landing-button:hover
+  .shop_icon {
+  fill: #be5b75;
+} /*# sourceMappingURL=HeroSection.css.map */

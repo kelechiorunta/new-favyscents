@@ -1,176 +1,164 @@
 $fontColor: #898989;
-$highlightColor: #4D2952;
+$highlightColor: #4d2952;
 
-.subscriber-container{
-    width: 100%;
+.subscriber-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc((4 / 1440) * 100vw);
+  @media only screen and (min-width: 300px) and (max-width: 787px) {
+    display: grid; //calc(9px + (768/1440) * 1vw);
+    grid-template-columns: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+  }
+
+  form {
+    width: 50%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: calc((4/1440) * 100vw);
-    @media only screen and (min-width: 300px) and (max-width: 787px) {  
-        display: grid; //calc(9px + (768/1440) * 1vw);
-        grid-template-columns: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-        
+    flex-direction: column;
+    border: 0.51px solid $fontColor;
+    // align-items: center;
+    gap: calc((27 / 1440) * 100vw);
+    padding: calc((24 / 1440) * 100vw) calc((48 / 1440) * 100vw);
+    // border: 1px solid $fontColor;
+    @media only screen and (min-width: 300px) and (max-width: 787px) {
+      width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+      font-size: calc(16px + (786 / 1440) * 1vw);
     }
-    
-        form{
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            border: 0.51px solid $fontColor;
-            // align-items: center;
-            gap: calc((27/1440) * 100vw);
-            padding: calc((24/1440) * 100vw) calc((48/1440) * 100vw);
-            // border: 1px solid $fontColor;
-            @media only screen and (min-width: 300px) and (max-width: 787px) {
-                
-                width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                font-size: calc(16px + (786/1440) * 1vw);
-            }
-            
-            h1{
-                color: $highlightColor;
-                font-weight: bold;
-                font-size: calc((16/1440) * 100vw);
-                @media only screen and (min-width: 300px) and (max-width: 787px) {
-                   
-                    width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                    
-                    font-size: calc(12px + (786/1440) * 1vw);
-                }
-            }
 
-            .input-section{
-                display: flex;
-                align-items: center;
-                gap: calc((15/1440) * 100vw);
+    h1 {
+      color: $highlightColor;
+      font-weight: bold;
+      font-size: calc((16 / 1440) * 100vw);
+      @media only screen and (min-width: 300px) and (max-width: 787px) {
+        width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
 
-                .name, .email{
-                    display: inline-block;
-                    color: $fontColor;
-                    width: calc((286/1440) * 100vw);
-                    height: calc((47/1440) * 100vw);
-                    font-size: calc((14/1440) * 100vw);
-                    padding: calc((12/1440) * 100vw);
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                   
-                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                        height: max-content;
-                        font-size: calc(10px + (786/1440) * 1vw);
-                    }
-                }
+        font-size: calc(12px + (786 / 1440) * 1vw);
+      }
+    }
 
-                .subscribeBtn{
-                    cursor: pointer;
-                    font-weight: bold;
-                    font-size: calc((14/1440) * 100vw);
-                    padding: calc((12/1440) * 100vw) calc((45/1440) * 100vw);;
-                    color: $highlightColor;
-                    background-color: transparent;
-                    transition: color 1s ease, background-color 1s ease-in-out;
-                    &:hover{
-                        color: white;
-                        background-color: $highlightColor;
-                    }
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                   
-                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                        
-                        font-size: calc(10px + (786/1440) * 1vw);
-                    }
-                }
-            }
+    .input-section {
+      display: flex;
+      align-items: center;
+      gap: calc((15 / 1440) * 100vw);
 
-            .consent{
-                font-size: calc((12/1440) * 100vw);                
-                @media only screen and (min-width: 300px) and (max-width: 787px) {
-                   
-                    width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                    
-                    font-size: calc(10px + (786/1440) * 1vw);
-                }
-            }
-        
+      .name,
+      .email {
+        display: inline-block;
+        color: $fontColor;
+        width: calc((286 / 1440) * 100vw);
+        height: calc((47 / 1440) * 100vw);
+        font-size: calc((14 / 1440) * 100vw);
+        padding: calc((12 / 1440) * 100vw);
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+          width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+          height: max-content;
+          font-size: calc(10px + (786 / 1440) * 1vw);
         }
+      }
 
-        .divider-hr{
-            display: inline-block;
-            width:1%;//calc((14/1440) * 100vw);
-            height:calc((104/1440) * 100vw);
-            background-color: $highlightColor;
-            // rotate: 90deg;
+      .subscribeBtn {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: calc((14 / 1440) * 100vw);
+        padding: calc((12 / 1440) * 100vw) calc((45 / 1440) * 100vw);
+        color: $highlightColor;
+        background-color: transparent;
+        transition:
+          color 1s ease,
+          background-color 1s ease-in-out;
+        &:hover {
+          color: white;
+          background-color: $highlightColor;
         }
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+          width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
 
-        .address{
-            padding: calc((24/1440) * 100vw) calc((48/1440) * 100vw);
-            width: 50%;
-            // height: 100%;
-            display: flex;
-            flex-direction: column;
-            border: 0.51px solid $fontColor;
-            // align-items: center;
-            gap: calc((27/1440) * 100vw);
-            // background-color: aquamarine;
-            @media only screen and (min-width: 300px) and (max-width: 787px) {
-                
-                width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                font-size: calc(16px + (786/1440) * 1vw);
-            }
-
-            .help-section{
-                .needHelp{
-                    color: $highlightColor;
-                    font-weight: bold;
-                    font-size: calc((16/1440) * 100vw);
-                    margin-bottom: calc((12/1440) * 100vw);;
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                
-                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                        font-size: calc(12px + (786/1440) * 1vw);
-                    }
-                }
-                .email{
-                    font-size: calc((14/1440) * 100vw);
-                    padding: calc((14/1440) * 100vw) auto;
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                
-                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                        font-size: calc(12px + (786/1440) * 1vw);
-                    }
-                }
-            }
-
-            .visit-section{
-                height: calc((96/1440) * 100vw);
-                @media only screen and (min-width: 300px) and (max-width: 787px) {
-                
-                    width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                    font-size: calc(16px + (786/1440) * 1vw);
-                }
-                .visitUs{
-                    color: $highlightColor;
-                    font-weight: bold;
-                    font-size: calc((16/1440) * 100vw);
-                    margin-bottom: calc((12/1440) * 100vw);;
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                
-                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                        font-size: calc(12px + (786/1440) * 1vw);
-                    }
-                
-                }
-                .location{
-                    text-transform: uppercase;
-                    // width: 30%;
-                    font-size: calc((14/1440) * 100vw);
-                    padding: calc((14/1440) * 100vw) auto;
-                    @media only screen and (min-width: 300px) and (max-width: 787px) {
-                
-                        width: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-                        font-size: calc(10px + (786/1440) * 1vw);
-                    
-                    }
-                }
-            }
+          font-size: calc(10px + (786 / 1440) * 1vw);
         }
+      }
+    }
+
+    .consent {
+      font-size: calc((12 / 1440) * 100vw);
+      @media only screen and (min-width: 300px) and (max-width: 787px) {
+        width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+
+        font-size: calc(10px + (786 / 1440) * 1vw);
+      }
+    }
+  }
+
+  .divider-hr {
+    display: inline-block;
+    width: 1%; //calc((14/1440) * 100vw);
+    height: calc((104 / 1440) * 100vw);
+    background-color: $highlightColor;
+    // rotate: 90deg;
+  }
+
+  .address {
+    padding: calc((24 / 1440) * 100vw) calc((48 / 1440) * 100vw);
+    width: 50%;
+    // height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 0.51px solid $fontColor;
+    // align-items: center;
+    gap: calc((27 / 1440) * 100vw);
+    // background-color: aquamarine;
+    @media only screen and (min-width: 300px) and (max-width: 787px) {
+      width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+      font-size: calc(16px + (786 / 1440) * 1vw);
+    }
+
+    .help-section {
+      .needHelp {
+        color: $highlightColor;
+        font-weight: bold;
+        font-size: calc((16 / 1440) * 100vw);
+        margin-bottom: calc((12 / 1440) * 100vw);
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+          width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+          font-size: calc(12px + (786 / 1440) * 1vw);
+        }
+      }
+      .email {
+        font-size: calc((14 / 1440) * 100vw);
+        padding: calc((14 / 1440) * 100vw) auto;
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+          width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+          font-size: calc(12px + (786 / 1440) * 1vw);
+        }
+      }
+    }
+
+    .visit-section {
+      height: calc((96 / 1440) * 100vw);
+      @media only screen and (min-width: 300px) and (max-width: 787px) {
+        width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+        font-size: calc(16px + (786 / 1440) * 1vw);
+      }
+      .visitUs {
+        color: $highlightColor;
+        font-weight: bold;
+        font-size: calc((16 / 1440) * 100vw);
+        margin-bottom: calc((12 / 1440) * 100vw);
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+          width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+          font-size: calc(12px + (786 / 1440) * 1vw);
+        }
+      }
+      .location {
+        text-transform: uppercase;
+        // width: 30%;
+        font-size: calc((14 / 1440) * 100vw);
+        padding: calc((14 / 1440) * 100vw) auto;
+        @media only screen and (min-width: 300px) and (max-width: 787px) {
+          width: 100%; //repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+          font-size: calc(10px + (786 / 1440) * 1vw);
+        }
+      }
+    }
+  }
 }

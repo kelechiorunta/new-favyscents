@@ -1,15 +1,12 @@
-
-
-
 .App {
   /* text-align: center; */
   max-width: 100%;
   min-height: 100%;
   overflow: hidden;
-  .header-container{
+  .header-container {
     position: fixed;
   }
-  .heroSection{
+  .heroSection {
     position: relative;
     opacity: 1;
     z-index: 999;

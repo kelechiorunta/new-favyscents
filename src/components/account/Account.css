@@ -25,16 +25,23 @@
   width: 60%;
   height: 4.8611111111vw;
 }
-.register-container .register-account-form .introduction-container .profile-container {
+.register-container
+  .register-account-form
+  .introduction-container
+  .profile-container {
   width: auto;
   height: 50%;
   border-radius: 50%;
 }
-.register-container .register-account-form .introduction-container .profile-container img {
+.register-container
+  .register-account-form
+  .introduction-container
+  .profile-container
+  img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   width: 4.8611111111vw;
   border-radius: 50%;
   height: 4.8611111111vw;
@@ -48,14 +55,21 @@
   gap: 1.0416666667vw;
   flex-wrap: wrap;
 }
-.register-container .register-account-form .input-section .first, .register-container .register-account-form .input-section .last, .register-container .register-account-form .input-section .email, .register-container .register-account-form .input-section .password {
+.register-container .register-account-form .input-section .first,
+.register-container .register-account-form .input-section .last,
+.register-container .register-account-form .input-section .email,
+.register-container .register-account-form .input-section .password {
   display: inline-block;
   width: 26.8055555556vw;
   height: 3.2638888889vw;
   font-size: 0.9722222222vw;
   padding: 0.8333333333vw;
 }
-.register-container .register-account-form .input-section .confirm-subscription .agree-label {
+.register-container
+  .register-account-form
+  .input-section
+  .confirm-subscription
+  .agree-label {
   display: flex;
   gap: 0.8333333333vw;
 }
@@ -65,13 +79,15 @@
   font-weight: bold;
   font-size: 0.9722222222vw;
   padding: 0.8333333333vw 3.125vw;
-  color: #D68E21;
+  color: #d68e21;
   background-color: transparent;
-  transition: color 1s ease, background-color 1s ease-in-out;
+  transition:
+    color 1s ease,
+    background-color 1s ease-in-out;
 }
 .register-container .register-account-form .input-section .subscribeBtn:hover {
   color: white;
-  background-color: #D68E21;
+  background-color: #d68e21;
 }
 .register-container .register-account-form .carousel-container {
   display: flex;
@@ -84,7 +100,8 @@
   position: relative;
   padding: 1.9444444444vw auto;
 }
-.register-container .register-account-form .carousel-container .prev, .register-container .register-account-form .carousel-container .next {
+.register-container .register-account-form .carousel-container .prev,
+.register-container .register-account-form .carousel-container .next {
   width: 2.3611111111vw;
   height: 6.5972222222vw;
   position: absolute;
@@ -96,4 +113,4 @@
 }
 .register-container .register-account-form .carousel-container .next {
   right: -2.3611111111vw;
-}/*# sourceMappingURL=Account.css.map */
+} /*# sourceMappingURL=Account.css.map */

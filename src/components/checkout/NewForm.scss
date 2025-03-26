@@ -1,20 +1,19 @@
-.form-container{
-    padding: calc((80/1440) * 100vw) auto;
-    margin-top: calc((120/1440) * 100vw);
+.form-container {
+  padding: calc((80 / 1440) * 100vw) auto;
+  margin-top: calc((120 / 1440) * 100vw);
 
-    .shipping-section{
-        
-        form{
-            button{
-                background-color: #4d2952;
-                color: white;
-            }
-            input{
-                outline: none;
-                :focus{
-                    outline: none;
-                }
-            }
+  .shipping-section {
+    form {
+      button {
+        background-color: #4d2952;
+        color: white;
+      }
+      input {
+        outline: none;
+        :focus {
+          outline: none;
         }
+      }
     }
+  }
 }

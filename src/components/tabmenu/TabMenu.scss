@@ -1,38 +1,38 @@
-$borderColor: #E5E5E5;
-$foreColor:#4D2952;
+$borderColor: #e5e5e5;
+$foreColor: #4d2952;
 
-.tab-menu{
-    background-color: $borderColor;
-    color: $foreColor;
-    position: absolute;
-    display: block;
-    top: 100%; /* Positions it below the menu item */
-    left: 0%;
-    transform: translateX(calc(50% - 95vw )); //translateY(1%) ; /* Centers it */
-    width: 100vw;
-    height: 60vh;
-    padding: calc((27/1440) * 100vw) calc((630/1440) * 100vw);
-    // z-index: ;
-    .women{
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        gap: calc((27/1440) * 100vw);
-        font-size: calc((16/1440) * 100vw);
-        // padding: auto calc((1400/1440) * 100vw);
-        
-        .women-links{
-            font-size: calc((14/1440) * 100vw);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: calc((27/1440) * 100vw);
-            padding:  calc((13/1440) * 100vw);
-        }
+.tab-menu {
+  background-color: $borderColor;
+  color: $foreColor;
+  position: absolute;
+  display: block;
+  top: 100%; /* Positions it below the menu item */
+  left: 0%;
+  transform: translateX(calc(50% - 95vw)); //translateY(1%) ; /* Centers it */
+  width: 100vw;
+  height: 60vh;
+  padding: calc((27 / 1440) * 100vw) calc((630 / 1440) * 100vw);
+  // z-index: ;
+  .women {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: calc((27 / 1440) * 100vw);
+    font-size: calc((16 / 1440) * 100vw);
+    // padding: auto calc((1400/1440) * 100vw);
+
+    .women-links {
+      font-size: calc((14 / 1440) * 100vw);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: calc((27 / 1440) * 100vw);
+      padding: calc((13 / 1440) * 100vw);
     }
-    .name{
-        font-weight: 700;
-        padding: calc((14/1440) * 100vw);
-        z-index: 9999;
-    }
+  }
+  .name {
+    font-weight: 700;
+    padding: calc((14 / 1440) * 100vw);
+    z-index: 9999;
+  }
 }

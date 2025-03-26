@@ -1,94 +1,93 @@
 // import logo from './logo.svg';
-import './App.css';
-import MainHeader from './components/mainheader/MainHeader.jsx';
+import './App.css'
+import MainHeader from './components/mainheader/MainHeader.jsx'
 // import Divider from './components/divider/Divider.jsx';
-import HeroSection from './components/heroSection/HeroSection.jsx';
-import Collections from './components/collections/Collections.jsx';
-import Recommended from './components/recommended/Recommended.jsx';
-import NewArrivals from './components/newArrivals/NewArrivals.jsx';
-import BestSellers from './components/bestSellers/BestSellers.jsx';
-import DividerII from './components/dividerII/DividerII.jsx';
-import Subscriber from './components/subscribe/Subscriber.jsx';
-import { ViewChild, ViewProvider } from './components/ViewContext/ViewContext.jsx';
-import MainFooter from './components/mainfooter/MainFooter.jsx';
-import { openProductDatabase } from './apis/indexedDB.js';
-import React, {  memo} from 'react';
-import { useQuery } from '@tanstack/react-query';
+import HeroSection from './components/heroSection/HeroSection.jsx'
+import Collections from './components/collections/Collections.jsx'
+import Recommended from './components/recommended/Recommended.jsx'
+import NewArrivals from './components/newArrivals/NewArrivals.jsx'
+import BestSellers from './components/bestSellers/BestSellers.jsx'
+import DividerII from './components/dividerII/DividerII.jsx'
+import Subscriber from './components/subscribe/Subscriber.jsx'
+import {
+  ViewChild,
+  ViewProvider,
+} from './components/ViewContext/ViewContext.jsx'
+import MainFooter from './components/mainfooter/MainFooter.jsx'
+import { openProductDatabase } from './apis/indexedDB.js'
+import React, { memo } from 'react'
+import { useQuery } from '@tanstack/react-query'
 // import Toaster from './components/toaster/Toaster.jsx';
-import Loader from './components/loader/Loader.jsx';
+import Loader from './components/loader/Loader.jsx'
 
 function App() {
-
   // Queries
-  const query = useQuery({ queryKey: ['products'], queryFn: openProductDatabase })
+  const query = useQuery({
+    queryKey: ['products'],
+    queryFn: openProductDatabase,
+  })
   // const [isActive, setActive] = useState(null);
- 
-  const { status, error} = query;//memoizedQuery
+
+  const { status, error } = query //memoizedQuery
   // let timerOutId;
 
-    return status === 'pending' ? <Loader/>
+  return status === 'pending' ? (
+    <Loader />
+  ) : status === 'error' ? (
+    <h1>Error...{error}</h1>
+  ) : (
+    <div className="App">
+      {/* {console.log(data)} */}
 
-  : status === 'error' ? <h1>Error...{error}</h1>
- 
-  :
-   (
-    <div className="App">  
-    {/* {console.log(data)} */}
-    
       {/* {isActive && data && <Toaster message={data?.name.toUpperCase() +' DATABASE IS OPENED SUCCESSFULLY.'} />} */}
-    
+
       <ViewProvider>
         {/* <ViewChild id={'mainheader'} > */}
-          <div className='header-contianer'>
-            <MainHeader 
-            id={'header-container'}/>
-          </div>
+        <div className="header-contianer">
+          <MainHeader id={'header-container'} />
+        </div>
         {/* </ViewChild> */}
         {/* <ViewChild id={'tabmenu'} >
           <TabMenu id={'tabmenu'}/>
         </ViewChild> */}
         {/* <ViewChild id={'divider'} > */}
-          {/* <Divider /> */}
+        {/* <Divider /> */}
         {/* </ViewChild> */}
-        <div className={'heroSection'} style={{zIndex:-9999}}>
-        <ViewChild id={'heroSection'} >
-        
+        <div className={'heroSection'}>
+          <ViewChild id={'heroSection'}>
             <HeroSection id={'heroSection'} />
-          
-        </ViewChild>
+          </ViewChild>
         </div>
-          {/* <HeroSection /> */}
-        <ViewChild id={'collections'} >
+        {/* <HeroSection /> */}
+        <ViewChild id={'collections'}>
           <Collections id={'collections'} />
         </ViewChild>
-        <ViewChild id={'recommended'} >
-          <Recommended id={'recommended'}/>
+        <ViewChild id={'recommended'}>
+          <Recommended id={'recommended'} />
         </ViewChild>
-          {/* <Recommended/> */}
-        <ViewChild id={'newArrivals'} >
-          <NewArrivals id={'newArrivals'}/>
+        {/* <Recommended/> */}
+        <ViewChild id={'newArrivals'}>
+          <NewArrivals id={'newArrivals'} />
         </ViewChild>
-          {/* <NewArrivals/> */}
-        <ViewChild id={'bestSellers'} >
-          <BestSellers id={'bestSellers'}/>
+        {/* <NewArrivals/> */}
+        <ViewChild id={'bestSellers'}>
+          <BestSellers id={'bestSellers'} />
         </ViewChild>
-          {/* <BestSellers/> */}
-        <ViewChild id={'dividerII'} >
+        {/* <BestSellers/> */}
+        <ViewChild id={'dividerII'}>
           <DividerII />
         </ViewChild>
-          {/* <DividerII/> */}
-        <ViewChild id={'subscriber'} >
+        {/* <DividerII/> */}
+        <ViewChild id={'subscriber'}>
           <Subscriber />
         </ViewChild>
-        <ViewChild id={'mainFooter'} >
+        <ViewChild id={'mainFooter'}>
           <MainFooter id={'mainFooter'} />
         </ViewChild>
-          {/* <Subscriber/> */}
-        </ViewProvider>
-
+        {/* <Subscriber/> */}
+      </ViewProvider>
     </div>
-    
-  );
+  )
 }
 
-export default memo(App);
+export default memo(App)

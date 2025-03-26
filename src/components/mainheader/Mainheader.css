@@ -39,7 +39,7 @@
   justify-content: space-between;
   align-items: center;
   width: 29.8611111111vw;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   height: 3.1944444444vw;
   border-radius: 2.0138888889vw;
   padding: 0.9027777778vw 1.3194444444vw;
@@ -101,7 +101,7 @@
 .mainheader .logo-container .logo-content {
   display: flex;
   flex-direction: column;
-  color: #4D2952;
+  color: #4d2952;
 }
 .mainheader .logo-container .logo-content .logo-title {
   font-size: 2.2222222222vw;
@@ -127,7 +127,9 @@
   width: 24.375vw;
   height: 3.125vw;
 }
-.mainheader .account-container button, .mainheader .account-container .cartitems, .mainheader .account-container .accountBtn {
+.mainheader .account-container button,
+.mainheader .account-container .cartitems,
+.mainheader .account-container .accountBtn {
   text-decoration: none;
   display: flex;
   align-items: flex-start;
@@ -135,12 +137,14 @@
   border-radius: 0.6944444444vw;
   font-size: 0.9722222222vw;
   padding: 0.6944444444vw;
-  color: #4D2952;
+  color: #4d2952;
   border: none;
   cursor: pointer;
 }
-.mainheader .account-container button:hover, .mainheader .account-container .cartitems:hover, .mainheader .account-container .accountBtn:hover {
-  border: 1px solid #4D2952;
+.mainheader .account-container button:hover,
+.mainheader .account-container .cartitems:hover,
+.mainheader .account-container .accountBtn:hover {
+  border: 1px solid #4d2952;
 }
 .mainheader .account-container .accountBtn .icon-user {
   -webkit-text-stroke: 1px black;
@@ -156,7 +160,7 @@
   margin: auto;
   margin-top: -12.7777777778vw;
   margin-bottom: 2.3611111111vw;
-  color: #4D2952;
+  color: #4d2952;
   z-index: 9999;
   position: relative;
   overflow: visible; /* Allow child elements to overflow */
@@ -180,6 +184,6 @@
 .mainheader .main-nav h1:hover {
   z-index: 9999;
   cursor: pointer;
-  border-bottom: 0.2083333333vw solid #4D2952;
+  border-bottom: 0.2083333333vw solid #4d2952;
   transition: border-bottom 0.1s ease;
-}/*# sourceMappingURL=Mainheader.css.map */
+} /*# sourceMappingURL=Mainheader.css.map */
