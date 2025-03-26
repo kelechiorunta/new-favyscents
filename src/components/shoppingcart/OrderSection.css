@@ -12,7 +12,9 @@
   background-color: #f5f6f6;
   padding: 1.6666666667vw;
 }
-.order-section .subtotal-section .subtotal-container, .order-section .subtotal-section .tax-container, .order-section .subtotal-section .total-container {
+.order-section .subtotal-section .subtotal-container,
+.order-section .subtotal-section .tax-container,
+.order-section .subtotal-section .total-container {
   background-color: #f5f6f6;
   display: flex;
   justify-content: space-between;
@@ -31,10 +33,12 @@
   background-color: transparent;
   color: black;
   border-radius: 0.6944444444vw;
-  transition: color 1s ease, background-color 1s ease;
+  transition:
+    color 1s ease,
+    background-color 1s ease;
 }
 .order-section .checkout:hover {
-  background-color: #D68E21;
+  background-color: #d68e21;
   color: white;
   cursor: pointer;
 }
@@ -44,4 +48,4 @@
 .order-section .checkout .checkout-icon {
   fill: black;
   transition: fill 1s ease;
-}/*# sourceMappingURL=OrderSection.css.map */
+} /*# sourceMappingURL=OrderSection.css.map */

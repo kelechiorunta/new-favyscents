@@ -4,7 +4,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #F5F6F6;
+  background-color: #f5f6f6;
 }
 @media only screen and (min-width: 300px) and (max-width: 787px) {
   .recommended {
@@ -26,9 +26,9 @@
 }
 .recommended .shopmore {
   background-color: white;
-  color: #D68E21;
+  color: #d68e21;
   font-size: 0.9722222222vw;
-  outline: 1px solid #D68E21;
+  outline: 1px solid #d68e21;
   border: none;
   display: block;
   width: -moz-max-content;
@@ -37,12 +37,15 @@
   border-radius: 0.6944444444vw;
   padding: 0.7291666667vw 3.125vw;
   margin-bottom: 2.9166666667vw;
-  transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease,
+    border 1s ease-in;
 }
 .recommended .shopmore:hover {
   cursor: pointer;
   color: white;
-  background-color: #D68E21;
+  background-color: #d68e21;
 }
 @media only screen and (min-width: 300px) and (max-width: 787px) {
   .recommended .shopmore {
@@ -66,12 +69,16 @@
     gap: calc(48px + 0.5333333333vw);
     height: 431px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(calc(617px + 0.5458333333vw), 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(calc(617px + 0.5458333333vw), 1fr)
+    );
     grid-auto-rows: calc(244px + 0.5458333333vw);
     padding: 40px auto;
   }
 }
-.recommended .carousel-container .prev, .recommended .carousel-container .next {
+.recommended .carousel-container .prev,
+.recommended .carousel-container .next {
   width: 2.3611111111vw;
   height: 6.5972222222vw;
   position: absolute;
@@ -79,7 +86,8 @@
   z-index: 100;
 }
 @media only screen and (min-width: 300px) and (max-width: 787px) {
-  .recommended .carousel-container .prev, .recommended .carousel-container .next {
+  .recommended .carousel-container .prev,
+  .recommended .carousel-container .next {
     width: -moz-max-content;
     width: max-content;
     height: calc(95px + 0.5458333333vw);
@@ -108,7 +116,10 @@
     gap: calc(48px + 0.5333333333vw);
     height: 331px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(calc(171px + 0.5458333333vw), 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(calc(171px + 0.5458333333vw), 1fr)
+    );
     overflow-y: scroll;
     padding: 40px auto;
   }
@@ -134,7 +145,7 @@
   height: 33.8888888889vw;
 }
 .recommended .carousel .item .label-container .label-title {
-  background-color: #774C7D;
+  background-color: #774c7d;
   font-size: 0.6944444444vw;
   display: flex;
   align-items: center;
@@ -175,9 +186,9 @@
 .recommended .carousel .item .child-collection .img-collection {
   cursor: pointer;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   width: 17.5vw;
   height: 15.9347222222vw;
 }
@@ -188,13 +199,15 @@
   width: 20.4166666667vw;
   height: 33.8888888889vw;
 }
-.recommended .carousel .item .child-collection .collection-details .title, .recommended .carousel .item .child-collection .collection-details .price {
+.recommended .carousel .item .child-collection .collection-details .title,
+.recommended .carousel .item .child-collection .collection-details .price {
   margin: auto;
   font-size: 0.9722222222vw;
   font-weight: 700;
 }
 @media only screen and (min-width: 300px) and (max-width: 787px) {
-  .recommended .carousel .item .child-collection .collection-details .title, .recommended .carousel .item .child-collection .collection-details .price {
+  .recommended .carousel .item .child-collection .collection-details .title,
+  .recommended .carousel .item .child-collection .collection-details .price {
     font-size: calc(8px + 0.5333333333vw);
     width: 100%;
   }
@@ -215,22 +228,34 @@
   margin: auto;
   background-color: transparent;
   border-radius: 0.6944444444vw;
-  border: 1px solid #D68E21;
+  border: 1px solid #d68e21;
   padding: 0.9722222222vw;
   font-size: 0.9722222222vw;
   font-weight: 700;
-  transition: background-color 1s ease-in-out, color 1s ease-in;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease-in;
 }
 @media only screen and (min-width: 300px) and (max-width: 787px) {
-  .recommended .carousel .item .child-collection .collection-details .addToCart {
+  .recommended
+    .carousel
+    .item
+    .child-collection
+    .collection-details
+    .addToCart {
     font-size: calc(8px + 0.5333333333vw);
     width: -moz-max-content;
     width: max-content;
     padding: calc(7px + 0.5458333333vw);
   }
 }
-.recommended .carousel .item .child-collection .collection-details .addToCart:hover {
+.recommended
+  .carousel
+  .item
+  .child-collection
+  .collection-details
+  .addToCart:hover {
   cursor: pointer;
-  background-color: #D68E21;
+  background-color: #d68e21;
   color: white;
-}/*# sourceMappingURL=Recommended.css.map */
+} /*# sourceMappingURL=Recommended.css.map */

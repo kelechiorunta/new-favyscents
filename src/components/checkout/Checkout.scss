@@ -1,12 +1,12 @@
-.checkout-container{
-    width: 100%;
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    // gap: calc((120/1440) * 100vw);
-    .checkout-title{
-        color: black;
-        margin-top: calc((120/1440) * 100vw);
-        padding-left: calc((120/1440) * 100vw);
-    }
+.checkout-container {
+  width: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // gap: calc((120/1440) * 100vw);
+  .checkout-title {
+    color: black;
+    margin-top: calc((120 / 1440) * 100vw);
+    padding-left: calc((120 / 1440) * 100vw);
+  }
 }

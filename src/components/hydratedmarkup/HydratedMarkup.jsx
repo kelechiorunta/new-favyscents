@@ -1,45 +1,43 @@
-import React, {useEffect, useState} from 'react'
-import Loader from '../loader/Loader.jsx';
-import App from '../../App.js';
-
+import React, { useEffect, useState } from 'react'
+import Loader from '../loader/Loader.jsx'
+import App from '../../App.js'
 
 // import React from 'react';
-import ReactDOM, {createRoot, hydrateRoot} from 'react-dom/client';
+import ReactDOM, { createRoot, hydrateRoot } from 'react-dom/client'
 import '../../index.css'
 // import App from '../../App.js';
-import Product from '../products/Product.jsx';
-import Account from '../account/account.jsx';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Perfume from '../perfume/Perfume.jsx';
+import Product from '../products/Product.jsx'
+import Account from '../account/account.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Perfume from '../perfume/Perfume.jsx'
 // import reportWebVitals from './reportWebVitals.js';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import ShoppingCart from '../shoppingcart/ShoppingCart.jsx';
-import WishList from '../wishlist/WishList.jsx';
-import ProductsContext from '../useProducts/ProductsContext.jsx';
-import ErrorBoundary from '../errorboundary/ErrorBoundary.jsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import ShoppingCart from '../shoppingcart/ShoppingCart.jsx'
+import WishList from '../wishlist/WishList.jsx'
+import ProductsContext from '../useProducts/ProductsContext.jsx'
+import ErrorBoundary from '../errorboundary/ErrorBoundary.jsx'
 // import { hydrateRoot } from 'react-dom/client';
 
 // import Loader from '../loader/Loader.jsx';
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 
 export default function HydratedMarkup() {
-    // const [isClient, setIsClient] = useState(true);
+  // const [isClient, setIsClient] = useState(true);
 
-    // useEffect(() => {
-    //     const timerId = setTimeout(() => {
-    //         setIsClient(true)
-    //     }, 3000)
-    //     return() => {
-    //         clearTimeout(timerId)
-    //     }
-    // }, [])
+  // useEffect(() => {
+  //     const timerId = setTimeout(() => {
+  //         setIsClient(true)
+  //     }, 3000)
+  //     return() => {
+  //         clearTimeout(timerId)
+  //     }
+  // }, [])
 
   return (
-    
     <>
-    {/* {isClient?  */}
-    {/* // <!DOCTYPE html> */}
-    {/* <html lang="en">
+      {/* {isClient?  */}
+      {/* // <!DOCTYPE html> */}
+      {/* <html lang="en">
         <head>
             <meta charset="utf-8" />
             <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -70,29 +68,19 @@ export default function HydratedMarkup() {
                         <Route path='/wishlist' element={<WishList/>} />
                     </Routes>
                     {/* <App /> */}
-                {/* </BrowserRouter> 
+      {/* </BrowserRouter> 
                 </QueryClientProvider>
                 </ProductsContext>
                 </ErrorBoundary>
             </React.StrictMode>
             </div>
         </body>
-    </html> */
-     }
+    </html> */}
 
-
-        
-       
-        
-        <h1>Hello Dear Kelechi, well done.</h1> 
-         
+      <h1>Hello Dear Kelechi, well done.</h1>
     </>
-    
-    
-
   )
 }
-
 
 // import { renderToString } from "react-dom/server";
 // import App from "../../App.js";
@@ -101,7 +89,6 @@ export default function HydratedMarkup() {
 
 // export default function HydratedMarkup() {
 //     const appHtml = renderToString(<Loader/>);
-
 
 //   return(
 //     // <html lang='en'>
@@ -112,7 +99,7 @@ export default function HydratedMarkup() {
 //     //   <title>My app</title>
 //     // </head>
 //     // <body>
-//     // <div id="root"> 
+//     // <div id="root">
 //         <h1>Hello Micheal</h1>
 //         // <Loader/>
 //         // {appHtml}
@@ -121,6 +108,3 @@ export default function HydratedMarkup() {
 // //   </html>
 //   )
 // }
-
-
-  

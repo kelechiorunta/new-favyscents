@@ -1,131 +1,144 @@
 $fontColor: #898989;
 
-.main-footer{
-    width: 100%;
-    height: calc((425/1440) * 100vw);
-    padding: calc((48/1440) * 100vw) calc((96/1440) * 100vw);
-    background-color: white;
-    position: relative;
-    @media only screen and (min-width: 300px) and (max-width: 787px) {  
-        // display: grid; //calc(9px + (768/1440) * 1vw);
-        // grid-template-columns: repeat(auto-fit, minmax(calc(325px + (786/1440) * 1vw), 1fr));
-        height: calc(425px + (786/1440) * 1vw);
+.main-footer {
+  width: 100%;
+  height: calc((425 / 1440) * 100vw);
+  padding: calc((48 / 1440) * 100vw) calc((96 / 1440) * 100vw);
+  background-color: white;
+  position: relative;
+  @media only screen and (min-width: 300px) and (max-width: 787px) {
+    // display: grid; //calc(9px + (768/1440) * 1vw);
+    // grid-template-columns: repeat(auto-fit, minmax(calc(325px + (786/1440) * 1vw), 1fr));
+    height: calc(425px + (786 / 1440) * 1vw);
+  }
+
+  .titles {
+    font-size: calc((16 / 1440) * 100vw);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    @media only screen and (min-width: 300px) and (max-width: 787px) {
+      display: grid; //calc(9px + (768/1440) * 1vw);
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(calc(325px + (786 / 1440) * 1vw), 1fr)
+      );
+    }
+  }
+
+  .icons {
+    font-size: calc((16 / 1440) * 100vw);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: calc((30 / 1440) * 100vw);
+    .icon {
+      fill: black;
+      width: 30px;
+      height: 30px;
     }
 
-    .titles{
-        font-size: calc((16/1440) * 100vw);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        @media only screen and (min-width: 300px) and (max-width: 787px) {  
-            display: grid; //calc(9px + (768/1440) * 1vw);
-            grid-template-columns: repeat(auto-fit, minmax(calc(325px + (786/1440) * 1vw), 1fr));
-            
-        }
+    @media only screen and (min-width: 300px) and (max-width: 787px) {
+      position: absolute;
+      bottom: 0px;
+      display: flex; //calc(9px + (768/1440) * 1vw);
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      .icon {
+        fill: black;
+        width: 30px;
+        height: 30px;
+      }
+      // width: 20px;
+      // height: 20px;
+      // size: 40px;
+      z-index: 50;
+      // grid-template-columns: repeat(auto-fit, minmax(calc(24px + (786/1440) * 1vw), 1fr));
+      // display: grid; //calc(9px + (768/1440) * 1vw);
+      // grid-template-columns: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
+    }
+  }
+
+  .navlist {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    gap: calc((53 / 1440) * 100vw);
+    padding: calc((34 / 1440) * 100vw);
+    color: $fontColor;
+    // @media only screen and (min-width: 400px) and (max-width: 787px) {
+    //     display: grid; //calc(9px + (768/1440) * 1vw);
+    //     grid-template-columns: repeat(auto-fit, minmax(calc(224px + (786/1440) * 1vw), 1fr));
+
+    // }
+
+    nav {
+      font-size: calc((14 / 1440) * 100vw);
+      display: flex;
+      flex-direction: column;
+      gap: calc((14 / 1440) * 100vw);
+      text-decoration: none;
+      color: $fontColor;
+      @media only screen and (min-width: 300px) and (max-width: 787px) {
+        font-size: calc(
+          10px + (786 / 1440) * 1vw
+        ); //calc(9px + (768/1440) * 1vw);
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(calc(224px + (786 / 1440) * 1vw), 1fr)
+        );
+      }
     }
 
-    .icons{
-        font-size: calc((16/1440) * 100vw);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: calc((30/1440) * 100vw);
-        .icon{
-            fill: black;
-            width: 30px;
-            height: 30px;
-        }
-        
-        @media only screen and (min-width: 300px) and (max-width: 787px) {  
-            position: absolute;
-            bottom: 0px;
-            display: flex; //calc(9px + (768/1440) * 1vw);
-            justify-content: space-between;
-            align-items: center;
-            width: 80%;
-            .icon{
-                fill: black;
-                width: 30px;
-                height: 30px;
-            }
-            // width: 20px;
-            // height: 20px;
-            // size: 40px;
-            z-index: 50;
-            // grid-template-columns: repeat(auto-fit, minmax(calc(24px + (786/1440) * 1vw), 1fr));
-            // display: grid; //calc(9px + (768/1440) * 1vw);
-            // grid-template-columns: 100%;//repeat(auto-fit, minmax(calc(617px + (786/1440) * 1vw), 1fr));
-            
-        }
+    .nav3 {
+      margin-left: calc((255 / 1440) * 100vw);
+    }
+  }
+
+  .copyright-section {
+    width: 100vw;
+    height: calc((228 / 1440) * 100vw);
+    color: white;
+    margin-left: calc((-96 / 1440) * 100vw);
+    background-color: black;
+    padding: calc((21 / 1440) * 100vw);
+    @media only screen and (min-width: 300px) and (max-width: 787px) {
+      display: grid; //calc(9px + (768/1440) * 1vw);
+      grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+      height: calc(228px + (786 / 1440) * 1vw);
     }
 
-    .navlist{
-        display: flex;
-        align-items: center;
-        // justify-content: space-between;
-        gap: calc((53/1440) * 100vw);
-        padding: calc((34/1440) * 100vw);
-        color: $fontColor;
-        // @media only screen and (min-width: 400px) and (max-width: 787px) {  
-        //     display: grid; //calc(9px + (768/1440) * 1vw);
-        //     grid-template-columns: repeat(auto-fit, minmax(calc(224px + (786/1440) * 1vw), 1fr));
-            
-        // }
-
-        nav{
-            font-size: calc((14/1440) * 100vw);
-            display: flex;
-            flex-direction: column;
-            gap: calc((14/1440) * 100vw);
-            text-decoration: none;
-            color: $fontColor;
-            @media only screen and (min-width: 300px) and (max-width: 787px) {  
-                font-size: calc(10px + (786/1440) * 1vw);//calc(9px + (768/1440) * 1vw);
-                grid-template-columns: repeat(auto-fit, minmax(calc(224px + (786/1440) * 1vw), 1fr));
-                
-            }
-        }
-
-        .nav3{
-            margin-left: calc((255/1440) * 100vw);
-        }
+    .trademark,
+    .reserved,
+    .service-code {
+      width: 60%;
+      margin: auto;
+      font-size: calc((14 / 1440) * 100vw);
+      text-align: center;
+      margin-bottom: calc((21 / 1440) * 100vw);
+      @media only screen and (min-width: 300px) and (max-width: 787px) {
+        font-size: calc(
+          10px + (786 / 1440) * 1vw
+        ); //calc(9px + (768/1440) * 1vw);
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(calc(224px + (786 / 1440) * 1vw), 1fr)
+        );
+        width: 100%;
+      }
     }
 
-    .copyright-section{
-        width: 100vw;
-        height: calc((228/1440) * 100vw);
-        color: white;
-        margin-left: calc((-96/1440) * 100vw);
-        background-color: black;
-        padding: calc((21/1440) * 100vw) ;
-        @media only screen and (min-width: 300px) and (max-width: 787px) {  
-            display: grid; //calc(9px + (768/1440) * 1vw);
-            grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
-            height: calc(228px + (786/1440) * 1vw);
-        }
-
-        .trademark, .reserved, .service-code{
-            width: 60%;
-            margin: auto;
-            font-size: calc((14/1440) * 100vw);
-            text-align: center;
-            margin-bottom: calc((21/1440) * 100vw) ;
-            @media only screen and (min-width: 300px) and (max-width: 787px) {  
-                font-size: calc(10px + (786/1440) * 1vw);//calc(9px + (768/1440) * 1vw);
-                grid-template-columns: repeat(auto-fit, minmax(calc(224px + (786/1440) * 1vw), 1fr));
-                width: 100%;
-            }
-        }
-
-        .service-code{
-            display: flex;
-            gap: calc((21/1440) * 100vw);
-            @media only screen and (min-width: 300px) and (max-width: 787px) {  
-                font-size: calc(10px + (786/1440) * 1vw);//calc(9px + (768/1440) * 1vw);
-                // grid-template-columns: repeat(auto-fit, minmax(calc(224px + (786/1440) * 1vw), 1fr));
-                width: 75%;
-            }
-            
-        }
+    .service-code {
+      display: flex;
+      gap: calc((21 / 1440) * 100vw);
+      @media only screen and (min-width: 300px) and (max-width: 787px) {
+        font-size: calc(
+          10px + (786 / 1440) * 1vw
+        ); //calc(9px + (768/1440) * 1vw);
+        // grid-template-columns: repeat(auto-fit, minmax(calc(224px + (786/1440) * 1vw), 1fr));
+        width: 75%;
+      }
     }
+  }
 }

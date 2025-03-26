@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   gap: 3.3333333333vw;
-  background-color: #F5F8F6;
+  background-color: #f5f8f6;
 }
 .product-container .product .title {
   width: -moz-max-content;
@@ -26,9 +26,9 @@
 }
 .product-container .product .shopmore {
   background-color: white;
-  color: #D68E21;
+  color: #d68e21;
   font-size: 0.9722222222vw;
-  outline: 1px solid #D68E21;
+  outline: 1px solid #d68e21;
   border: none;
   display: block;
   width: -moz-max-content;
@@ -36,12 +36,15 @@
   margin: auto;
   border-radius: 0.6944444444vw;
   padding: 0.7291666667vw 3.125vw;
-  transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease,
+    border 1s ease-in;
 }
 .product-container .product .shopmore:hover {
   cursor: pointer;
   color: white;
-  background-color: #D68E21;
+  background-color: #d68e21;
 }
 .product-container .product .filter-section {
   padding: 0.9722222222vw;
@@ -58,16 +61,18 @@
   margin-bottom: 1.6666666667vw;
   background-color: transparent;
   border-radius: 0.6944444444vw;
-  border: 1px solid #D68E21;
+  border: 1px solid #d68e21;
   padding: 0.9722222222vw;
   font-size: 0.9722222222vw;
   font-weight: 700;
   text-align: center;
-  transition: background-color 1s ease-in-out, color 1s ease-in;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease-in;
 }
 .product-container .product .filter-section .reset:hover {
   cursor: pointer;
-  background-color: #D68E21;
+  background-color: #d68e21;
   color: white;
 }
 .product-container .product .filter-section select {
@@ -83,11 +88,13 @@
   font-size: 0.9722222222vw;
   font-weight: 700;
   text-align: left;
-  transition: background-color 1s ease-in-out, color 1s ease-in;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease-in;
 }
 .product-container .product .filter-section select:hover {
   cursor: pointer;
-  background-color: #D68E21;
+  background-color: #d68e21;
   color: white;
 }
 .product-container .product .filter-section form {
@@ -105,17 +112,18 @@
 .product-container .product .filter-section form .input-section h1 {
   width: 17.5vw;
   text-align: left;
-  color: #4D2952;
+  color: #4d2952;
   font-weight: bold;
   font-size: 0.9722222222vw;
 }
 .product-container .product .filter-section form .input-section p {
   width: 15.4166666667vw;
   text-align: left;
-  color: #4D2952;
+  color: #4d2952;
   font-size: 0.9722222222vw;
 }
-.product-container .product .filter-section form .input-section .name, .product-container .product .filter-section form .input-section .email {
+.product-container .product .filter-section form .input-section .name,
+.product-container .product .filter-section form .input-section .email {
   display: inline-block;
   color: #898989;
   width: 14.0277777778vw;
@@ -130,11 +138,18 @@
   font-size: 0.9722222222vw;
   padding: 0.8333333333vw 3.125vw;
   color: white;
-  background-color: #4D2952;
-  transition: color 1s ease, background-color 1s ease-in-out;
+  background-color: #4d2952;
+  transition:
+    color 1s ease,
+    background-color 1s ease-in-out;
 }
-.product-container .product .filter-section form .input-section .subscribeBtn:hover {
-  color: #4D2952;
+.product-container
+  .product
+  .filter-section
+  form
+  .input-section
+  .subscribeBtn:hover {
+  color: #4d2952;
   background-color: transparent;
 }
 .product-container .product .filter-section form .consent {
@@ -175,7 +190,13 @@
   padding: 0.4861111111vw;
   width: 9.3055555556vw;
 }
-.product-container .product .perfume-section .quantity-container .cont select option {
+.product-container
+  .product
+  .perfume-section
+  .quantity-container
+  .cont
+  select
+  option {
   padding: 0.4861111111vw;
 }
 .product-container .product .perfume-section .carousel-container {
@@ -190,7 +211,8 @@
   padding: 1.3194444444vw;
   padding-right: 1.3194444444vw;
 }
-.product-container .product .perfume-section .carousel-container .prev, .product-container .product .perfume-section .carousel-container .next {
+.product-container .product .perfume-section .carousel-container .prev,
+.product-container .product .perfume-section .carousel-container .next {
   width: 2.3611111111vw;
   height: 6.5972222222vw;
   position: absolute;
@@ -203,7 +225,11 @@
 .product-container .product .perfume-section .carousel-container .next {
   right: -2.3611111111vw;
 }
-.product-container .product .perfume-section .carousel-container .pagination-container {
+.product-container
+  .product
+  .perfume-section
+  .carousel-container
+  .pagination-container {
   display: flex;
   justify-content: space-evenly;
   width: -moz-max-content;
@@ -214,7 +240,12 @@
   cursor: pointer;
   z-index: 9999;
 }
-.product-container .product .perfume-section .carousel-container .pagination-container button {
+.product-container
+  .product
+  .perfume-section
+  .carousel-container
+  .pagination-container
+  button {
   position: relative;
   width: 2.3611111111vw;
   height: 2.3611111111vw;
@@ -243,8 +274,14 @@
   margin-bottom: 0.6944444444vw;
   height: 33.8888888889vw;
 }
-.product-container .product .perfume-section .carousel .item .label-container .label-title {
-  background-color: #774C7D;
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .label-container
+  .label-title {
+  background-color: #774c7d;
   font-size: 0.6944444444vw;
   display: flex;
   align-items: center;
@@ -255,7 +292,13 @@
   height: 1.3888888889vw;
   padding: 0.6944444444vw;
 }
-.product-container .product .perfume-section .carousel .item .label-container .label-icon {
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .label-container
+  .label-icon {
   width: 1.3194444444vw;
   height: 1.1111111111vw;
 }
@@ -267,45 +310,95 @@
   align-items: center;
   text-align: center;
 }
-.product-container .product .perfume-section .carousel .item .child-collection .img-collection {
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .child-collection
+  .img-collection {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   width: 17.5vw;
   height: 15.9347222222vw;
   cursor: pointer;
 }
-.product-container .product .perfume-section .carousel .item .child-collection .collection-details {
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .child-collection
+  .collection-details {
   margin-top: -6.25vw;
   display: flex;
   flex-direction: column;
   width: 20.4166666667vw;
   height: 33.8888888889vw;
 }
-.product-container .product .perfume-section .carousel .item .child-collection .collection-details .title, .product-container .product .perfume-section .carousel .item .child-collection .collection-details .price {
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .child-collection
+  .collection-details
+  .title,
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .child-collection
+  .collection-details
+  .price {
   margin: auto;
   font-size: 0.9722222222vw;
   font-weight: 700;
 }
-.product-container .product .perfume-section .carousel .item .child-collection .collection-details .supplier {
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .child-collection
+  .collection-details
+  .supplier {
   text-transform: uppercase;
   font-size: 0.9027777778vw;
 }
-.product-container .product .perfume-section .carousel .item .child-collection .collection-details .addToCart {
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .child-collection
+  .collection-details
+  .addToCart {
   width: 17.5vw;
   position: relative;
   margin: auto;
   background-color: transparent;
   border-radius: 0.6944444444vw;
-  border: 1px solid #D68E21;
+  border: 1px solid #d68e21;
   padding: 0.9722222222vw;
   font-size: 0.9722222222vw;
   font-weight: 700;
-  transition: background-color 1s ease-in-out, color 1s ease-in;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease-in;
 }
-.product-container .product .perfume-section .carousel .item .child-collection .collection-details .addToCart:hover {
+.product-container
+  .product
+  .perfume-section
+  .carousel
+  .item
+  .child-collection
+  .collection-details
+  .addToCart:hover {
   cursor: pointer;
-  background-color: #D68E21;
+  background-color: #d68e21;
   color: white;
-}/*# sourceMappingURL=Product.css.map */
+} /*# sourceMappingURL=Product.css.map */

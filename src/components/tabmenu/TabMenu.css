@@ -1,6 +1,6 @@
 .tab-menu {
-  background-color: #E5E5E5;
-  color: #4D2952;
+  background-color: #e5e5e5;
+  color: #4d2952;
   position: absolute;
   display: block;
   top: 100%; /* Positions it below the menu item */
@@ -29,4 +29,4 @@
   font-weight: 700;
   padding: 0.9722222222vw;
   z-index: 9999;
-}/*# sourceMappingURL=TabMenu.css.map */
+} /*# sourceMappingURL=TabMenu.css.map */
