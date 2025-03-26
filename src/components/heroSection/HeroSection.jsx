@@ -2,9 +2,11 @@ import React from 'react'
 import './HeroSection.css'
 import { ViewChild } from '../ViewContext/ViewContext'
 import { useViewChild } from '../ViewContext/ViewContext'
+import { useNavigate } from 'react-router-dom'
 
 export default function HeroSection({ id }) {
   const { isVisible } = useViewChild(id)
+  const navigate = useNavigate()
 
   const animateStyle = {
     opacity: `${isVisible ? '1' : '0'}`,
@@ -15,7 +17,7 @@ export default function HeroSection({ id }) {
   }
 
   const handleClick = () => {
-    alert('Hello')
+    navigate('/product')
   }
   return (
     <div style={{ zIndex: 9999 }} className="hero-section">
