@@ -1,0 +1,13 @@
+/* $theme-colors: (
+  'info': tomato,
+  'danger': teal,
+); */
+
+/* The following line can be included in a src/App.scss */
+/* @import '~bootstrap/scss/bootstrap'; */
+
+.my-btn-primary,
+.super-btn {
+  padding: 12px;
+  border-radius: 10px;
+}

@@ -13,6 +13,7 @@ import MainFooter from '../mainfooter/MainFooter.jsx'
 import { addNewSubscriber } from '../../actions/actions.js'
 import Loader from '../loader/Loader.jsx'
 import Toaster from '../toaster/Toaster.jsx'
+import { useNavigate } from 'react-router-dom'
 
 const testimonials = [
   {
@@ -65,6 +66,7 @@ export default function Account() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [prevSlide, setPrevSlide] = useState(0) // Track the previous slide index
   const [direction, setDirection] = useState('left')
+  const navigate = useNavigate()
 
   const [formState, setFormState] = useState(null)
   const [isPending, setIsPending] = useState(null)
@@ -84,6 +86,7 @@ export default function Account() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     setIsPending(true)
+    let timerId
     const formData = new FormData(event.target)
     const formObjects = Object.fromEntries(formData.entries())
     try {
@@ -91,6 +94,10 @@ export default function Account() {
       // if (formObjects) {
       const response = await addNewSubscriber({}, formObjects)
       setFormState(response)
+      timerId = setTimeout(() => {
+        navigate('/dashboard')
+        clearTimeout(timerId)
+      }, 3000)
       // }
     } catch (err) {
       setFormState(err)

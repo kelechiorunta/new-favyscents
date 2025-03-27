@@ -1,4 +1,5 @@
 import React from 'react'
+
 import ReactDOM, { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.js'
@@ -6,6 +7,7 @@ import Product from './components/products/Product.jsx'
 import Account from './components/account/Account.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Perfume from './components/perfume/Perfume.jsx'
+import Dashboard from './components/dashboard/Dashboard.jsx'
 // import reportWebVitals from './reportWebVitals.js';
 import {
   QueryClient,
@@ -21,6 +23,7 @@ import ErrorBoundary from './components/errorboundary/ErrorBoundary.jsx'
 import Loader from './components/loader/Loader.jsx'
 import Checkout from './components/checkout/Checkout.jsx'
 import Unsubscribe from './components/unsubscribe/Unsubscribe.jsx'
+
 const queryClient = new QueryClient()
 
 //GET BACK TO THIS AND FIND OUT HOW TO
@@ -72,6 +75,7 @@ root.render(
               <Route path="/cart" element={<ShoppingCart />} />
               <Route path="/wishlist" element={<WishList />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route
                 path="/users/unsubscribe/:name"
                 element={<Unsubscribe />}
