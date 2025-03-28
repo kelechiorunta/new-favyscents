@@ -131,11 +131,11 @@ $logoTitleColor: #4d2952;
     .accountBtn {
       text-decoration: none;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: calc((10 / 1440) * 100vw);
       border-radius: calc((10 / 1440) * 100vw);
       font-size: calc((14 / 1440) * 100vw);
-      padding: calc((10 / 1440) * 100vw);
+      // padding: calc((10 / 1440) * 100vw);
       color: $logoTitleColor;
       border: none;
       &:hover {
