@@ -191,7 +191,16 @@ export default function MainHeader({ id, tooltipContent, ...rest }) {
             </Tooltip>
           )}
         </button>
-        <div className="cartitems">
+        <div
+          className="cartitems"
+          style={{
+            width: 'max-content',
+            display: 'flex',
+            marginTop: '12px',
+            padding: '5px 12px',
+            // alignItems: 'flex-start',
+          }}
+        >
           <FaCartShopping size={19} color="black" stroke="2px black" />
           <p>{matches ? `${updatedQuantity} items` : null}</p>
         </div>
