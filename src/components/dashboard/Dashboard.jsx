@@ -18,11 +18,25 @@ import { Form } from 'react-bootstrap'
 export default function Dashboard() {
   const [show, setShow] = useState(true)
   const passwordRef = useRef(null)
+  const [formdata, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    textarea: '',
+    country: '',
+  })
   const { Control, Label, Group, Text, Select } = Form
 
   const handleClick = () => {
-    alert(passwordRef.current?.name.toString())
+    // alert(passwordRef.current?.name.toString())
+    alert(JSON.stringify(formdata))
   }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
   return (
     <div>
       <Container fluid="md" bsPrefix="container" as={'div'}>
@@ -181,9 +195,12 @@ export default function Dashboard() {
 
         <Form>
           <Stack className="flex-wrap" direction="vertical" gap={2}>
-            <Group className="mb-3 col-md-6" id="formName">
-              <Label>Name</Label>
+            <Group className="mb-3 col-md-12 col-lg-6" id="formName">
+              <Label htmlFor="name">Name</Label>
               <Control
+                onChange={handleChange}
+                value={formdata.name}
+                id="name"
                 type="text"
                 name="name"
                 className="me-auto"
@@ -192,9 +209,14 @@ export default function Dashboard() {
               <Text className="text-muted">Your details are safe</Text>
             </Group>
 
-            <Group className="mb-3 col-md-6" id="formEmail">
-              <Label className="">Email</Label>
+            <Group className="mb-3 col-md-12 col-lg-6" id="formEmail">
+              <Label htmlFor="email" className="">
+                Email
+              </Label>
               <Control
+                onChange={handleChange}
+                value={formdata.email}
+                id="email"
                 type="email"
                 name="email"
                 className="me-auto"
@@ -203,10 +225,15 @@ export default function Dashboard() {
               <Text className="text-muted">Your Email details are safe</Text>
             </Group>
 
-            <Group className="mb-3 col-md-6" id="formPassword">
-              <Label className="">Password</Label>
+            <Group className="mb-3 col-md-12 col-lg-6" id="formPassword">
+              <Label htmlFor="password" className="">
+                Password
+              </Label>
               <Control
+                onChange={handleChange}
+                value={formdata.password}
                 ref={passwordRef}
+                id="password"
                 type="password"
                 name="password"
                 className="me-auto"
@@ -215,14 +242,35 @@ export default function Dashboard() {
               <Text className="text-muted">Your Password details are safe</Text>
             </Group>
 
-            <Group className="mb-3 col-md-6" id="formCountry">
-              <Label className="">Select Country</Label>
-              <Select className="p-2">
-                <option value="nigeria">Nigeria</option>
-                <option value="algeria">Algeria</option>
-                <option value="cameroun">Cameroun</option>
-                <option value="ivory-coast">Ivory Coast</option>
-                <option value="ghana">Ghana</option>
+            <Group className="mb-3 col-md-12 col-lg-6" id="formComments">
+              <Label htmlFor="textarea" className="">
+                Comments
+              </Label>
+              <Control
+                onChange={handleChange}
+                id="textarea"
+                as={'textarea'}
+                rows={8}
+                name="textarea"
+                className="me-auto"
+                placeholder="Enter Comments please.."
+                aria-describedby="passwordHelpBlock"
+              />
+              <Text id="passwordHelpBlock" muted className="text-muted">
+                Your Comments are subjective
+              </Text>
+            </Group>
+
+            <Group className="mb-3 col-md-12 col-lg-6" id="formCountry">
+              <Label id="country" className="">
+                Select Country
+              </Label>
+              <Select onChange={handleChange} name="country" className="p-2">
+                <option value="Nigeria">Nigeria</option>
+                <option value="Algeria">Algeria</option>
+                <option value="Cameroun">Cameroun</option>
+                <option value="Ivory-coast">Ivory Coast</option>
+                <option value="Ghana">Ghana</option>
               </Select>
             </Group>
             <Button
