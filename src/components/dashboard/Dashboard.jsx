@@ -18,21 +18,26 @@ import { Form } from 'react-bootstrap'
 export default function Dashboard() {
   const [show, setShow] = useState(true)
   const passwordRef = useRef(null)
+  const [toggled, setToggled] = useState(false)
   const [formdata, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     textarea: '',
-    country: '',
+    gender: '',
+    mode: false,
+    country: 'Nigeria',
   })
-  const { Control, Label, Group, Text, Select } = Form
+  const { Control, Label, Group, Text, Select, Check } = Form
 
   const handleClick = () => {
     // alert(passwordRef.current?.name.toString())
-    alert(JSON.stringify(formdata))
+    alert(JSON.stringify({ ...formdata, mode: toggled }))
   }
 
   const handleChange = (event) => {
+    // setToggled(event.target.checked)
+
     const { name, value } = event.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -195,6 +200,7 @@ export default function Dashboard() {
 
         <Form>
           <Stack className="flex-wrap" direction="vertical" gap={2}>
+            {/* Name Control */}
             <Group className="mb-3 col-md-12 col-lg-6" id="formName">
               <Label htmlFor="name">Name</Label>
               <Control
@@ -209,6 +215,7 @@ export default function Dashboard() {
               <Text className="text-muted">Your details are safe</Text>
             </Group>
 
+            {/* Email Control */}
             <Group className="mb-3 col-md-12 col-lg-6" id="formEmail">
               <Label htmlFor="email" className="">
                 Email
@@ -225,6 +232,7 @@ export default function Dashboard() {
               <Text className="text-muted">Your Email details are safe</Text>
             </Group>
 
+            {/* Password Control */}
             <Group className="mb-3 col-md-12 col-lg-6" id="formPassword">
               <Label htmlFor="password" className="">
                 Password
@@ -242,6 +250,7 @@ export default function Dashboard() {
               <Text className="text-muted">Your Password details are safe</Text>
             </Group>
 
+            {/* TextArea Control */}
             <Group className="mb-3 col-md-12 col-lg-6" id="formComments">
               <Label htmlFor="textarea" className="">
                 Comments
@@ -261,6 +270,57 @@ export default function Dashboard() {
               </Text>
             </Group>
 
+            {/* Radio/Checkbox Control */}
+
+            <Group className="mb-3 col-md-12 col-lg-6" id="formComments">
+              <Label htmlFor="textarea" className="">
+                Gender
+              </Label>
+              <Stack className="col-md-4" direction="horizontal" gap={2}>
+                <Check
+                  inline
+                  onChange={handleChange}
+                  id="check-male"
+                  type={'radio'}
+                  name="gender"
+                  className="me-auto col-md-2"
+                  label="Male"
+                  value={'Male'}
+                />
+                <Check
+                  inline
+                  onChange={handleChange}
+                  id="check-female"
+                  type={'radio'}
+                  name="gender"
+                  className="me-auto col-md-2"
+                  label="Female"
+                  value={'Female'}
+                />
+              </Stack>
+            </Group>
+
+            {/* Switch Control */}
+
+            <Group className="mb-3 col-md-12 col-lg-6" id="formComments">
+              <Label htmlFor="textarea" className="">
+                Mode
+              </Label>
+              <Stack direction="horizontal" gap={2}>
+                <Check
+                  onChange={(event) => setToggled(event.target.checked)}
+                  id="check-mode"
+                  type={'switch'}
+                  name="mode"
+                  className="me-auto col-md-12"
+                  label="Active Mode"
+                  value={toggled}
+                  //   checked={formdata.mode}
+                />
+              </Stack>
+            </Group>
+
+            {/* Select Control */}
             <Group className="mb-3 col-md-12 col-lg-6" id="formCountry">
               <Label id="country" className="">
                 Select Country
