@@ -16,19 +16,9 @@
   color: #4d2952;
   background-color: transparent;
   padding: 0.9722222222vw;
-  transition:
-    color 1s ease-in-out,
-    background-color 1s ease-in-out,
-    -webkit-text-decoration 1s ease-in-out;
-  transition:
-    text-decoration 1s ease-in-out,
-    color 1s ease-in-out,
-    background-color 1s ease-in-out;
-  transition:
-    text-decoration 1s ease-in-out,
-    color 1s ease-in-out,
-    background-color 1s ease-in-out,
-    -webkit-text-decoration 1s ease-in-out;
+  transition: color 1s ease-in-out, background-color 1s ease-in-out, -webkit-text-decoration 1s ease-in-out;
+  transition: text-decoration 1s ease-in-out, color 1s ease-in-out, background-color 1s ease-in-out;
+  transition: text-decoration 1s ease-in-out, color 1s ease-in-out, background-color 1s ease-in-out, -webkit-text-decoration 1s ease-in-out;
 }
 .perfume-container .perfume-section .link-cart:hover {
   text-decoration: underline;
@@ -94,18 +84,8 @@
   gap: 0.9722222222vw;
   align-items: center;
 }
-.perfume-container
-  .perfume-section
-  .perfume
-  .description
-  .payment-section
-  .addToCart,
-.perfume-container
-  .perfume-section
-  .perfume
-  .description
-  .payment-section
-  input {
+.perfume-container .perfume-section .perfume .description .payment-section .addToCart,
+.perfume-container .perfume-section .perfume .description .payment-section input {
   z-index: 20;
   width: 10.5555555556vw;
   margin: auto;
@@ -115,22 +95,10 @@
   padding: 0.9722222222vw;
   font-size: 0.9722222222vw;
   font-weight: 700;
-  transition:
-    background-color 1s ease-in-out,
-    color 1s ease-in;
+  transition: background-color 1s ease-in-out, color 1s ease-in;
 }
-.perfume-container
-  .perfume-section
-  .perfume
-  .description
-  .payment-section
-  .addToCart:hover,
-.perfume-container
-  .perfume-section
-  .perfume
-  .description
-  .payment-section
-  input:hover {
+.perfume-container .perfume-section .perfume .description .payment-section .addToCart:hover,
+.perfume-container .perfume-section .perfume .description .payment-section input:hover {
   cursor: pointer;
   background-color: #d68e21;
   color: white;
@@ -186,4 +154,4 @@
   margin-top: 49.5833333333vw;
   position: relative;
   display: block;
-} /*# sourceMappingURL=Perfume.css.map */
+}/*# sourceMappingURL=Perfume.css.map */

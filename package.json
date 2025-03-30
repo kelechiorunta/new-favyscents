@@ -42,7 +42,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prod-build": "npm run build && cp -r ./public ./backend/public",
-    "backend": "NODE_ENV=production nodemon --env-file=.env server-babel.js",
+    "backend": "cross-env NODE_ENV=production nodemon --env-file=.env server-babel.js",
     "start": "concurrently \"npm run frontend\" \"npm run backend\"",
     "ssr": "npm run build && node --env-file=.env server-babel.js"
   },

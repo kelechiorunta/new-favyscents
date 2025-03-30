@@ -33,9 +33,7 @@
   background-color: transparent;
   color: black;
   border-radius: 0.6944444444vw;
-  transition:
-    color 1s ease,
-    background-color 1s ease;
+  transition: color 1s ease, background-color 1s ease;
 }
 .order-section .checkout:hover {
   background-color: #d68e21;
@@ -48,4 +46,4 @@
 .order-section .checkout .checkout-icon {
   fill: black;
   transition: fill 1s ease;
-} /*# sourceMappingURL=OrderSection.css.map */
+}/*# sourceMappingURL=OrderSection.css.map */

@@ -132,7 +132,8 @@
 .mainheader .account-container .accountBtn {
   text-decoration: none;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 0.6944444444vw;
   border-radius: 0.6944444444vw;
   font-size: 0.9722222222vw;
@@ -186,4 +187,4 @@
   cursor: pointer;
   border-bottom: 0.2083333333vw solid #4d2952;
   transition: border-bottom 0.1s ease;
-} /*# sourceMappingURL=Mainheader.css.map */
+}/*# sourceMappingURL=Mainheader.css.map */

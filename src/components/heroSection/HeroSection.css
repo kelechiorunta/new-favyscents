@@ -21,7 +21,7 @@
   height: 26.875vw;
   background-size: cover;
   background-position: center;
-  background-image: url('./welcome_logo.png');
+  background-image: url("./welcome_logo.png");
 }
 .hero-section .landing-section .landing-caption-section {
   display: flex;
@@ -32,10 +32,7 @@
   gap: 0.8333333333vw;
   justify-content: space-evenly;
 }
-.hero-section
-  .landing-section
-  .landing-caption-section
-  .landing-christmas-image {
+.hero-section .landing-section .landing-caption-section .landing-christmas-image {
   background-position: center;
   background-size: cover;
   z-index: 10;
@@ -44,7 +41,7 @@
   margin: auto;
   margin-left: -0.9027777778vw;
   margin-top: -3.3333333333vw;
-  background-image: url('./christmas.png');
+  background-image: url("./christmas.png");
 }
 .hero-section .landing-section .landing-caption-section .landing-caption {
   color: #4d2952;
@@ -73,16 +70,9 @@
   border-radius: 1.3888888889vw;
   margin-left: 0.8333333333vw;
   padding: 1.5625vw 3.125vw;
-  transition:
-    background-color 1s ease-in-out,
-    color 1s ease,
-    border 1s ease-in;
+  transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
 }
-.hero-section
-  .landing-section
-  .landing-caption-section
-  .landing-button
-  .shop_icon {
+.hero-section .landing-section .landing-caption-section .landing-button .shop_icon {
   fill: white;
   transition: fill 1s ease;
 }
@@ -91,10 +81,6 @@
   color: #be5b75;
   background-color: white;
 }
-.hero-section
-  .landing-section
-  .landing-caption-section
-  .landing-button:hover
-  .shop_icon {
+.hero-section .landing-section .landing-caption-section .landing-button:hover .shop_icon {
   fill: #be5b75;
-} /*# sourceMappingURL=HeroSection.css.map */
+}/*# sourceMappingURL=HeroSection.css.map */

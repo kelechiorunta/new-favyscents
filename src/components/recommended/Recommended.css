@@ -37,10 +37,7 @@
   border-radius: 0.6944444444vw;
   padding: 0.7291666667vw 3.125vw;
   margin-bottom: 2.9166666667vw;
-  transition:
-    background-color 1s ease-in-out,
-    color 1s ease,
-    border 1s ease-in;
+  transition: background-color 1s ease-in-out, color 1s ease, border 1s ease-in;
 }
 .recommended .shopmore:hover {
   cursor: pointer;
@@ -56,7 +53,7 @@
   display: flex;
   align-items: center;
   width: 85.6944444444vw;
-  height: 45.9722222222vw;
+  height: 52.9166666667vw;
   background: white;
   margin: auto;
   margin-bottom: 1.9444444444vw;
@@ -69,10 +66,7 @@
     gap: calc(48px + 0.5333333333vw);
     height: 431px;
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(calc(617px + 0.5458333333vw), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(calc(617px + 0.5458333333vw), 1fr));
     grid-auto-rows: calc(244px + 0.5458333333vw);
     padding: 40px auto;
   }
@@ -108,7 +102,7 @@
   align-items: center;
   gap: 1.25vw;
   width: 85.6944444444vw;
-  height: 39.0277777778vw;
+  height: 45.9722222222vw;
   padding: 1.9444444444vw auto;
 }
 @media only screen and (min-width: 300px) and (max-width: 787px) {
@@ -116,10 +110,7 @@
     gap: calc(48px + 0.5333333333vw);
     height: 331px;
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(calc(171px + 0.5458333333vw), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(calc(171px + 0.5458333333vw), 1fr));
     overflow-y: scroll;
     padding: 40px auto;
   }
@@ -186,9 +177,9 @@
 .recommended .carousel .item .child-collection .img-collection {
   cursor: pointer;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
-  object-position: center;
+     object-position: center;
   width: 17.5vw;
   height: 15.9347222222vw;
 }
@@ -232,30 +223,18 @@
   padding: 0.9722222222vw;
   font-size: 0.9722222222vw;
   font-weight: 700;
-  transition:
-    background-color 1s ease-in-out,
-    color 1s ease-in;
+  transition: background-color 1s ease-in-out, color 1s ease-in;
 }
 @media only screen and (min-width: 300px) and (max-width: 787px) {
-  .recommended
-    .carousel
-    .item
-    .child-collection
-    .collection-details
-    .addToCart {
+  .recommended .carousel .item .child-collection .collection-details .addToCart {
     font-size: calc(8px + 0.5333333333vw);
     width: -moz-max-content;
     width: max-content;
     padding: calc(7px + 0.5458333333vw);
   }
 }
-.recommended
-  .carousel
-  .item
-  .child-collection
-  .collection-details
-  .addToCart:hover {
+.recommended .carousel .item .child-collection .collection-details .addToCart:hover {
   cursor: pointer;
   background-color: #d68e21;
   color: white;
-} /*# sourceMappingURL=Recommended.css.map */
+}/*# sourceMappingURL=Recommended.css.map */
