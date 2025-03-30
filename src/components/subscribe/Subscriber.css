@@ -66,9 +66,7 @@
   padding: 0.8333333333vw 3.125vw;
   color: #4d2952;
   background-color: transparent;
-  transition:
-    color 1s ease,
-    background-color 1s ease-in-out;
+  transition: color 1s ease, background-color 1s ease-in-out;
 }
 .subscriber-container form .input-section .subscribeBtn:hover {
   color: white;
@@ -162,4 +160,4 @@
     width: 100%;
     font-size: calc(10px + 0.5458333333vw);
   }
-} /*# sourceMappingURL=Subscriber.css.map */
+}/*# sourceMappingURL=Subscriber.css.map */

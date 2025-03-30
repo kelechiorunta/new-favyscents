@@ -119,7 +119,7 @@ export const Carousel = ({ refId, id, title, brands, gender }) => {
   }, [selectedItems, getQuantity, handleUpdateItems]) // ✅ Runs when `selectedItems` changes
 
   return (
-    <div className="carousel">
+    <div className="carousel" style={{ marginTop: '-50px' }}>
       {brands.map((brand, idx) => (
         <ViewChild
           animateStyle={{

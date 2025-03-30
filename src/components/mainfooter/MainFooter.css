@@ -19,10 +19,7 @@
 @media only screen and (min-width: 300px) and (max-width: 787px) {
   .main-footer .titles {
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(calc(325px + 0.5458333333vw), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(calc(325px + 0.5458333333vw), 1fr));
   }
 }
 .main-footer .icons {
@@ -71,10 +68,7 @@
 @media only screen and (min-width: 300px) and (max-width: 787px) {
   .main-footer .navlist nav {
     font-size: calc(10px + 0.5458333333vw);
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(calc(224px + 0.5458333333vw), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(calc(224px + 0.5458333333vw), 1fr));
   }
 }
 .main-footer .navlist .nav3 {
@@ -109,10 +103,7 @@
   .main-footer .copyright-section .reserved,
   .main-footer .copyright-section .service-code {
     font-size: calc(10px + 0.5458333333vw);
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(calc(224px + 0.5458333333vw), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(calc(224px + 0.5458333333vw), 1fr));
     width: 100%;
   }
 }
@@ -125,4 +116,4 @@
     font-size: calc(10px + 0.5458333333vw);
     width: 75%;
   }
-} /*# sourceMappingURL=MainFooter.css.map */
+}/*# sourceMappingURL=MainFooter.css.map */

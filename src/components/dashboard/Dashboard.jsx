@@ -28,7 +28,7 @@ export default function Dashboard() {
     mode: false,
     country: 'Nigeria',
   })
-  const { Control, Label, Group, Text, Select, Check } = Form
+  const { Control, Label, Group, Text, Select, Check, Range } = Form
 
   const handleClick = () => {
     // alert(passwordRef.current?.name.toString())
@@ -36,8 +36,6 @@ export default function Dashboard() {
   }
 
   const handleChange = (event) => {
-    // setToggled(event.target.checked)
-
     const { name, value } = event.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -319,6 +317,8 @@ export default function Dashboard() {
                 />
               </Stack>
             </Group>
+
+            <Range />
 
             {/* Select Control */}
             <Group className="mb-3 col-md-12 col-lg-6" id="formCountry">

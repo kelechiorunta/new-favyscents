@@ -60,47 +60,23 @@
   text-align: right;
   margin-top: 4.4444444444vw;
 }
-.carousel-container
-  .testimonial-carousel
-  .item
-  .testimonial-child-collection
-  img {
+.carousel-container .testimonial-carousel .item .testimonial-child-collection img {
   display: inline-block;
   border-radius: 50%;
   width: 5.1388888889vw;
   height: 5.1388888889vw;
 }
-.carousel-container
-  .testimonial-carousel
-  .item
-  .testimonial-child-collection
-  .collection-details
-  .left-quote {
+.carousel-container .testimonial-carousel .item .testimonial-child-collection .collection-details .left-quote {
   float: left;
 }
-.carousel-container
-  .testimonial-carousel
-  .item
-  .testimonial-child-collection
-  .collection-details
-  .right-quote {
+.carousel-container .testimonial-carousel .item .testimonial-child-collection .collection-details .right-quote {
   float: right;
 }
-.carousel-container
-  .testimonial-carousel
-  .item
-  .testimonial-child-collection
-  .collection-details
-  .title {
+.carousel-container .testimonial-carousel .item .testimonial-child-collection .collection-details .title {
   margin: auto;
   font-size: 0.9722222222vw;
   color: #000;
 }
-.carousel-container
-  .testimonial-carousel
-  .item
-  .testimonial-child-collection
-  .collection-details
-  .name {
+.carousel-container .testimonial-carousel .item .testimonial-child-collection .collection-details .name {
   font-weight: 700;
-} /*# sourceMappingURL=TestimonialCarousel.css.map */
+}/*# sourceMappingURL=TestimonialCarousel.css.map */

@@ -132,10 +132,12 @@ $logoTitleColor: #4d2952;
       text-decoration: none;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: calc((10 / 1440) * 100vw);
       border-radius: calc((10 / 1440) * 100vw);
       font-size: calc((14 / 1440) * 100vw);
-      // padding: calc((10 / 1440) * 100vw);
+      padding: calc((10 / 1440) * 100vw);
+      // width: 100%;
       color: $logoTitleColor;
       border: none;
       &:hover {

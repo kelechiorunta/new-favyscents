@@ -25,23 +25,16 @@
   width: 60%;
   height: 4.8611111111vw;
 }
-.register-container
-  .register-account-form
-  .introduction-container
-  .profile-container {
+.register-container .register-account-form .introduction-container .profile-container {
   width: auto;
   height: 50%;
   border-radius: 50%;
 }
-.register-container
-  .register-account-form
-  .introduction-container
-  .profile-container
-  img {
+.register-container .register-account-form .introduction-container .profile-container img {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
-  object-position: center;
+     object-position: center;
   width: 4.8611111111vw;
   border-radius: 50%;
   height: 4.8611111111vw;
@@ -65,11 +58,7 @@
   font-size: 0.9722222222vw;
   padding: 0.8333333333vw;
 }
-.register-container
-  .register-account-form
-  .input-section
-  .confirm-subscription
-  .agree-label {
+.register-container .register-account-form .input-section .confirm-subscription .agree-label {
   display: flex;
   gap: 0.8333333333vw;
 }
@@ -81,9 +70,7 @@
   padding: 0.8333333333vw 3.125vw;
   color: #d68e21;
   background-color: transparent;
-  transition:
-    color 1s ease,
-    background-color 1s ease-in-out;
+  transition: color 1s ease, background-color 1s ease-in-out;
 }
 .register-container .register-account-form .input-section .subscribeBtn:hover {
   color: white;
@@ -113,4 +100,4 @@
 }
 .register-container .register-account-form .carousel-container .next {
   right: -2.3611111111vw;
-} /*# sourceMappingURL=Account.css.map */
+}/*# sourceMappingURL=Account.css.map */
