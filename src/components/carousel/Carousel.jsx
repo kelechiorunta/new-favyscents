@@ -40,7 +40,10 @@ export const Item = ({ id, name, pic, supplier, price, quantity }) => {
   // }
   return (
     <>
-      <div className="child-collection" style={{ position: 'relative' }}>
+      <div
+        className="child-collection"
+        style={{ position: 'relative', marginTop: '-20px' }}
+      >
         <img
           onClick={() => navigate(`/perfume/${id}`)}
           className="img-collection"
@@ -119,7 +122,7 @@ export const Carousel = ({ refId, id, title, brands, gender }) => {
   }, [selectedItems, getQuantity, handleUpdateItems]) // ✅ Runs when `selectedItems` changes
 
   return (
-    <div className="carousel" style={{ marginTop: '-50px' }}>
+    <div className="carousel">
       {brands.map((brand, idx) => (
         <ViewChild
           animateStyle={{

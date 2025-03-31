@@ -14,6 +14,7 @@ import { addNewSubscriber } from '../../actions/actions.js'
 import Loader from '../loader/Loader.jsx'
 import Toaster from '../toaster/Toaster.jsx'
 import { useNavigate } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
 
 const testimonials = [
   {
@@ -112,6 +113,7 @@ export default function Account() {
       <MainHeader />
       <ViewProvider>
         <ViewChild id={'register'}>
+          {/* <Container fluid={'xxlg'}> */}
           <div className="register-account-form">
             <h1>CREATE A NEW ACCOUNT</h1>
             <div className="introduction-container">
@@ -195,6 +197,7 @@ export default function Account() {
             </ViewChild>
           </div>
           {/* TESTIMONIAL SLIDER */}
+          {/* </Container> */}
           <div
             className="testimonial-section"
             style={{ backgroundColor: '#f5f6f6' }}

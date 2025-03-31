@@ -43,7 +43,8 @@ export default function TestimonialSlider({
           transition={sliderTransition}
           style={{
             position: 'absolute',
-            width: '100%',
+            width: 'max-content',
+            // height: '100%',
             zIndex: 50,
             overflow: 'hidden',
           }}

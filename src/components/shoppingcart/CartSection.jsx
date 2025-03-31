@@ -89,12 +89,12 @@ export default function CartSection({
                   />
                 </div>
                 <div className="description-col">
-                  <h1 className="name">{item.name}</h1>
+                  <h6 className="name">{item.name}</h6>
                   <div className="description">{item.description}</div>
                 </div>
               </div>
               <div className="price-col">
-                <h1 className="price-title">{item.price}</h1>
+                <h6 className="price-title">{item.price}</h6>
               </div>
               <div className="quantity-col">
                 <input
@@ -117,11 +117,11 @@ export default function CartSection({
                 />
               </div>
               <div className="total-col">
-                <h1 className="total-title">
+                <h6 className="total-title">
                   {'$' +
                     parseFloat(item.price.replace('$', ''), '10') *
                       item.quantity}
-                </h1>
+                </h6>
               </div>
               <button onClick={() => deleteItem(item.id)} className="delete">
                 <FaTrash className="delete-icon" size={14} color="white" />

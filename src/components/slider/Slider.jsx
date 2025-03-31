@@ -43,8 +43,9 @@ export default function Slider({
           style={{
             position: 'absolute',
             width: '100%',
+            height: '100%',
             zIndex: 50,
-            overflow: 'hidden',
+            overflowX: 'hidden',
           }}
           // initial={direction === "right" && indx===currentIndex? "hiddenRight" : "hiddenLeft"}
           // animate={'visible'}
