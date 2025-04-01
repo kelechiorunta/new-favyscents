@@ -36,6 +36,8 @@ export default function Dashboard() {
   })
   const { Control, Label, Group, Text, Select, Check, Range, Floating } = Form
   const { Item, Divider } = Dropdown
+  const { Feedback } = Control
+  const [validated, setValidated] = useState(null)
 
   const handleClick = () => {
     // alert(passwordRef.current?.name.toString())
@@ -45,6 +47,15 @@ export default function Dashboard() {
   const handleChange = (event) => {
     const { name, value } = event.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget
+    if (form.checkValidity() === false) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+    setValidated(true)
   }
 
   return (
@@ -203,12 +214,13 @@ export default function Dashboard() {
           </Col>
         </Stack>
 
-        <Form>
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Stack className="flex-wrap" direction="vertical" gap={2}>
             {/* Name Control */}
             <Group className="mb-3 col-md-12 col-lg-6" id="formName">
               <Label htmlFor="name">Name</Label>
               <Control
+                required
                 onChange={handleChange}
                 value={formdata.name}
                 id="name"
@@ -217,6 +229,9 @@ export default function Dashboard() {
                 className="me-auto"
                 placeholder="Enter Name please.."
               />
+
+              <Feedback>Correct Name</Feedback>
+              <Feedback type="invalid">Please Enter a Valid Name</Feedback>
               <Text className="text-muted">Your details are safe</Text>
             </Group>
 
@@ -226,6 +241,7 @@ export default function Dashboard() {
                 Email
               </Label>
               <Control
+                required
                 onChange={handleChange}
                 value={formdata.email}
                 id="email"
@@ -234,6 +250,8 @@ export default function Dashboard() {
                 className="me-auto"
                 placeholder="Enter Email please.."
               />
+              <Feedback>Correct Email</Feedback>
+              <Feedback type="invalid">Please enter a valid email</Feedback>
               <Text className="text-muted">Your Email details are safe</Text>
             </Group>
 
@@ -243,6 +261,7 @@ export default function Dashboard() {
                 Password
               </Label>
               <Control
+                required
                 onChange={handleChange}
                 value={formdata.password}
                 ref={passwordRef}
@@ -261,6 +280,7 @@ export default function Dashboard() {
                 Comments
               </Label>
               <Control
+                required
                 onChange={handleChange}
                 id="textarea"
                 as={'textarea'}
@@ -283,6 +303,7 @@ export default function Dashboard() {
               </Label>
               <Stack className="col-md-4" direction="horizontal" gap={2}>
                 <Check
+                  required
                   inline
                   onChange={handleChange}
                   id="check-male"
@@ -294,6 +315,7 @@ export default function Dashboard() {
                 />
                 <Check
                   inline
+                  required
                   onChange={handleChange}
                   id="check-female"
                   type={'radio'}
@@ -431,17 +453,29 @@ export default function Dashboard() {
               </Floating>
             </Group>
 
-            {/* FLoating nested controls */}
+            {/* Setting up grid controls */}
 
             <Group className="g-2" controlId="control_ids">
               <Row className="align-items-center">
                 <InputGroup as={Col}>
-                  <InputGroup.Text>Home Address</InputGroup.Text>
-                  <Control type="text" placeholder="Home Address" />
+                  <InputGroup.Text id="home_address">
+                    Home Address
+                  </InputGroup.Text>
+                  <Control
+                    type="text"
+                    aria-labelledby="home_address"
+                    placeholder="Home Address"
+                  />
                 </InputGroup>
                 <InputGroup as={Col}>
-                  <InputGroup.Text>Office Address</InputGroup.Text>
-                  <Control type="text" placeholder="Office Address" />
+                  <InputGroup.Text id="office_address">
+                    Office Address
+                  </InputGroup.Text>
+                  <Control
+                    type="text"
+                    aria-labelledby="office_address"
+                    placeholder="Office Address"
+                  />
                 </InputGroup>
               </Row>
             </Group>
@@ -472,11 +506,7 @@ export default function Dashboard() {
                 <option value="Ghana">Ghana</option>
               </Select>
             </Group>
-            <Button
-              onClick={handleClick}
-              className="col-md-2 mb-3"
-              variant="primary"
-            >
+            <Button type="submit" className="col-md-2 mb-3" variant="primary">
               Submit
             </Button>
           </Stack>
