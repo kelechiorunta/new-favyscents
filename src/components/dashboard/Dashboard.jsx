@@ -1,5 +1,10 @@
 import React, { useState, useRef } from 'react'
-import { Badge } from 'react-bootstrap'
+import {
+  Badge,
+  FloatingLabel,
+  FormFloating,
+  SplitButton,
+} from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Stack } from 'react-bootstrap'
@@ -14,6 +19,7 @@ import './Dashboard.css'
 import MainHeader from '../mainheader/MainHeader.jsx'
 import SSRProvider from 'react-bootstrap/SSRProvider'
 import { Form } from 'react-bootstrap'
+import { InputGroup } from 'react-bootstrap'
 
 export default function Dashboard() {
   const [show, setShow] = useState(true)
@@ -28,7 +34,8 @@ export default function Dashboard() {
     mode: false,
     country: 'Nigeria',
   })
-  const { Control, Label, Group, Text, Select, Check, Range } = Form
+  const { Control, Label, Group, Text, Select, Check, Range, Floating } = Form
+  const { Item, Divider } = Dropdown
 
   const handleClick = () => {
     // alert(passwordRef.current?.name.toString())
@@ -319,6 +326,138 @@ export default function Dashboard() {
             </Group>
 
             <Range />
+
+            <Group className="col-lg-6 col-md-12">
+              <InputGroup size="md">
+                <InputGroup.Text id="small_group_name">
+                  Full Names
+                </InputGroup.Text>
+                <Control
+                  type="text"
+                  id="group_name"
+                  aria-label="small"
+                  aria-describedby="small_group_name"
+                />
+              </InputGroup>
+            </Group>
+
+            <Group className="col-lg-6 col-md-12">
+              <InputGroup title="State">
+                <DropdownButton
+                  variant="outline-secondary"
+                  align={'end'}
+                  title="State"
+                >
+                  <Item href="#">Lagos</Item>
+                  <Item href="#">Edo</Item>
+                  <Item href="#">Delta</Item>
+                  <Item href="#">CrossRiver</Item>
+                  <Divider />
+                  <Item href="#">Plateau</Item>
+                </DropdownButton>
+                <Control type="text" />
+              </InputGroup>
+            </Group>
+
+            <Group className="col-lg-6 col-md-12">
+              <InputGroup title="L.G.A">
+                <Control type="text" aria-label="List of Local Governnments" />
+                <SplitButton
+                  variant="outline-secondary"
+                  alignRight
+                  title="L.G.A"
+                  aria-label="List of Local Governments"
+                >
+                  <Item href="#">Okota</Item>
+                  <Item href="#">Isolo</Item>
+                  <Item href="#">Ago</Item>
+                  <Item href="#">Ikotun</Item>
+                </SplitButton>
+              </InputGroup>
+            </Group>
+
+            {/* Floating email control */}
+            <Group className="col-lg-6 col-md-12">
+              {/* <InputGroup title="floating-email"> */}
+              <FloatingLabel label="Email" controlId="email_input">
+                <Control type="email" placeholder="Enter Email" />
+              </FloatingLabel>
+              {/* </InputGroup> */}
+            </Group>
+
+            {/* Floating textarea control */}
+            <Group className="col-lg-12 col-md-12">
+              <Row className="g-sm-2 g-md-1 g-lg-1 ">
+                {/* <Col lg> */}
+                {/* Without the Col the floatinglabel is displayed block and takes full-width. */}
+                {/* With the Col the floatinglabel is displayed in a grid format and takes the average width based on the number of columns */}
+                <FloatingLabel
+                  as={Col}
+                  controlId="textarea_input"
+                  label="Comments"
+                >
+                  <Control
+                    as="textarea"
+                    cols={8}
+                    placeholder="Enter Comment"
+                    aria-labelledby="textarea_input"
+                  />
+                </FloatingLabel>
+                {/* </Col> */}
+                <Col lg>
+                  <FloatingLabel controlId="textarea_input" label="Enter Post">
+                    <Control
+                      as={'textarea'}
+                      cols={8}
+                      placeholder="Enter Post"
+                      aria-labelledby="textarea_input"
+                    />
+                  </FloatingLabel>
+                </Col>
+              </Row>
+            </Group>
+
+            {/* Floating nested controls */}
+
+            <Group className="col-lg-6 col-md-12">
+              <Floating>
+                <Control
+                  placeholder="Enter Institution"
+                  id="institution_id"
+                  type="text"
+                  aria-labelledby="institution_input"
+                />
+                <label htmlFor="institution_id">Institution</label>
+              </Floating>
+            </Group>
+
+            {/* FLoating nested controls */}
+
+            <Group className="g-2" controlId="control_ids">
+              <Row className="align-items-center">
+                <InputGroup as={Col}>
+                  <InputGroup.Text>Home Address</InputGroup.Text>
+                  <Control type="text" placeholder="Home Address" />
+                </InputGroup>
+                <InputGroup as={Col}>
+                  <InputGroup.Text>Office Address</InputGroup.Text>
+                  <Control type="text" placeholder="Office Address" />
+                </InputGroup>
+              </Row>
+            </Group>
+
+            {/* Floating select control */}
+            <Group className="col-lg-6 col-md-12">
+              <FloatingLabel controlId="select_input" label="Gospel Artists">
+                <Select aria-labelledby="select_input">
+                  <option>Select Your Best Gospel Artists</option>
+                  <option value={'Bebe & Cece Winans'}>Bebe & Cece</option>
+                  <option value={'Fred Hammond'}>Fred Hammond</option>
+                  <option value={'Marcus Cole'}>Marcus Cole</option>
+                  <option value={'Donnie McClurkin'}>Donnie McClurkin</option>
+                </Select>
+              </FloatingLabel>
+            </Group>
 
             {/* Select Control */}
             <Group className="mb-3 col-md-12 col-lg-6" id="formCountry">
