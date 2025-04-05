@@ -8,6 +8,7 @@ import {
   InputGroup,
   Row,
   Col,
+  Accordion,
 } from 'react-bootstrap'
 import { Formik } from 'formik'
 import * as yup from 'yup'
@@ -18,6 +19,8 @@ import Loader from '../loader/Loader.jsx'
 export default function Dashboard() {
   const passwordRef = useRef(null)
   const [toggled, setToggled] = useState(false)
+
+  const { Item, Body, Header } = Accordion
 
   const schema = yup.object().shape({
     name: yup
@@ -214,6 +217,23 @@ export default function Dashboard() {
           </Form>
         )}
       </Formik>
+
+      <Row md>
+        <Accordion>
+          <Item className="mt-6 col-12-md col-6-lg">
+            <Header>Accordion 1</Header>
+            <Body>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Body>
+          </Item>
+        </Accordion>
+      </Row>
     </Container>
   )
 }
