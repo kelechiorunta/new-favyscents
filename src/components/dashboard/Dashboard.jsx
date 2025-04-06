@@ -219,9 +219,21 @@ export default function Dashboard() {
       </Formik>
 
       <Row md>
-        <Accordion>
+        <Accordion className="mt-6 col-12-md col-6-lg">
           <Item className="mt-6 col-12-md col-6-lg">
             <Header>Accordion 1</Header>
+            <Body>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Body>
+          </Item>
+          <Item className="mt-6 col-12-md col-6-lg">
+            <Header>Accordion 2</Header>
             <Body>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
