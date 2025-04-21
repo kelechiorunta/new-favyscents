@@ -28,8 +28,8 @@ import config from 'config'
 
 const serverConfig = config.get('Backend.serverConfig')
 const dbConfig = config.get('Backend.dbConfig')
-console.log(serverConfig)
-console.log(dbConfig)
+// console.log(serverConfig)
+// console.log(dbConfig)
 
 const server = express()
 
