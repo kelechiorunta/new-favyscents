@@ -26,12 +26,14 @@ import passport from 'passport'
 import { authenticate } from 'passport'
 import config from 'config'
 
-const dbConfig = config.get('Customer.dbConfig')
+const serverConfig = config.get('Backend.serverConfig')
+const dbConfig = config.get('Backend.dbConfig')
+console.log(serverConfig)
 console.log(dbConfig)
 
 const server = express()
 
-const uri = process.env.MONGO_URI
+const uri = dbConfig.db_URL //process.env.MONGO_URI
 
 // Implementing a MongoDB middleware session and store for passport authentication
 const MongoDBStore = ConnectMongoDBSession(session)
