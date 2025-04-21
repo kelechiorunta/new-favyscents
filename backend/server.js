@@ -24,6 +24,10 @@ import session from 'express-session'
 import ConnectMongoDBSession from 'connect-mongodb-session'
 import passport from 'passport'
 import { authenticate } from 'passport'
+import config from 'config'
+
+const dbConfig = config.get('Customer.dbConfig')
+console.log(dbConfig)
 
 const server = express()
 
